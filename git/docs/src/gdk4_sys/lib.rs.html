@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `gdk4/sys/src/lib.rs`."><title>lib.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Regular-46f98efaafac5295.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Bold-a2c9cd1067f8b328.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../static.files/rustdoc-0ef3deca4ed45ad8.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../static.files/light-f501212b8b071243.css"><link rel="stylesheet" disabled href="../../static.files/dark-e92fc12c34ff89d3.css"><link rel="stylesheet" disabled href="../../static.files/ayu-a0090c8b1ced384f.css"><script src="../../static.files/storage-3891ce972e3a2bf8.js"></script><script defer src="../../static.files/source-script-ea63cb6500f71309.js"></script><script defer src="../../source-files.js"></script><script defer src="../../static.files/main-364b95f387bc3166.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `gdk4/sys/src/lib.rs`."><title>lib.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Regular-46f98efaafac5295.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Bold-a2c9cd1067f8b328.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../static.files/rustdoc-ba5701c5741a7b69.css" id="mainThemeStyle"><div id="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="gdk4_sys" data-themes="" data-resource-suffix="" data-rustdoc-version="1.70.0-nightly (a41fc00ea 2023-04-13)" data-search-js="search-bc5a112813b5d712.js" data-settings-js="settings-298e1ea74db45b39.js" data-settings-css="settings-7bfb4c59cc6bc502.css" data-theme-light-css="light-0f8c037637f9eb3e.css" data-theme-dark-css="dark-1097f8e92a01e3cf.css" data-theme-ayu-css="ayu-614652228113ac93.css" ></div><script src="../../static.files/storage-62ce34ea385b278a.js"></script><script defer src="../../static.files/source-script-905937fbbdc8e9ea.js"></script><script defer src="../../source-files.js"></script><script defer src="../../static.files/main-f61008743c98d196.js"></script><noscript><link rel="stylesheet" media="(prefers-color-scheme:light)" href="../../static.files/light-0f8c037637f9eb3e.css"><link rel="stylesheet" media="(prefers-color-scheme:dark)" href="../../static.files/dark-1097f8e92a01e3cf.css"><link rel="stylesheet" href="../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", checkDocsLatestStable);
 
@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><nav class="sub"><a class="sub-logo-container" href="../../gdk4_sys/index.html"><img class="rust-logo" src="../../static.files/rust-logo-151179464ae7ed46.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" aria-label="Run search in the documentation" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../static.files/wheel-5ec35bf9ca753509.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><a href="#1" id="1">1</a>
+<nav class="sidebar"></nav><main><nav class="sub"><a class="sub-logo-container" href="../../gdk4_sys/index.html"><img class="rust-logo" src="../../static.files/rust-logo-151179464ae7ed46.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" aria-label="Run search in the documentation" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../static.files/wheel-7b819b6101059cd0.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><div data-nosnippet><pre class="src-line-numbers"><a href="#1" id="1">1</a>
 <a href="#2" id="2">2</a>
 <a href="#3" id="3">3</a>
 <a href="#4" id="4">4</a>
@@ -5085,7 +5085,103 @@
 <a href="#5012" id="5012">5012</a>
 <a href="#5013" id="5013">5013</a>
 <a href="#5014" id="5014">5014</a>
-</pre><pre class="rust"><code><span class="comment">// This file was generated by gir (https://github.com/gtk-rs/gir)
+<a href="#5015" id="5015">5015</a>
+<a href="#5016" id="5016">5016</a>
+<a href="#5017" id="5017">5017</a>
+<a href="#5018" id="5018">5018</a>
+<a href="#5019" id="5019">5019</a>
+<a href="#5020" id="5020">5020</a>
+<a href="#5021" id="5021">5021</a>
+<a href="#5022" id="5022">5022</a>
+<a href="#5023" id="5023">5023</a>
+<a href="#5024" id="5024">5024</a>
+<a href="#5025" id="5025">5025</a>
+<a href="#5026" id="5026">5026</a>
+<a href="#5027" id="5027">5027</a>
+<a href="#5028" id="5028">5028</a>
+<a href="#5029" id="5029">5029</a>
+<a href="#5030" id="5030">5030</a>
+<a href="#5031" id="5031">5031</a>
+<a href="#5032" id="5032">5032</a>
+<a href="#5033" id="5033">5033</a>
+<a href="#5034" id="5034">5034</a>
+<a href="#5035" id="5035">5035</a>
+<a href="#5036" id="5036">5036</a>
+<a href="#5037" id="5037">5037</a>
+<a href="#5038" id="5038">5038</a>
+<a href="#5039" id="5039">5039</a>
+<a href="#5040" id="5040">5040</a>
+<a href="#5041" id="5041">5041</a>
+<a href="#5042" id="5042">5042</a>
+<a href="#5043" id="5043">5043</a>
+<a href="#5044" id="5044">5044</a>
+<a href="#5045" id="5045">5045</a>
+<a href="#5046" id="5046">5046</a>
+<a href="#5047" id="5047">5047</a>
+<a href="#5048" id="5048">5048</a>
+<a href="#5049" id="5049">5049</a>
+<a href="#5050" id="5050">5050</a>
+<a href="#5051" id="5051">5051</a>
+<a href="#5052" id="5052">5052</a>
+<a href="#5053" id="5053">5053</a>
+<a href="#5054" id="5054">5054</a>
+<a href="#5055" id="5055">5055</a>
+<a href="#5056" id="5056">5056</a>
+<a href="#5057" id="5057">5057</a>
+<a href="#5058" id="5058">5058</a>
+<a href="#5059" id="5059">5059</a>
+<a href="#5060" id="5060">5060</a>
+<a href="#5061" id="5061">5061</a>
+<a href="#5062" id="5062">5062</a>
+<a href="#5063" id="5063">5063</a>
+<a href="#5064" id="5064">5064</a>
+<a href="#5065" id="5065">5065</a>
+<a href="#5066" id="5066">5066</a>
+<a href="#5067" id="5067">5067</a>
+<a href="#5068" id="5068">5068</a>
+<a href="#5069" id="5069">5069</a>
+<a href="#5070" id="5070">5070</a>
+<a href="#5071" id="5071">5071</a>
+<a href="#5072" id="5072">5072</a>
+<a href="#5073" id="5073">5073</a>
+<a href="#5074" id="5074">5074</a>
+<a href="#5075" id="5075">5075</a>
+<a href="#5076" id="5076">5076</a>
+<a href="#5077" id="5077">5077</a>
+<a href="#5078" id="5078">5078</a>
+<a href="#5079" id="5079">5079</a>
+<a href="#5080" id="5080">5080</a>
+<a href="#5081" id="5081">5081</a>
+<a href="#5082" id="5082">5082</a>
+<a href="#5083" id="5083">5083</a>
+<a href="#5084" id="5084">5084</a>
+<a href="#5085" id="5085">5085</a>
+<a href="#5086" id="5086">5086</a>
+<a href="#5087" id="5087">5087</a>
+<a href="#5088" id="5088">5088</a>
+<a href="#5089" id="5089">5089</a>
+<a href="#5090" id="5090">5090</a>
+<a href="#5091" id="5091">5091</a>
+<a href="#5092" id="5092">5092</a>
+<a href="#5093" id="5093">5093</a>
+<a href="#5094" id="5094">5094</a>
+<a href="#5095" id="5095">5095</a>
+<a href="#5096" id="5096">5096</a>
+<a href="#5097" id="5097">5097</a>
+<a href="#5098" id="5098">5098</a>
+<a href="#5099" id="5099">5099</a>
+<a href="#5100" id="5100">5100</a>
+<a href="#5101" id="5101">5101</a>
+<a href="#5102" id="5102">5102</a>
+<a href="#5103" id="5103">5103</a>
+<a href="#5104" id="5104">5104</a>
+<a href="#5105" id="5105">5105</a>
+<a href="#5106" id="5106">5106</a>
+<a href="#5107" id="5107">5107</a>
+<a href="#5108" id="5108">5108</a>
+<a href="#5109" id="5109">5109</a>
+<a href="#5110" id="5110">5110</a>
+</pre></div><pre class="rust"><code><span class="comment">// This file was generated by gir (https://github.com/gtk-rs/gir)
 // from gir-files (https://github.com/gtk-rs/gir-files)
 // DO NOT EDIT
 
@@ -5096,7 +5192,7 @@
     clippy::unreadable_literal,
     clippy::upper_case_acronyms
 )]
-#![cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, feature(doc_cfg))]
+#![cfg_attr(docsrs, feature(doc_cfg))]
 
 #[allow(unused_imports)]
 </span><span class="kw">use </span>libc::{
@@ -7785,6 +7881,14 @@
 <span class="kw">pub type </span>GdkDragSurfaceInterface = <span class="kw-2">*mut </span>_GdkDragSurfaceInterface;
 
 <span class="attr">#[repr(C)]
+</span><span class="kw">pub struct </span>_GdkDragSurfaceSize {
+    _data: [u8; <span class="number">0</span>],
+    _marker: core::marker::PhantomData&lt;(<span class="kw-2">*mut </span>u8, core::marker::PhantomPinned)&gt;,
+}
+
+<span class="kw">pub type </span>GdkDragSurfaceSize = <span class="kw-2">*mut </span>_GdkDragSurfaceSize;
+
+<span class="attr">#[repr(C)]
 </span><span class="kw">pub struct </span>GdkEventSequence {
     _data: [u8; <span class="number">0</span>],
     _marker: core::marker::PhantomData&lt;(<span class="kw-2">*mut </span>u8, core::marker::PhantomPinned)&gt;,
@@ -7993,6 +8097,19 @@
 }
 
 <span class="kw">pub type </span>GdkTextureClass = <span class="kw-2">*mut </span>_GdkTextureClass;
+
+<span class="attr">#[repr(C)]
+</span><span class="kw">pub struct </span>GdkTextureDownloader {
+    _data: [u8; <span class="number">0</span>],
+    _marker: core::marker::PhantomData&lt;(<span class="kw-2">*mut </span>u8, core::marker::PhantomPinned)&gt;,
+}
+
+<span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>GdkTextureDownloader {
+    <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GdkTextureDownloader @ {self:p}&quot;</span>))
+            .finish()
+    }
+}
 
 <span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
@@ -8660,8 +8777,8 @@
     <span class="comment">//=========================================================================
     // GdkScrollUnit
     //=========================================================================
-    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
-    #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_8&quot;</span>)))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, docsrs))]
+    #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_8&quot;</span>)))]
     </span><span class="kw">pub fn </span>gdk_scroll_unit_get_type() -&gt; GType;
 
     <span class="comment">//=========================================================================
@@ -8677,18 +8794,18 @@
     <span class="comment">//=========================================================================
     // GdkTextureError
     //=========================================================================
-    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
-    #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, docsrs))]
+    #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
     </span><span class="kw">pub fn </span>gdk_texture_error_get_type() -&gt; GType;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
-    #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, docsrs))]
+    #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
     </span><span class="kw">pub fn </span>gdk_texture_error_quark() -&gt; glib::GQuark;
 
     <span class="comment">//=========================================================================
     // GdkTitlebarGesture
     //=========================================================================
-    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_4&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
-    #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_4&quot;</span>)))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_4&quot;</span>, docsrs))]
+    #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_4&quot;</span>)))]
     </span><span class="kw">pub fn </span>gdk_titlebar_gesture_get_type() -&gt; GType;
 
     <span class="comment">//=========================================================================
@@ -8726,8 +8843,8 @@
     <span class="comment">//=========================================================================
     // GdkGLAPI
     //=========================================================================
-    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
-    #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, docsrs))]
+    #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
     </span><span class="kw">pub fn </span>gdk_gl_api_get_type() -&gt; GType;
 
     <span class="comment">//=========================================================================
@@ -8807,8 +8924,8 @@
         formats: <span class="kw-2">*mut </span>GdkContentFormats,
     ) -&gt; <span class="kw-2">*mut </span>GdkContentFormats;
     <span class="kw">pub fn </span>gdk_content_formats_unref(formats: <span class="kw-2">*mut </span>GdkContentFormats);
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_4&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
-    #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_4&quot;</span>)))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_4&quot;</span>, docsrs))]
+    #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_4&quot;</span>)))]
     </span><span class="kw">pub fn </span>gdk_content_formats_parse(string: <span class="kw-2">*const </span>c_char) -&gt; <span class="kw-2">*mut </span>GdkContentFormats;
 
     <span class="comment">//=========================================================================
@@ -8840,6 +8957,17 @@
     <span class="kw">pub fn </span>gdk_content_formats_builder_unref(builder: <span class="kw-2">*mut </span>GdkContentFormatsBuilder);
 
     <span class="comment">//=========================================================================
+    // GdkDragSurfaceSize
+    //=========================================================================
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_12&quot;</span>, docsrs))]
+    #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_12&quot;</span>)))]
+    </span><span class="kw">pub fn </span>gdk_drag_surface_size_set_size(
+        size: <span class="kw-2">*mut </span>GdkDragSurfaceSize,
+        width: c_int,
+        height: c_int,
+    );
+
+    <span class="comment">//=========================================================================
     // GdkEventSequence
     //=========================================================================
     </span><span class="kw">pub fn </span>gdk_event_sequence_get_type() -&gt; GType;
@@ -8847,20 +8975,20 @@
     <span class="comment">//=========================================================================
     // GdkFileList
     //=========================================================================
-    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
-    #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, docsrs))]
+    #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
     </span><span class="kw">pub fn </span>gdk_file_list_get_type() -&gt; GType;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
-    #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_8&quot;</span>)))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, docsrs))]
+    #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_8&quot;</span>)))]
     </span><span class="kw">pub fn </span>gdk_file_list_new_from_array(
         files: <span class="kw-2">*mut *mut </span>gio::GFile,
         n_files: size_t,
     ) -&gt; <span class="kw-2">*mut </span>GdkFileList;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
-    #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_8&quot;</span>)))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, docsrs))]
+    #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_8&quot;</span>)))]
     </span><span class="kw">pub fn </span>gdk_file_list_new_from_list(files: <span class="kw-2">*mut </span>glib::GSList) -&gt; <span class="kw-2">*mut </span>GdkFileList;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
-    #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, docsrs))]
+    #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
     </span><span class="kw">pub fn </span>gdk_file_list_get_files(file_list: <span class="kw-2">*mut </span>GdkFileList) -&gt; <span class="kw-2">*mut </span>glib::GSList;
 
     <span class="comment">//=========================================================================
@@ -8894,8 +9022,8 @@
     <span class="kw">pub fn </span>gdk_popup_layout_get_anchor_rect(layout: <span class="kw-2">*mut </span>GdkPopupLayout) -&gt; <span class="kw-2">*const </span>GdkRectangle;
     <span class="kw">pub fn </span>gdk_popup_layout_get_offset(layout: <span class="kw-2">*mut </span>GdkPopupLayout, dx: <span class="kw-2">*mut </span>c_int, dy: <span class="kw-2">*mut </span>c_int);
     <span class="kw">pub fn </span>gdk_popup_layout_get_rect_anchor(layout: <span class="kw-2">*mut </span>GdkPopupLayout) -&gt; GdkGravity;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_2&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
-    #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_2&quot;</span>)))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_2&quot;</span>, docsrs))]
+    #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_2&quot;</span>)))]
     </span><span class="kw">pub fn </span>gdk_popup_layout_get_shadow_width(
         layout: <span class="kw-2">*mut </span>GdkPopupLayout,
         left: <span class="kw-2">*mut </span>c_int,
@@ -8915,8 +9043,8 @@
     );
     <span class="kw">pub fn </span>gdk_popup_layout_set_offset(layout: <span class="kw-2">*mut </span>GdkPopupLayout, dx: c_int, dy: c_int);
     <span class="kw">pub fn </span>gdk_popup_layout_set_rect_anchor(layout: <span class="kw-2">*mut </span>GdkPopupLayout, anchor: GdkGravity);
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_2&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
-    #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_2&quot;</span>)))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_2&quot;</span>, docsrs))]
+    #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_2&quot;</span>)))]
     </span><span class="kw">pub fn </span>gdk_popup_layout_set_shadow_width(
         layout: <span class="kw-2">*mut </span>GdkPopupLayout,
         left: c_int,
@@ -8955,6 +9083,58 @@
         src1: <span class="kw-2">*const </span>GdkRectangle,
         src2: <span class="kw-2">*const </span>GdkRectangle,
         dest: <span class="kw-2">*mut </span>GdkRectangle,
+    );
+
+    <span class="comment">//=========================================================================
+    // GdkTextureDownloader
+    //=========================================================================
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
+    </span><span class="kw">pub fn </span>gdk_texture_downloader_get_type() -&gt; GType;
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
+    </span><span class="kw">pub fn </span>gdk_texture_downloader_new(texture: <span class="kw-2">*mut </span>GdkTexture) -&gt; <span class="kw-2">*mut </span>GdkTextureDownloader;
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
+    </span><span class="kw">pub fn </span>gdk_texture_downloader_copy(
+        self_: <span class="kw-2">*const </span>GdkTextureDownloader,
+    ) -&gt; <span class="kw-2">*mut </span>GdkTextureDownloader;
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
+    </span><span class="kw">pub fn </span>gdk_texture_downloader_download_bytes(
+        self_: <span class="kw-2">*const </span>GdkTextureDownloader,
+        out_stride: <span class="kw-2">*mut </span>size_t,
+    ) -&gt; <span class="kw-2">*mut </span>glib::GBytes;
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
+    </span><span class="kw">pub fn </span>gdk_texture_downloader_download_into(
+        self_: <span class="kw-2">*const </span>GdkTextureDownloader,
+        data: <span class="kw-2">*mut </span>u8,
+        stride: size_t,
+    );
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
+    </span><span class="kw">pub fn </span>gdk_texture_downloader_free(self_: <span class="kw-2">*mut </span>GdkTextureDownloader);
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
+    </span><span class="kw">pub fn </span>gdk_texture_downloader_get_format(self_: <span class="kw-2">*const </span>GdkTextureDownloader)
+        -&gt; GdkMemoryFormat;
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
+    </span><span class="kw">pub fn </span>gdk_texture_downloader_get_texture(
+        self_: <span class="kw-2">*const </span>GdkTextureDownloader,
+    ) -&gt; <span class="kw-2">*mut </span>GdkTexture;
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
+    </span><span class="kw">pub fn </span>gdk_texture_downloader_set_format(
+        self_: <span class="kw-2">*mut </span>GdkTextureDownloader,
+        format: GdkMemoryFormat,
+    );
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
+    </span><span class="kw">pub fn </span>gdk_texture_downloader_set_texture(
+        self_: <span class="kw-2">*mut </span>GdkTextureDownloader,
+        texture: <span class="kw-2">*mut </span>GdkTexture,
     );
 
     <span class="comment">//=========================================================================
@@ -9291,8 +9471,8 @@
         win_x: <span class="kw-2">*mut </span>c_double,
         win_y: <span class="kw-2">*mut </span>c_double,
     ) -&gt; <span class="kw-2">*mut </span>GdkSurface;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_2&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
-    #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_2&quot;</span>)))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_2&quot;</span>, docsrs))]
+    #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_2&quot;</span>)))]
     </span><span class="kw">pub fn </span>gdk_device_get_timestamp(device: <span class="kw-2">*mut </span>GdkDevice) -&gt; u32;
     <span class="kw">pub fn </span>gdk_device_get_vendor_id(device: <span class="kw-2">*mut </span>GdkDevice) -&gt; <span class="kw-2">*const </span>c_char;
     <span class="kw">pub fn </span>gdk_device_has_bidi_layouts(device: <span class="kw-2">*mut </span>GdkDevice) -&gt; gboolean;
@@ -9314,8 +9494,8 @@
     <span class="kw">pub fn </span>gdk_display_open(display_name: <span class="kw-2">*const </span>c_char) -&gt; <span class="kw-2">*mut </span>GdkDisplay;
     <span class="kw">pub fn </span>gdk_display_beep(display: <span class="kw-2">*mut </span>GdkDisplay);
     <span class="kw">pub fn </span>gdk_display_close(display: <span class="kw-2">*mut </span>GdkDisplay);
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
-    #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, docsrs))]
+    #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
     </span><span class="kw">pub fn </span>gdk_display_create_gl_context(
         self_: <span class="kw-2">*mut </span>GdkDisplay,
         error: <span class="kw-2">*mut *mut </span>glib::GError,
@@ -9360,8 +9540,8 @@
         n_keys: <span class="kw-2">*mut </span>c_int,
     ) -&gt; gboolean;
     <span class="kw">pub fn </span>gdk_display_notify_startup_complete(display: <span class="kw-2">*mut </span>GdkDisplay, startup_id: <span class="kw-2">*const </span>c_char);
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_4&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
-    #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_4&quot;</span>)))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_4&quot;</span>, docsrs))]
+    #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_4&quot;</span>)))]
     </span><span class="kw">pub fn </span>gdk_display_prepare_gl(
         self_: <span class="kw-2">*mut </span>GdkDisplay,
         error: <span class="kw-2">*mut *mut </span>glib::GError,
@@ -9554,11 +9734,11 @@
     </span><span class="kw">pub fn </span>gdk_gl_context_get_type() -&gt; GType;
     <span class="kw">pub fn </span>gdk_gl_context_clear_current();
     <span class="kw">pub fn </span>gdk_gl_context_get_current() -&gt; <span class="kw-2">*mut </span>GdkGLContext;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
-    #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, docsrs))]
+    #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
     </span><span class="kw">pub fn </span>gdk_gl_context_get_allowed_apis(self_: <span class="kw-2">*mut </span>GdkGLContext) -&gt; GdkGLAPI;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
-    #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, docsrs))]
+    #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
     </span><span class="kw">pub fn </span>gdk_gl_context_get_api(self_: <span class="kw-2">*mut </span>GdkGLContext) -&gt; GdkGLAPI;
     <span class="kw">pub fn </span>gdk_gl_context_get_debug_enabled(context: <span class="kw-2">*mut </span>GdkGLContext) -&gt; gboolean;
     <span class="kw">pub fn </span>gdk_gl_context_get_display(context: <span class="kw-2">*mut </span>GdkGLContext) -&gt; <span class="kw-2">*mut </span>GdkDisplay;
@@ -9577,8 +9757,8 @@
         minor: <span class="kw-2">*mut </span>c_int,
     );
     <span class="kw">pub fn </span>gdk_gl_context_is_legacy(context: <span class="kw-2">*mut </span>GdkGLContext) -&gt; gboolean;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_4&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
-    #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_4&quot;</span>)))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_4&quot;</span>, docsrs))]
+    #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_4&quot;</span>)))]
     </span><span class="kw">pub fn </span>gdk_gl_context_is_shared(self_: <span class="kw-2">*mut </span>GdkGLContext, other: <span class="kw-2">*mut </span>GdkGLContext)
         -&gt; gboolean;
     <span class="kw">pub fn </span>gdk_gl_context_make_current(context: <span class="kw-2">*mut </span>GdkGLContext);
@@ -9586,8 +9766,8 @@
         context: <span class="kw-2">*mut </span>GdkGLContext,
         error: <span class="kw-2">*mut *mut </span>glib::GError,
     ) -&gt; gboolean;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
-    #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, docsrs))]
+    #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
     </span><span class="kw">pub fn </span>gdk_gl_context_set_allowed_apis(self_: <span class="kw-2">*mut </span>GdkGLContext, apis: GdkGLAPI);
     <span class="kw">pub fn </span>gdk_gl_context_set_debug_enabled(context: <span class="kw-2">*mut </span>GdkGLContext, enabled: gboolean);
     <span class="kw">pub fn </span>gdk_gl_context_set_forward_compatible(context: <span class="kw-2">*mut </span>GdkGLContext, compatible: gboolean);
@@ -9659,6 +9839,9 @@
     //=========================================================================
     </span><span class="kw">pub fn </span>gdk_monitor_get_type() -&gt; GType;
     <span class="kw">pub fn </span>gdk_monitor_get_connector(monitor: <span class="kw-2">*mut </span>GdkMonitor) -&gt; <span class="kw-2">*const </span>c_char;
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
+    </span><span class="kw">pub fn </span>gdk_monitor_get_description(monitor: <span class="kw-2">*mut </span>GdkMonitor) -&gt; <span class="kw-2">*const </span>c_char;
     <span class="kw">pub fn </span>gdk_monitor_get_display(monitor: <span class="kw-2">*mut </span>GdkMonitor) -&gt; <span class="kw-2">*mut </span>GdkDisplay;
     <span class="kw">pub fn </span>gdk_monitor_get_geometry(monitor: <span class="kw-2">*mut </span>GdkMonitor, geometry: <span class="kw-2">*mut </span>GdkRectangle);
     <span class="kw">pub fn </span>gdk_monitor_get_height_mm(monitor: <span class="kw-2">*mut </span>GdkMonitor) -&gt; c_int;
@@ -9706,8 +9889,8 @@
         delta_y: <span class="kw-2">*mut </span>c_double,
     );
     <span class="kw">pub fn </span>gdk_scroll_event_get_direction(event: <span class="kw-2">*mut </span>GdkScrollEvent) -&gt; GdkScrollDirection;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
-    #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_8&quot;</span>)))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, docsrs))]
+    #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_8&quot;</span>)))]
     </span><span class="kw">pub fn </span>gdk_scroll_event_get_unit(event: <span class="kw-2">*mut </span>GdkScrollEvent) -&gt; GdkScrollUnit;
     <span class="kw">pub fn </span>gdk_scroll_event_is_stop(event: <span class="kw-2">*mut </span>GdkScrollEvent) -&gt; gboolean;
 
@@ -9769,6 +9952,9 @@
     <span class="kw">pub fn </span>gdk_surface_get_frame_clock(surface: <span class="kw-2">*mut </span>GdkSurface) -&gt; <span class="kw-2">*mut </span>GdkFrameClock;
     <span class="kw">pub fn </span>gdk_surface_get_height(surface: <span class="kw-2">*mut </span>GdkSurface) -&gt; c_int;
     <span class="kw">pub fn </span>gdk_surface_get_mapped(surface: <span class="kw-2">*mut </span>GdkSurface) -&gt; gboolean;
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_12&quot;</span>, docsrs))]
+    #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_12&quot;</span>)))]
+    </span><span class="kw">pub fn </span>gdk_surface_get_scale(surface: <span class="kw-2">*mut </span>GdkSurface) -&gt; c_double;
     <span class="kw">pub fn </span>gdk_surface_get_scale_factor(surface: <span class="kw-2">*mut </span>GdkSurface) -&gt; c_int;
     <span class="kw">pub fn </span>gdk_surface_get_width(surface: <span class="kw-2">*mut </span>GdkSurface) -&gt; c_int;
     <span class="kw">pub fn </span>gdk_surface_hide(surface: <span class="kw-2">*mut </span>GdkSurface);
@@ -9801,8 +9987,8 @@
     //=========================================================================
     </span><span class="kw">pub fn </span>gdk_texture_get_type() -&gt; GType;
     <span class="kw">pub fn </span>gdk_texture_new_for_pixbuf(pixbuf: <span class="kw-2">*mut </span>gdk_pixbuf::GdkPixbuf) -&gt; <span class="kw-2">*mut </span>GdkTexture;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
-    #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, docsrs))]
+    #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
     </span><span class="kw">pub fn </span>gdk_texture_new_from_bytes(
         bytes: <span class="kw-2">*mut </span>glib::GBytes,
         error: <span class="kw-2">*mut *mut </span>glib::GError,
@@ -9811,25 +9997,28 @@
         file: <span class="kw-2">*mut </span>gio::GFile,
         error: <span class="kw-2">*mut *mut </span>glib::GError,
     ) -&gt; <span class="kw-2">*mut </span>GdkTexture;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
-    #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, docsrs))]
+    #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
     </span><span class="kw">pub fn </span>gdk_texture_new_from_filename(
         path: <span class="kw-2">*const </span>c_char,
         error: <span class="kw-2">*mut *mut </span>glib::GError,
     ) -&gt; <span class="kw-2">*mut </span>GdkTexture;
     <span class="kw">pub fn </span>gdk_texture_new_from_resource(resource_path: <span class="kw-2">*const </span>c_char) -&gt; <span class="kw-2">*mut </span>GdkTexture;
     <span class="kw">pub fn </span>gdk_texture_download(texture: <span class="kw-2">*mut </span>GdkTexture, data: <span class="kw-2">*mut </span>u8, stride: size_t);
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
+    </span><span class="kw">pub fn </span>gdk_texture_get_format(self_: <span class="kw-2">*mut </span>GdkTexture) -&gt; GdkMemoryFormat;
     <span class="kw">pub fn </span>gdk_texture_get_height(texture: <span class="kw-2">*mut </span>GdkTexture) -&gt; c_int;
     <span class="kw">pub fn </span>gdk_texture_get_width(texture: <span class="kw-2">*mut </span>GdkTexture) -&gt; c_int;
     <span class="kw">pub fn </span>gdk_texture_save_to_png(texture: <span class="kw-2">*mut </span>GdkTexture, filename: <span class="kw-2">*const </span>c_char) -&gt; gboolean;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
-    #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, docsrs))]
+    #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
     </span><span class="kw">pub fn </span>gdk_texture_save_to_png_bytes(texture: <span class="kw-2">*mut </span>GdkTexture) -&gt; <span class="kw-2">*mut </span>glib::GBytes;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
-    #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, docsrs))]
+    #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
     </span><span class="kw">pub fn </span>gdk_texture_save_to_tiff(texture: <span class="kw-2">*mut </span>GdkTexture, filename: <span class="kw-2">*const </span>c_char) -&gt; gboolean;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
-    #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, docsrs))]
+    #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
     </span><span class="kw">pub fn </span>gdk_texture_save_to_tiff_bytes(texture: <span class="kw-2">*mut </span>GdkTexture) -&gt; <span class="kw-2">*mut </span>glib::GBytes;
 
     <span class="comment">//=========================================================================
@@ -9973,8 +10162,8 @@
         event: <span class="kw-2">*mut </span>GdkEvent,
     ) -&gt; gboolean;
     <span class="kw">pub fn </span>gdk_toplevel_supports_edge_constraints(toplevel: <span class="kw-2">*mut </span>GdkToplevel) -&gt; gboolean;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_4&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
-    #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_4&quot;</span>)))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_4&quot;</span>, docsrs))]
+    #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_4&quot;</span>)))]
     </span><span class="kw">pub fn </span>gdk_toplevel_titlebar_gesture(
         toplevel: <span class="kw-2">*mut </span>GdkToplevel,
         gesture: GdkTitlebarGesture,
@@ -10047,6 +10236,9 @@
         result: <span class="kw-2">*mut </span>gio::GAsyncResult,
         error: <span class="kw-2">*mut *mut </span>glib::GError,
     ) -&gt; gboolean;
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_12&quot;</span>, docsrs))]
+    #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_12&quot;</span>)))]
+    </span><span class="kw">pub fn </span>gdk_drag_surface_size_get_type() -&gt; GType;
     <span class="kw">pub fn </span>gdk_events_get_angle(
         event1: <span class="kw-2">*mut </span>GdkEvent,
         event2: <span class="kw-2">*mut </span>GdkEvent,
@@ -10099,5 +10291,4 @@
     <span class="kw">pub fn </span>gdk_unicode_to_keyval(wc: u32) -&gt; c_uint;
 
 }
-</code></pre></div>
-</section></main><div id="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="gdk4_sys" data-themes="" data-resource-suffix="" data-rustdoc-version="1.69.0-nightly (ef934d9b6 2023-02-08)" data-search-js="search-28136cea55c34037.js" data-settings-js="settings-f0c5c39777a9a2f6.js" data-settings-css="settings-0bcba95ff279c1db.css" ></div></body></html>
+</code></pre></div></section></main></body></html>

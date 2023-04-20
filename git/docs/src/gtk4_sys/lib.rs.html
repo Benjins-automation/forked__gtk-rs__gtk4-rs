@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `gtk4/sys/src/lib.rs`."><title>lib.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Regular-46f98efaafac5295.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Bold-a2c9cd1067f8b328.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../static.files/rustdoc-ba5701c5741a7b69.css" id="mainThemeStyle"><div id="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="gtk4_sys" data-themes="" data-resource-suffix="" data-rustdoc-version="1.70.0-nightly (a41fc00ea 2023-04-13)" data-search-js="search-bc5a112813b5d712.js" data-settings-js="settings-298e1ea74db45b39.js" data-settings-css="settings-7bfb4c59cc6bc502.css" data-theme-light-css="light-0f8c037637f9eb3e.css" data-theme-dark-css="dark-1097f8e92a01e3cf.css" data-theme-ayu-css="ayu-614652228113ac93.css" ></div><script src="../../static.files/storage-62ce34ea385b278a.js"></script><script defer src="../../static.files/source-script-905937fbbdc8e9ea.js"></script><script defer src="../../source-files.js"></script><script defer src="../../static.files/main-f61008743c98d196.js"></script><noscript><link rel="stylesheet" media="(prefers-color-scheme:light)" href="../../static.files/light-0f8c037637f9eb3e.css"><link rel="stylesheet" media="(prefers-color-scheme:dark)" href="../../static.files/dark-1097f8e92a01e3cf.css"><link rel="stylesheet" href="../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `gtk4/sys/src/lib.rs`."><title>lib.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Regular-46f98efaafac5295.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Bold-a2c9cd1067f8b328.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../static.files/rustdoc-ba5701c5741a7b69.css" id="mainThemeStyle"><div id="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="gtk4_sys" data-themes="" data-resource-suffix="" data-rustdoc-version="1.71.0-nightly (39c6804b9 2023-04-19)" data-search-js="search-e077946657036a58.js" data-settings-js="settings-298e1ea74db45b39.js" data-settings-css="settings-7bfb4c59cc6bc502.css" data-theme-light-css="light-0f8c037637f9eb3e.css" data-theme-dark-css="dark-1097f8e92a01e3cf.css" data-theme-ayu-css="ayu-614652228113ac93.css" ></div><script src="../../static.files/storage-62ce34ea385b278a.js"></script><script defer src="../../static.files/source-script-905937fbbdc8e9ea.js"></script><script defer src="../../source-files.js"></script><script defer src="../../static.files/main-1a524efa7bd4ab32.js"></script><noscript><link rel="stylesheet" media="(prefers-color-scheme:light)" href="../../static.files/light-0f8c037637f9eb3e.css"><link rel="stylesheet" media="(prefers-color-scheme:dark)" href="../../static.files/dark-1097f8e92a01e3cf.css"><link rel="stylesheet" href="../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", checkDocsLatestStable);
 
@@ -20188,6 +20188,33 @@
 <a href="#20115" id="20115">20115</a>
 <a href="#20116" id="20116">20116</a>
 <a href="#20117" id="20117">20117</a>
+<a href="#20118" id="20118">20118</a>
+<a href="#20119" id="20119">20119</a>
+<a href="#20120" id="20120">20120</a>
+<a href="#20121" id="20121">20121</a>
+<a href="#20122" id="20122">20122</a>
+<a href="#20123" id="20123">20123</a>
+<a href="#20124" id="20124">20124</a>
+<a href="#20125" id="20125">20125</a>
+<a href="#20126" id="20126">20126</a>
+<a href="#20127" id="20127">20127</a>
+<a href="#20128" id="20128">20128</a>
+<a href="#20129" id="20129">20129</a>
+<a href="#20130" id="20130">20130</a>
+<a href="#20131" id="20131">20131</a>
+<a href="#20132" id="20132">20132</a>
+<a href="#20133" id="20133">20133</a>
+<a href="#20134" id="20134">20134</a>
+<a href="#20135" id="20135">20135</a>
+<a href="#20136" id="20136">20136</a>
+<a href="#20137" id="20137">20137</a>
+<a href="#20138" id="20138">20138</a>
+<a href="#20139" id="20139">20139</a>
+<a href="#20140" id="20140">20140</a>
+<a href="#20141" id="20141">20141</a>
+<a href="#20142" id="20142">20142</a>
+<a href="#20143" id="20143">20143</a>
+<a href="#20144" id="20144">20144</a>
 </pre></div><pre class="rust"><code><span class="comment">// This file was generated by gir (https://github.com/gtk-rs/gir)
 // from gir-files (https://github.com/gtk-rs/gir-files)
 // DO NOT EDIT
@@ -29338,7 +29365,7 @@
     <span class="comment">//=========================================================================
     // GtkAccessiblePlatformState
     //=========================================================================
-    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    </span><span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_accessible_platform_state_get_type() -&gt; GType;
 
@@ -29430,7 +29457,7 @@
     <span class="comment">//=========================================================================
     // GtkCollation
     //=========================================================================
-    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    </span><span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_collation_get_type() -&gt; GType;
 
@@ -29458,7 +29485,7 @@
     <span class="comment">//=========================================================================
     // GtkContentFit
     //=========================================================================
-    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, docsrs))]
+    </span><span class="attr">#[cfg(feature = <span class="string">&quot;v4_8&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_8&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_content_fit_get_type() -&gt; GType;
 
@@ -29475,10 +29502,10 @@
     <span class="comment">//=========================================================================
     // GtkDialogError
     //=========================================================================
-    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    </span><span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_dialog_error_get_type() -&gt; GType;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_dialog_error_quark() -&gt; glib::GQuark;
 
@@ -29526,7 +29553,7 @@
     <span class="comment">//=========================================================================
     // GtkFontLevel
     //=========================================================================
-    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    </span><span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_font_level_get_type() -&gt; GType;
 
@@ -29559,7 +29586,7 @@
     <span class="comment">//=========================================================================
     // GtkInscriptionOverflow
     //=========================================================================
-    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, docsrs))]
+    </span><span class="attr">#[cfg(feature = <span class="string">&quot;v4_8&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_8&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_inscription_overflow_get_type() -&gt; GType;
 
@@ -29581,7 +29608,7 @@
     <span class="comment">//=========================================================================
     // GtkListTabBehavior
     //=========================================================================
-    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_12&quot;</span>, docsrs))]
+    </span><span class="attr">#[cfg(feature = <span class="string">&quot;v4_12&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_12&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_list_tab_behavior_get_type() -&gt; GType;
 
@@ -29598,7 +29625,7 @@
     <span class="comment">//=========================================================================
     // GtkNaturalWrapMode
     //=========================================================================
-    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, docsrs))]
+    </span><span class="attr">#[cfg(feature = <span class="string">&quot;v4_6&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_natural_wrap_mode_get_type() -&gt; GType;
 
@@ -29616,7 +29643,7 @@
     // GtkOrdering
     //=========================================================================
     </span><span class="kw">pub fn </span>gtk_ordering_get_type() -&gt; GType;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_2&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_2&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_2&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_ordering_from_cmpfunc(cmpfunc_result: c_int) -&gt; GtkOrdering;
 
@@ -29810,7 +29837,7 @@
     <span class="comment">//=========================================================================
     // GtkSymbolicColor
     //=========================================================================
-    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, docsrs))]
+    </span><span class="attr">#[cfg(feature = <span class="string">&quot;v4_6&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_symbolic_color_get_type() -&gt; GType;
 
@@ -30099,7 +30126,7 @@
     <span class="comment">//=========================================================================
     // GtkExpressionWatch
     //=========================================================================
-    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_2&quot;</span>, docsrs))]
+    </span><span class="attr">#[cfg(feature = <span class="string">&quot;v4_2&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_2&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_expression_watch_get_type() -&gt; GType;
     <span class="kw">pub fn </span>gtk_expression_watch_evaluate(
@@ -30718,13 +30745,13 @@
     <span class="comment">//=========================================================================
     // GtkAlertDialog
     //=========================================================================
-    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    </span><span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_alert_dialog_get_type() -&gt; GType;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_alert_dialog_new(format: <span class="kw-2">*const </span>c_char, ...) -&gt; <span class="kw-2">*mut </span>GtkAlertDialog;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_alert_dialog_choose(
         self_: <span class="kw-2">*mut </span>GtkAlertDialog,
@@ -30733,50 +30760,50 @@
         callback: gio::GAsyncReadyCallback,
         user_data: gpointer,
     );
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_alert_dialog_choose_finish(
         self_: <span class="kw-2">*mut </span>GtkAlertDialog,
         result: <span class="kw-2">*mut </span>gio::GAsyncResult,
         error: <span class="kw-2">*mut *mut </span>glib::GError,
     ) -&gt; c_int;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_alert_dialog_get_buttons(self_: <span class="kw-2">*mut </span>GtkAlertDialog) -&gt; <span class="kw-2">*const *const </span>c_char;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_alert_dialog_get_cancel_button(self_: <span class="kw-2">*mut </span>GtkAlertDialog) -&gt; c_int;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_alert_dialog_get_default_button(self_: <span class="kw-2">*mut </span>GtkAlertDialog) -&gt; c_int;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_alert_dialog_get_detail(self_: <span class="kw-2">*mut </span>GtkAlertDialog) -&gt; <span class="kw-2">*const </span>c_char;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_alert_dialog_get_message(self_: <span class="kw-2">*mut </span>GtkAlertDialog) -&gt; <span class="kw-2">*const </span>c_char;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_alert_dialog_get_modal(self_: <span class="kw-2">*mut </span>GtkAlertDialog) -&gt; gboolean;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_alert_dialog_set_buttons(self_: <span class="kw-2">*mut </span>GtkAlertDialog, labels: <span class="kw-2">*const *const </span>c_char);
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_alert_dialog_set_cancel_button(self_: <span class="kw-2">*mut </span>GtkAlertDialog, button: c_int);
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_alert_dialog_set_default_button(self_: <span class="kw-2">*mut </span>GtkAlertDialog, button: c_int);
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_alert_dialog_set_detail(self_: <span class="kw-2">*mut </span>GtkAlertDialog, detail: <span class="kw-2">*const </span>c_char);
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_alert_dialog_set_message(self_: <span class="kw-2">*mut </span>GtkAlertDialog, message: <span class="kw-2">*const </span>c_char);
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_alert_dialog_set_modal(self_: <span class="kw-2">*mut </span>GtkAlertDialog, modal: gboolean);
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_alert_dialog_show(self_: <span class="kw-2">*mut </span>GtkAlertDialog, parent: <span class="kw-2">*mut </span>GtkWindow);
 
@@ -31821,6 +31848,9 @@
     <span class="kw">pub fn </span>gtk_center_box_get_baseline_position(self_: <span class="kw-2">*mut </span>GtkCenterBox) -&gt; GtkBaselinePosition;
     <span class="kw">pub fn </span>gtk_center_box_get_center_widget(self_: <span class="kw-2">*mut </span>GtkCenterBox) -&gt; <span class="kw-2">*mut </span>GtkWidget;
     <span class="kw">pub fn </span>gtk_center_box_get_end_widget(self_: <span class="kw-2">*mut </span>GtkCenterBox) -&gt; <span class="kw-2">*mut </span>GtkWidget;
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_12&quot;</span>)]
+    #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_12&quot;</span>)))]
+    </span><span class="kw">pub fn </span>gtk_center_box_get_shrink_center_last(self_: <span class="kw-2">*mut </span>GtkCenterBox) -&gt; gboolean;
     <span class="kw">pub fn </span>gtk_center_box_get_start_widget(self_: <span class="kw-2">*mut </span>GtkCenterBox) -&gt; <span class="kw-2">*mut </span>GtkWidget;
     <span class="kw">pub fn </span>gtk_center_box_set_baseline_position(
         self_: <span class="kw-2">*mut </span>GtkCenterBox,
@@ -31828,6 +31858,12 @@
     );
     <span class="kw">pub fn </span>gtk_center_box_set_center_widget(self_: <span class="kw-2">*mut </span>GtkCenterBox, child: <span class="kw-2">*mut </span>GtkWidget);
     <span class="kw">pub fn </span>gtk_center_box_set_end_widget(self_: <span class="kw-2">*mut </span>GtkCenterBox, child: <span class="kw-2">*mut </span>GtkWidget);
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_12&quot;</span>)]
+    #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_12&quot;</span>)))]
+    </span><span class="kw">pub fn </span>gtk_center_box_set_shrink_center_last(
+        self_: <span class="kw-2">*mut </span>GtkCenterBox,
+        shrink_center_last: gboolean,
+    );
     <span class="kw">pub fn </span>gtk_center_box_set_start_widget(self_: <span class="kw-2">*mut </span>GtkCenterBox, child: <span class="kw-2">*mut </span>GtkWidget);
 
     <span class="comment">//=========================================================================
@@ -31841,6 +31877,9 @@
     <span class="kw">pub fn </span>gtk_center_layout_get_center_widget(self_: <span class="kw-2">*mut </span>GtkCenterLayout) -&gt; <span class="kw-2">*mut </span>GtkWidget;
     <span class="kw">pub fn </span>gtk_center_layout_get_end_widget(self_: <span class="kw-2">*mut </span>GtkCenterLayout) -&gt; <span class="kw-2">*mut </span>GtkWidget;
     <span class="kw">pub fn </span>gtk_center_layout_get_orientation(self_: <span class="kw-2">*mut </span>GtkCenterLayout) -&gt; GtkOrientation;
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_12&quot;</span>)]
+    #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_12&quot;</span>)))]
+    </span><span class="kw">pub fn </span>gtk_center_layout_get_shrink_center_last(self_: <span class="kw-2">*mut </span>GtkCenterLayout) -&gt; gboolean;
     <span class="kw">pub fn </span>gtk_center_layout_get_start_widget(self_: <span class="kw-2">*mut </span>GtkCenterLayout) -&gt; <span class="kw-2">*mut </span>GtkWidget;
     <span class="kw">pub fn </span>gtk_center_layout_set_baseline_position(
         self_: <span class="kw-2">*mut </span>GtkCenterLayout,
@@ -31852,6 +31891,12 @@
         self_: <span class="kw-2">*mut </span>GtkCenterLayout,
         orientation: GtkOrientation,
     );
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_12&quot;</span>)]
+    #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_12&quot;</span>)))]
+    </span><span class="kw">pub fn </span>gtk_center_layout_set_shrink_center_last(
+        self_: <span class="kw-2">*mut </span>GtkCenterLayout,
+        shrink_center_last: gboolean,
+    );
     <span class="kw">pub fn </span>gtk_center_layout_set_start_widget(self_: <span class="kw-2">*mut </span>GtkCenterLayout, widget: <span class="kw-2">*mut </span>GtkWidget);
 
     <span class="comment">//=========================================================================
@@ -31862,14 +31907,14 @@
     <span class="kw">pub fn </span>gtk_check_button_new_with_label(label: <span class="kw-2">*const </span>c_char) -&gt; <span class="kw-2">*mut </span>GtkWidget;
     <span class="kw">pub fn </span>gtk_check_button_new_with_mnemonic(label: <span class="kw-2">*const </span>c_char) -&gt; <span class="kw-2">*mut </span>GtkWidget;
     <span class="kw">pub fn </span>gtk_check_button_get_active(self_: <span class="kw-2">*mut </span>GtkCheckButton) -&gt; gboolean;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_8&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_8&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_check_button_get_child(button: <span class="kw-2">*mut </span>GtkCheckButton) -&gt; <span class="kw-2">*mut </span>GtkWidget;
     <span class="kw">pub fn </span>gtk_check_button_get_inconsistent(check_button: <span class="kw-2">*mut </span>GtkCheckButton) -&gt; gboolean;
     <span class="kw">pub fn </span>gtk_check_button_get_label(self_: <span class="kw-2">*mut </span>GtkCheckButton) -&gt; <span class="kw-2">*const </span>c_char;
     <span class="kw">pub fn </span>gtk_check_button_get_use_underline(self_: <span class="kw-2">*mut </span>GtkCheckButton) -&gt; gboolean;
     <span class="kw">pub fn </span>gtk_check_button_set_active(self_: <span class="kw-2">*mut </span>GtkCheckButton, setting: gboolean);
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_8&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_8&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_check_button_set_child(button: <span class="kw-2">*mut </span>GtkCheckButton, child: <span class="kw-2">*mut </span>GtkWidget);
     <span class="kw">pub fn </span>gtk_check_button_set_group(self_: <span class="kw-2">*mut </span>GtkCheckButton, group: <span class="kw-2">*mut </span>GtkCheckButton);
@@ -31920,13 +31965,13 @@
     <span class="comment">//=========================================================================
     // GtkColorDialog
     //=========================================================================
-    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    </span><span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_color_dialog_get_type() -&gt; GType;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_color_dialog_new() -&gt; <span class="kw-2">*mut </span>GtkColorDialog;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_color_dialog_choose_rgba(
         self_: <span class="kw-2">*mut </span>GtkColorDialog,
@@ -31936,58 +31981,58 @@
         callback: gio::GAsyncReadyCallback,
         user_data: gpointer,
     );
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_color_dialog_choose_rgba_finish(
         self_: <span class="kw-2">*mut </span>GtkColorDialog,
         result: <span class="kw-2">*mut </span>gio::GAsyncResult,
         error: <span class="kw-2">*mut *mut </span>glib::GError,
     ) -&gt; <span class="kw-2">*mut </span>gdk::GdkRGBA;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_color_dialog_get_modal(self_: <span class="kw-2">*mut </span>GtkColorDialog) -&gt; gboolean;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_color_dialog_get_title(self_: <span class="kw-2">*mut </span>GtkColorDialog) -&gt; <span class="kw-2">*const </span>c_char;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_color_dialog_get_with_alpha(self_: <span class="kw-2">*mut </span>GtkColorDialog) -&gt; gboolean;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_color_dialog_set_modal(self_: <span class="kw-2">*mut </span>GtkColorDialog, modal: gboolean);
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_color_dialog_set_title(self_: <span class="kw-2">*mut </span>GtkColorDialog, title: <span class="kw-2">*const </span>c_char);
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_color_dialog_set_with_alpha(self_: <span class="kw-2">*mut </span>GtkColorDialog, with_alpha: gboolean);
 
     <span class="comment">//=========================================================================
     // GtkColorDialogButton
     //=========================================================================
-    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    </span><span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_color_dialog_button_get_type() -&gt; GType;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_color_dialog_button_new(dialog: <span class="kw-2">*mut </span>GtkColorDialog) -&gt; <span class="kw-2">*mut </span>GtkWidget;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_color_dialog_button_get_dialog(
         self_: <span class="kw-2">*mut </span>GtkColorDialogButton,
     ) -&gt; <span class="kw-2">*mut </span>GtkColorDialog;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_color_dialog_button_get_rgba(
         self_: <span class="kw-2">*mut </span>GtkColorDialogButton,
     ) -&gt; <span class="kw-2">*const </span>gdk::GdkRGBA;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_color_dialog_button_set_dialog(
         self_: <span class="kw-2">*mut </span>GtkColorDialogButton,
         dialog: <span class="kw-2">*mut </span>GtkColorDialog,
     );
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_color_dialog_button_set_rgba(
         self_: <span class="kw-2">*mut </span>GtkColorDialogButton,
@@ -32007,14 +32052,14 @@
     <span class="kw">pub fn </span>gtk_column_view_get_enable_rubberband(self_: <span class="kw-2">*mut </span>GtkColumnView) -&gt; gboolean;
     <span class="kw">pub fn </span>gtk_column_view_get_model(self_: <span class="kw-2">*mut </span>GtkColumnView) -&gt; <span class="kw-2">*mut </span>GtkSelectionModel;
     <span class="kw">pub fn </span>gtk_column_view_get_reorderable(self_: <span class="kw-2">*mut </span>GtkColumnView) -&gt; gboolean;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_12&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_12&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_12&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_column_view_get_row_factory(self_: <span class="kw-2">*mut </span>GtkColumnView) -&gt; <span class="kw-2">*mut </span>GtkListItemFactory;
     <span class="kw">pub fn </span>gtk_column_view_get_show_column_separators(self_: <span class="kw-2">*mut </span>GtkColumnView) -&gt; gboolean;
     <span class="kw">pub fn </span>gtk_column_view_get_show_row_separators(self_: <span class="kw-2">*mut </span>GtkColumnView) -&gt; gboolean;
     <span class="kw">pub fn </span>gtk_column_view_get_single_click_activate(self_: <span class="kw-2">*mut </span>GtkColumnView) -&gt; gboolean;
     <span class="kw">pub fn </span>gtk_column_view_get_sorter(self_: <span class="kw-2">*mut </span>GtkColumnView) -&gt; <span class="kw-2">*mut </span>GtkSorter;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_12&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_12&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_12&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_column_view_get_tab_behavior(self_: <span class="kw-2">*mut </span>GtkColumnView) -&gt; GtkListTabBehavior;
     <span class="kw">pub fn </span>gtk_column_view_insert_column(
@@ -32032,7 +32077,7 @@
     );
     <span class="kw">pub fn </span>gtk_column_view_set_model(self_: <span class="kw-2">*mut </span>GtkColumnView, model: <span class="kw-2">*mut </span>GtkSelectionModel);
     <span class="kw">pub fn </span>gtk_column_view_set_reorderable(self_: <span class="kw-2">*mut </span>GtkColumnView, reorderable: gboolean);
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_12&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_12&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_12&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_column_view_set_row_factory(
         self_: <span class="kw-2">*mut </span>GtkColumnView,
@@ -32050,7 +32095,7 @@
         self_: <span class="kw-2">*mut </span>GtkColumnView,
         single_click_activate: gboolean,
     );
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_12&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_12&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_12&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_column_view_set_tab_behavior(
         self_: <span class="kw-2">*mut </span>GtkColumnView,
@@ -32065,28 +32110,28 @@
     <span class="comment">//=========================================================================
     // GtkColumnViewCell
     //=========================================================================
-    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_12&quot;</span>, docsrs))]
+    </span><span class="attr">#[cfg(feature = <span class="string">&quot;v4_12&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_12&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_column_view_cell_get_type() -&gt; GType;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_12&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_12&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_12&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_column_view_cell_get_child(self_: <span class="kw-2">*mut </span>GtkColumnViewCell) -&gt; <span class="kw-2">*mut </span>GtkWidget;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_12&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_12&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_12&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_column_view_cell_get_focusable(self_: <span class="kw-2">*mut </span>GtkColumnViewCell) -&gt; gboolean;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_12&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_12&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_12&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_column_view_cell_get_item(self_: <span class="kw-2">*mut </span>GtkColumnViewCell) -&gt; <span class="kw-2">*mut </span>gobject::GObject;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_12&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_12&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_12&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_column_view_cell_get_position(self_: <span class="kw-2">*mut </span>GtkColumnViewCell) -&gt; c_uint;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_12&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_12&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_12&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_column_view_cell_get_selected(self_: <span class="kw-2">*mut </span>GtkColumnViewCell) -&gt; gboolean;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_12&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_12&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_12&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_column_view_cell_set_child(self_: <span class="kw-2">*mut </span>GtkColumnViewCell, child: <span class="kw-2">*mut </span>GtkWidget);
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_12&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_12&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_12&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_column_view_cell_set_focusable(self_: <span class="kw-2">*mut </span>GtkColumnViewCell, focusable: gboolean);
 
@@ -32109,7 +32154,7 @@
     <span class="kw">pub fn </span>gtk_column_view_column_get_header_menu(
         self_: <span class="kw-2">*mut </span>GtkColumnViewColumn,
     ) -&gt; <span class="kw-2">*mut </span>gio::GMenuModel;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_column_view_column_get_id(self_: <span class="kw-2">*mut </span>GtkColumnViewColumn) -&gt; <span class="kw-2">*const </span>c_char;
     <span class="kw">pub fn </span>gtk_column_view_column_get_resizable(self_: <span class="kw-2">*mut </span>GtkColumnViewColumn) -&gt; gboolean;
@@ -32129,7 +32174,7 @@
         self_: <span class="kw-2">*mut </span>GtkColumnViewColumn,
         menu: <span class="kw-2">*mut </span>gio::GMenuModel,
     );
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_column_view_column_set_id(self_: <span class="kw-2">*mut </span>GtkColumnViewColumn, id: <span class="kw-2">*const </span>c_char);
     <span class="kw">pub fn </span>gtk_column_view_column_set_resizable(
@@ -32146,59 +32191,59 @@
     <span class="comment">//=========================================================================
     // GtkColumnViewRow
     //=========================================================================
-    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_12&quot;</span>, docsrs))]
+    </span><span class="attr">#[cfg(feature = <span class="string">&quot;v4_12&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_12&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_column_view_row_get_type() -&gt; GType;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_12&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_12&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_12&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_column_view_row_get_activatable(self_: <span class="kw-2">*mut </span>GtkColumnViewRow) -&gt; gboolean;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_12&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_12&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_12&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_column_view_row_get_focusable(self_: <span class="kw-2">*mut </span>GtkColumnViewRow) -&gt; gboolean;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_12&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_12&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_12&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_column_view_row_get_item(self_: <span class="kw-2">*mut </span>GtkColumnViewRow) -&gt; <span class="kw-2">*mut </span>gobject::GObject;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_12&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_12&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_12&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_column_view_row_get_position(self_: <span class="kw-2">*mut </span>GtkColumnViewRow) -&gt; c_uint;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_12&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_12&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_12&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_column_view_row_get_selectable(self_: <span class="kw-2">*mut </span>GtkColumnViewRow) -&gt; gboolean;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_12&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_12&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_12&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_column_view_row_get_selected(self_: <span class="kw-2">*mut </span>GtkColumnViewRow) -&gt; gboolean;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_12&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_12&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_12&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_column_view_row_set_activatable(self_: <span class="kw-2">*mut </span>GtkColumnViewRow, activatable: gboolean);
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_12&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_12&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_12&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_column_view_row_set_focusable(self_: <span class="kw-2">*mut </span>GtkColumnViewRow, focusable: gboolean);
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_12&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_12&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_12&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_column_view_row_set_selectable(self_: <span class="kw-2">*mut </span>GtkColumnViewRow, selectable: gboolean);
 
     <span class="comment">//=========================================================================
     // GtkColumnViewSorter
     //=========================================================================
-    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    </span><span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_column_view_sorter_get_type() -&gt; GType;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_column_view_sorter_get_n_sort_columns(self_: <span class="kw-2">*mut </span>GtkColumnViewSorter) -&gt; c_uint;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_column_view_sorter_get_nth_sort_column(
         self_: <span class="kw-2">*mut </span>GtkColumnViewSorter,
         position: c_uint,
         sort_order: <span class="kw-2">*mut </span>GtkSortType,
     ) -&gt; <span class="kw-2">*mut </span>GtkColumnViewColumn;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_column_view_sorter_get_primary_sort_column(
         self_: <span class="kw-2">*mut </span>GtkColumnViewSorter,
     ) -&gt; <span class="kw-2">*mut </span>GtkColumnViewColumn;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_column_view_sorter_get_primary_sort_order(
         self_: <span class="kw-2">*mut </span>GtkColumnViewSorter,
@@ -32645,7 +32690,7 @@
     <span class="kw">pub fn </span>gtk_drop_down_get_model(self_: <span class="kw-2">*mut </span>GtkDropDown) -&gt; <span class="kw-2">*mut </span>gio::GListModel;
     <span class="kw">pub fn </span>gtk_drop_down_get_selected(self_: <span class="kw-2">*mut </span>GtkDropDown) -&gt; c_uint;
     <span class="kw">pub fn </span>gtk_drop_down_get_selected_item(self_: <span class="kw-2">*mut </span>GtkDropDown) -&gt; <span class="kw-2">*mut </span>gobject::GObject;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_6&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_drop_down_get_show_arrow(self_: <span class="kw-2">*mut </span>GtkDropDown) -&gt; gboolean;
     <span class="kw">pub fn </span>gtk_drop_down_set_enable_search(self_: <span class="kw-2">*mut </span>GtkDropDown, enable_search: gboolean);
@@ -32657,7 +32702,7 @@
     );
     <span class="kw">pub fn </span>gtk_drop_down_set_model(self_: <span class="kw-2">*mut </span>GtkDropDown, model: <span class="kw-2">*mut </span>gio::GListModel);
     <span class="kw">pub fn </span>gtk_drop_down_set_selected(self_: <span class="kw-2">*mut </span>GtkDropDown, position: c_uint);
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_6&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_drop_down_set_show_arrow(self_: <span class="kw-2">*mut </span>GtkDropDown, show_arrow: gboolean);
 
@@ -32667,7 +32712,7 @@
     </span><span class="kw">pub fn </span>gtk_drop_target_get_type() -&gt; GType;
     <span class="kw">pub fn </span>gtk_drop_target_new(type_: GType, actions: gdk::GdkDragAction) -&gt; <span class="kw-2">*mut </span>GtkDropTarget;
     <span class="kw">pub fn </span>gtk_drop_target_get_actions(self_: <span class="kw-2">*mut </span>GtkDropTarget) -&gt; gdk::GdkDragAction;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_4&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_4&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_4&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_drop_target_get_current_drop(self_: <span class="kw-2">*mut </span>GtkDropTarget) -&gt; <span class="kw-2">*mut </span>gdk::GdkDrop;
     <span class="kw">pub fn </span>gtk_drop_target_get_drop(self_: <span class="kw-2">*mut </span>GtkDropTarget) -&gt; <span class="kw-2">*mut </span>gdk::GdkDrop;
@@ -32999,7 +33044,7 @@
         controller: <span class="kw-2">*mut </span>GtkEventController,
         phase: GtkPropagationPhase,
     );
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_8&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_8&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_event_controller_set_static_name(
         controller: <span class="kw-2">*mut </span>GtkEventController,
@@ -33061,7 +33106,7 @@
     <span class="kw">pub fn </span>gtk_event_controller_scroll_get_flags(
         scroll: <span class="kw-2">*mut </span>GtkEventControllerScroll,
     ) -&gt; GtkEventControllerScrollFlags;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_8&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_8&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_event_controller_scroll_get_unit(
         scroll: <span class="kw-2">*mut </span>GtkEventControllerScroll,
@@ -33172,37 +33217,37 @@
     <span class="comment">//=========================================================================
     // GtkFileDialog
     //=========================================================================
-    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    </span><span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_file_dialog_get_type() -&gt; GType;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_file_dialog_new() -&gt; <span class="kw-2">*mut </span>GtkFileDialog;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_file_dialog_get_accept_label(self_: <span class="kw-2">*mut </span>GtkFileDialog) -&gt; <span class="kw-2">*const </span>c_char;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_file_dialog_get_default_filter(self_: <span class="kw-2">*mut </span>GtkFileDialog) -&gt; <span class="kw-2">*mut </span>GtkFileFilter;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_file_dialog_get_filters(self_: <span class="kw-2">*mut </span>GtkFileDialog) -&gt; <span class="kw-2">*mut </span>gio::GListModel;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_file_dialog_get_initial_file(self_: <span class="kw-2">*mut </span>GtkFileDialog) -&gt; <span class="kw-2">*mut </span>gio::GFile;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_file_dialog_get_initial_folder(self_: <span class="kw-2">*mut </span>GtkFileDialog) -&gt; <span class="kw-2">*mut </span>gio::GFile;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_file_dialog_get_initial_name(self_: <span class="kw-2">*mut </span>GtkFileDialog) -&gt; <span class="kw-2">*const </span>c_char;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_file_dialog_get_modal(self_: <span class="kw-2">*mut </span>GtkFileDialog) -&gt; gboolean;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_file_dialog_get_title(self_: <span class="kw-2">*mut </span>GtkFileDialog) -&gt; <span class="kw-2">*const </span>c_char;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_file_dialog_open(
         self_: <span class="kw-2">*mut </span>GtkFileDialog,
@@ -33211,14 +33256,14 @@
         callback: gio::GAsyncReadyCallback,
         user_data: gpointer,
     );
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_file_dialog_open_finish(
         self_: <span class="kw-2">*mut </span>GtkFileDialog,
         result: <span class="kw-2">*mut </span>gio::GAsyncResult,
         error: <span class="kw-2">*mut *mut </span>glib::GError,
     ) -&gt; <span class="kw-2">*mut </span>gio::GFile;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_file_dialog_open_multiple(
         self_: <span class="kw-2">*mut </span>GtkFileDialog,
@@ -33227,14 +33272,14 @@
         callback: gio::GAsyncReadyCallback,
         user_data: gpointer,
     );
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_file_dialog_open_multiple_finish(
         self_: <span class="kw-2">*mut </span>GtkFileDialog,
         result: <span class="kw-2">*mut </span>gio::GAsyncResult,
         error: <span class="kw-2">*mut *mut </span>glib::GError,
     ) -&gt; <span class="kw-2">*mut </span>gio::GListModel;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_file_dialog_save(
         self_: <span class="kw-2">*mut </span>GtkFileDialog,
@@ -33243,14 +33288,14 @@
         callback: gio::GAsyncReadyCallback,
         user_data: gpointer,
     );
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_file_dialog_save_finish(
         self_: <span class="kw-2">*mut </span>GtkFileDialog,
         result: <span class="kw-2">*mut </span>gio::GAsyncResult,
         error: <span class="kw-2">*mut *mut </span>glib::GError,
     ) -&gt; <span class="kw-2">*mut </span>gio::GFile;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_file_dialog_select_folder(
         self_: <span class="kw-2">*mut </span>GtkFileDialog,
@@ -33259,14 +33304,14 @@
         callback: gio::GAsyncReadyCallback,
         user_data: gpointer,
     );
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_file_dialog_select_folder_finish(
         self_: <span class="kw-2">*mut </span>GtkFileDialog,
         result: <span class="kw-2">*mut </span>gio::GAsyncResult,
         error: <span class="kw-2">*mut *mut </span>glib::GError,
     ) -&gt; <span class="kw-2">*mut </span>gio::GFile;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_file_dialog_select_multiple_folders(
         self_: <span class="kw-2">*mut </span>GtkFileDialog,
@@ -33275,38 +33320,38 @@
         callback: gio::GAsyncReadyCallback,
         user_data: gpointer,
     );
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_file_dialog_select_multiple_folders_finish(
         self_: <span class="kw-2">*mut </span>GtkFileDialog,
         result: <span class="kw-2">*mut </span>gio::GAsyncResult,
         error: <span class="kw-2">*mut *mut </span>glib::GError,
     ) -&gt; <span class="kw-2">*mut </span>gio::GListModel;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_file_dialog_set_accept_label(self_: <span class="kw-2">*mut </span>GtkFileDialog, accept_label: <span class="kw-2">*const </span>c_char);
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_file_dialog_set_default_filter(
         self_: <span class="kw-2">*mut </span>GtkFileDialog,
         filter: <span class="kw-2">*mut </span>GtkFileFilter,
     );
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_file_dialog_set_filters(self_: <span class="kw-2">*mut </span>GtkFileDialog, filters: <span class="kw-2">*mut </span>gio::GListModel);
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_file_dialog_set_initial_file(self_: <span class="kw-2">*mut </span>GtkFileDialog, file: <span class="kw-2">*mut </span>gio::GFile);
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_file_dialog_set_initial_folder(self_: <span class="kw-2">*mut </span>GtkFileDialog, folder: <span class="kw-2">*mut </span>gio::GFile);
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_file_dialog_set_initial_name(self_: <span class="kw-2">*mut </span>GtkFileDialog, name: <span class="kw-2">*const </span>c_char);
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_file_dialog_set_modal(self_: <span class="kw-2">*mut </span>GtkFileDialog, modal: gboolean);
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_file_dialog_set_title(self_: <span class="kw-2">*mut </span>GtkFileDialog, title: <span class="kw-2">*const </span>c_char);
 
@@ -33319,7 +33364,7 @@
     <span class="kw">pub fn </span>gtk_file_filter_add_mime_type(filter: <span class="kw-2">*mut </span>GtkFileFilter, mime_type: <span class="kw-2">*const </span>c_char);
     <span class="kw">pub fn </span>gtk_file_filter_add_pattern(filter: <span class="kw-2">*mut </span>GtkFileFilter, pattern: <span class="kw-2">*const </span>c_char);
     <span class="kw">pub fn </span>gtk_file_filter_add_pixbuf_formats(filter: <span class="kw-2">*mut </span>GtkFileFilter);
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_4&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_4&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_4&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_file_filter_add_suffix(filter: <span class="kw-2">*mut </span>GtkFileFilter, suffix: <span class="kw-2">*const </span>c_char);
     <span class="kw">pub fn </span>gtk_file_filter_get_attributes(filter: <span class="kw-2">*mut </span>GtkFileFilter) -&gt; <span class="kw-2">*mut *const </span>c_char;
@@ -33330,16 +33375,16 @@
     <span class="comment">//=========================================================================
     // GtkFileLauncher
     //=========================================================================
-    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    </span><span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_file_launcher_get_type() -&gt; GType;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_file_launcher_new(file: <span class="kw-2">*mut </span>gio::GFile) -&gt; <span class="kw-2">*mut </span>GtkFileLauncher;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_file_launcher_get_file(self_: <span class="kw-2">*mut </span>GtkFileLauncher) -&gt; <span class="kw-2">*mut </span>gio::GFile;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_file_launcher_launch(
         self_: <span class="kw-2">*mut </span>GtkFileLauncher,
@@ -33348,14 +33393,14 @@
         callback: gio::GAsyncReadyCallback,
         user_data: gpointer,
     );
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_file_launcher_launch_finish(
         self_: <span class="kw-2">*mut </span>GtkFileLauncher,
         result: <span class="kw-2">*mut </span>gio::GAsyncResult,
         error: <span class="kw-2">*mut *mut </span>glib::GError,
     ) -&gt; gboolean;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_file_launcher_open_containing_folder(
         self_: <span class="kw-2">*mut </span>GtkFileLauncher,
@@ -33364,14 +33409,14 @@
         callback: gio::GAsyncReadyCallback,
         user_data: gpointer,
     );
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_file_launcher_open_containing_folder_finish(
         self_: <span class="kw-2">*mut </span>GtkFileLauncher,
         result: <span class="kw-2">*mut </span>gio::GAsyncResult,
         error: <span class="kw-2">*mut *mut </span>glib::GError,
     ) -&gt; gboolean;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_file_launcher_set_file(self_: <span class="kw-2">*mut </span>GtkFileLauncher, file: <span class="kw-2">*mut </span>gio::GFile);
 
@@ -33469,7 +33514,7 @@
     //=========================================================================
     </span><span class="kw">pub fn </span>gtk_flow_box_get_type() -&gt; GType;
     <span class="kw">pub fn </span>gtk_flow_box_new() -&gt; <span class="kw-2">*mut </span>GtkWidget;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_6&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_flow_box_append(self_: <span class="kw-2">*mut </span>GtkFlowBox, child: <span class="kw-2">*mut </span>GtkWidget);
     <span class="kw">pub fn </span>gtk_flow_box_bind_model(
@@ -33499,11 +33544,11 @@
     <span class="kw">pub fn </span>gtk_flow_box_insert(box_: <span class="kw-2">*mut </span>GtkFlowBox, widget: <span class="kw-2">*mut </span>GtkWidget, position: c_int);
     <span class="kw">pub fn </span>gtk_flow_box_invalidate_filter(box_: <span class="kw-2">*mut </span>GtkFlowBox);
     <span class="kw">pub fn </span>gtk_flow_box_invalidate_sort(box_: <span class="kw-2">*mut </span>GtkFlowBox);
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_6&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_flow_box_prepend(self_: <span class="kw-2">*mut </span>GtkFlowBox, child: <span class="kw-2">*mut </span>GtkWidget);
     <span class="kw">pub fn </span>gtk_flow_box_remove(box_: <span class="kw-2">*mut </span>GtkFlowBox, widget: <span class="kw-2">*mut </span>GtkWidget);
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_12&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_12&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_12&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_flow_box_remove_all(box_: <span class="kw-2">*mut </span>GtkFlowBox);
     <span class="kw">pub fn </span>gtk_flow_box_select_all(box_: <span class="kw-2">*mut </span>GtkFlowBox);
@@ -33581,13 +33626,13 @@
     <span class="comment">//=========================================================================
     // GtkFontDialog
     //=========================================================================
-    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    </span><span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_font_dialog_get_type() -&gt; GType;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_font_dialog_new() -&gt; <span class="kw-2">*mut </span>GtkFontDialog;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_font_dialog_choose_face(
         self_: <span class="kw-2">*mut </span>GtkFontDialog,
@@ -33597,14 +33642,14 @@
         callback: gio::GAsyncReadyCallback,
         user_data: gpointer,
     );
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_font_dialog_choose_face_finish(
         self_: <span class="kw-2">*mut </span>GtkFontDialog,
         result: <span class="kw-2">*mut </span>gio::GAsyncResult,
         error: <span class="kw-2">*mut *mut </span>glib::GError,
     ) -&gt; <span class="kw-2">*mut </span>pango::PangoFontFace;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_font_dialog_choose_family(
         self_: <span class="kw-2">*mut </span>GtkFontDialog,
@@ -33614,14 +33659,14 @@
         callback: gio::GAsyncReadyCallback,
         user_data: gpointer,
     );
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_font_dialog_choose_family_finish(
         self_: <span class="kw-2">*mut </span>GtkFontDialog,
         result: <span class="kw-2">*mut </span>gio::GAsyncResult,
         error: <span class="kw-2">*mut *mut </span>glib::GError,
     ) -&gt; <span class="kw-2">*mut </span>pango::PangoFontFamily;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_font_dialog_choose_font(
         self_: <span class="kw-2">*mut </span>GtkFontDialog,
@@ -33631,7 +33676,7 @@
         callback: gio::GAsyncReadyCallback,
         user_data: gpointer,
     );
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_font_dialog_choose_font_and_features(
         self_: <span class="kw-2">*mut </span>GtkFontDialog,
@@ -33641,7 +33686,7 @@
         callback: gio::GAsyncReadyCallback,
         user_data: gpointer,
     );
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_font_dialog_choose_font_and_features_finish(
         self_: <span class="kw-2">*mut </span>GtkFontDialog,
@@ -33651,118 +33696,118 @@
         language: <span class="kw-2">*mut *mut </span>pango::PangoLanguage,
         error: <span class="kw-2">*mut *mut </span>glib::GError,
     ) -&gt; gboolean;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_font_dialog_choose_font_finish(
         self_: <span class="kw-2">*mut </span>GtkFontDialog,
         result: <span class="kw-2">*mut </span>gio::GAsyncResult,
         error: <span class="kw-2">*mut *mut </span>glib::GError,
     ) -&gt; <span class="kw-2">*mut </span>pango::PangoFontDescription;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_font_dialog_get_filter(self_: <span class="kw-2">*mut </span>GtkFontDialog) -&gt; <span class="kw-2">*mut </span>GtkFilter;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_font_dialog_get_font_map(self_: <span class="kw-2">*mut </span>GtkFontDialog) -&gt; <span class="kw-2">*mut </span>pango::PangoFontMap;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_font_dialog_get_language(self_: <span class="kw-2">*mut </span>GtkFontDialog) -&gt; <span class="kw-2">*mut </span>pango::PangoLanguage;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_font_dialog_get_modal(self_: <span class="kw-2">*mut </span>GtkFontDialog) -&gt; gboolean;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_font_dialog_get_title(self_: <span class="kw-2">*mut </span>GtkFontDialog) -&gt; <span class="kw-2">*const </span>c_char;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_font_dialog_set_filter(self_: <span class="kw-2">*mut </span>GtkFontDialog, filter: <span class="kw-2">*mut </span>GtkFilter);
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_font_dialog_set_font_map(
         self_: <span class="kw-2">*mut </span>GtkFontDialog,
         fontmap: <span class="kw-2">*mut </span>pango::PangoFontMap,
     );
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_font_dialog_set_language(
         self_: <span class="kw-2">*mut </span>GtkFontDialog,
         language: <span class="kw-2">*mut </span>pango::PangoLanguage,
     );
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_font_dialog_set_modal(self_: <span class="kw-2">*mut </span>GtkFontDialog, modal: gboolean);
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_font_dialog_set_title(self_: <span class="kw-2">*mut </span>GtkFontDialog, title: <span class="kw-2">*const </span>c_char);
 
     <span class="comment">//=========================================================================
     // GtkFontDialogButton
     //=========================================================================
-    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    </span><span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_font_dialog_button_get_type() -&gt; GType;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_font_dialog_button_new(dialog: <span class="kw-2">*mut </span>GtkFontDialog) -&gt; <span class="kw-2">*mut </span>GtkWidget;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_font_dialog_button_get_dialog(self_: <span class="kw-2">*mut </span>GtkFontDialogButton)
         -&gt; <span class="kw-2">*mut </span>GtkFontDialog;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_font_dialog_button_get_font_desc(
         self_: <span class="kw-2">*mut </span>GtkFontDialogButton,
     ) -&gt; <span class="kw-2">*mut </span>pango::PangoFontDescription;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_font_dialog_button_get_font_features(
         self_: <span class="kw-2">*mut </span>GtkFontDialogButton,
     ) -&gt; <span class="kw-2">*const </span>c_char;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_font_dialog_button_get_language(
         self_: <span class="kw-2">*mut </span>GtkFontDialogButton,
     ) -&gt; <span class="kw-2">*mut </span>pango::PangoLanguage;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_font_dialog_button_get_level(self_: <span class="kw-2">*mut </span>GtkFontDialogButton) -&gt; GtkFontLevel;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_font_dialog_button_get_use_font(self_: <span class="kw-2">*mut </span>GtkFontDialogButton) -&gt; gboolean;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_font_dialog_button_get_use_size(self_: <span class="kw-2">*mut </span>GtkFontDialogButton) -&gt; gboolean;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_font_dialog_button_set_dialog(
         self_: <span class="kw-2">*mut </span>GtkFontDialogButton,
         dialog: <span class="kw-2">*mut </span>GtkFontDialog,
     );
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_font_dialog_button_set_font_desc(
         self_: <span class="kw-2">*mut </span>GtkFontDialogButton,
         font_desc: <span class="kw-2">*const </span>pango::PangoFontDescription,
     );
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_font_dialog_button_set_font_features(
         self_: <span class="kw-2">*mut </span>GtkFontDialogButton,
         font_features: <span class="kw-2">*const </span>c_char,
     );
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_font_dialog_button_set_language(
         self_: <span class="kw-2">*mut </span>GtkFontDialogButton,
         language: <span class="kw-2">*mut </span>pango::PangoLanguage,
     );
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_font_dialog_button_set_level(self_: <span class="kw-2">*mut </span>GtkFontDialogButton, level: GtkFontLevel);
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_font_dialog_button_set_use_font(self_: <span class="kw-2">*mut </span>GtkFontDialogButton, use_font: gboolean);
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_font_dialog_button_set_use_size(self_: <span class="kw-2">*mut </span>GtkFontDialogButton, use_size: gboolean);
 
@@ -33786,6 +33831,12 @@
     </span><span class="kw">pub fn </span>gtk_gl_area_get_type() -&gt; GType;
     <span class="kw">pub fn </span>gtk_gl_area_new() -&gt; <span class="kw-2">*mut </span>GtkWidget;
     <span class="kw">pub fn </span>gtk_gl_area_attach_buffers(area: <span class="kw-2">*mut </span>GtkGLArea);
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_12&quot;</span>)]
+    #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_12&quot;</span>)))]
+    </span><span class="kw">pub fn </span>gtk_gl_area_get_allowed_apis(area: <span class="kw-2">*mut </span>GtkGLArea) -&gt; gdk::GdkGLAPI;
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_12&quot;</span>)]
+    #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_12&quot;</span>)))]
+    </span><span class="kw">pub fn </span>gtk_gl_area_get_api(area: <span class="kw-2">*mut </span>GtkGLArea) -&gt; gdk::GdkGLAPI;
     <span class="kw">pub fn </span>gtk_gl_area_get_auto_render(area: <span class="kw-2">*mut </span>GtkGLArea) -&gt; gboolean;
     <span class="kw">pub fn </span>gtk_gl_area_get_context(area: <span class="kw-2">*mut </span>GtkGLArea) -&gt; <span class="kw-2">*mut </span>gdk::GdkGLContext;
     <span class="kw">pub fn </span>gtk_gl_area_get_error(area: <span class="kw-2">*mut </span>GtkGLArea) -&gt; <span class="kw-2">*mut </span>glib::GError;
@@ -33799,6 +33850,9 @@
     <span class="kw">pub fn </span>gtk_gl_area_get_use_es(area: <span class="kw-2">*mut </span>GtkGLArea) -&gt; gboolean;
     <span class="kw">pub fn </span>gtk_gl_area_make_current(area: <span class="kw-2">*mut </span>GtkGLArea);
     <span class="kw">pub fn </span>gtk_gl_area_queue_render(area: <span class="kw-2">*mut </span>GtkGLArea);
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_12&quot;</span>)]
+    #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_12&quot;</span>)))]
+    </span><span class="kw">pub fn </span>gtk_gl_area_set_allowed_apis(area: <span class="kw-2">*mut </span>GtkGLArea, apis: gdk::GdkGLAPI);
     <span class="kw">pub fn </span>gtk_gl_area_set_auto_render(area: <span class="kw-2">*mut </span>GtkGLArea, auto_render: gboolean);
     <span class="kw">pub fn </span>gtk_gl_area_set_error(area: <span class="kw-2">*mut </span>GtkGLArea, error: <span class="kw-2">*const </span>glib::GError);
     <span class="kw">pub fn </span>gtk_gl_area_set_has_depth_buffer(area: <span class="kw-2">*mut </span>GtkGLArea, has_depth_buffer: gboolean);
@@ -33950,10 +34004,10 @@
     <span class="kw">pub fn </span>gtk_gesture_stylus_get_device_tool(
         gesture: <span class="kw-2">*mut </span>GtkGestureStylus,
     ) -&gt; <span class="kw-2">*mut </span>gdk::GdkDeviceTool;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_gesture_stylus_get_stylus_only(gesture: <span class="kw-2">*mut </span>GtkGestureStylus) -&gt; gboolean;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_gesture_stylus_set_stylus_only(
         gesture: <span class="kw-2">*mut </span>GtkGestureStylus,
@@ -34090,7 +34144,7 @@
     <span class="kw">pub fn </span>gtk_grid_view_get_min_columns(self_: <span class="kw-2">*mut </span>GtkGridView) -&gt; c_uint;
     <span class="kw">pub fn </span>gtk_grid_view_get_model(self_: <span class="kw-2">*mut </span>GtkGridView) -&gt; <span class="kw-2">*mut </span>GtkSelectionModel;
     <span class="kw">pub fn </span>gtk_grid_view_get_single_click_activate(self_: <span class="kw-2">*mut </span>GtkGridView) -&gt; gboolean;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_12&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_12&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_12&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_grid_view_get_tab_behavior(self_: <span class="kw-2">*mut </span>GtkGridView) -&gt; GtkListTabBehavior;
     <span class="kw">pub fn </span>gtk_grid_view_set_enable_rubberband(
@@ -34105,7 +34159,7 @@
         self_: <span class="kw-2">*mut </span>GtkGridView,
         single_click_activate: gboolean,
     );
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_12&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_12&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_12&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_grid_view_set_tab_behavior(
         self_: <span class="kw-2">*mut </span>GtkGridView,
@@ -34163,7 +34217,7 @@
         text: <span class="kw-2">*mut *mut </span>c_char,
         cursor_index: <span class="kw-2">*mut </span>c_int,
     ) -&gt; gboolean;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_2&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_2&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_2&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_im_context_get_surrounding_with_selection(
         context: <span class="kw-2">*mut </span>GtkIMContext,
@@ -34183,7 +34237,7 @@
         len: c_int,
         cursor_index: c_int,
     );
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_2&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_2&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_2&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_im_context_set_surrounding_with_selection(
         context: <span class="kw-2">*mut </span>GtkIMContext,
@@ -34251,7 +34305,7 @@
     <span class="kw">pub fn </span>gtk_icon_theme_get_resource_path(self_: <span class="kw-2">*mut </span>GtkIconTheme) -&gt; <span class="kw-2">*mut *mut </span>c_char;
     <span class="kw">pub fn </span>gtk_icon_theme_get_search_path(self_: <span class="kw-2">*mut </span>GtkIconTheme) -&gt; <span class="kw-2">*mut *mut </span>c_char;
     <span class="kw">pub fn </span>gtk_icon_theme_get_theme_name(self_: <span class="kw-2">*mut </span>GtkIconTheme) -&gt; <span class="kw-2">*mut </span>c_char;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_2&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_2&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_2&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_icon_theme_has_gicon(self_: <span class="kw-2">*mut </span>GtkIconTheme, gicon: <span class="kw-2">*mut </span>gio::GIcon) -&gt; gboolean;
     <span class="kw">pub fn </span>gtk_icon_theme_has_icon(self_: <span class="kw-2">*mut </span>GtkIconTheme, icon_name: <span class="kw-2">*const </span>c_char) -&gt; gboolean;
@@ -34509,82 +34563,82 @@
     <span class="comment">//=========================================================================
     // GtkInscription
     //=========================================================================
-    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, docsrs))]
+    </span><span class="attr">#[cfg(feature = <span class="string">&quot;v4_8&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_8&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_inscription_get_type() -&gt; GType;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_8&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_8&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_inscription_new(text: <span class="kw-2">*const </span>c_char) -&gt; <span class="kw-2">*mut </span>GtkWidget;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_8&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_8&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_inscription_get_attributes(self_: <span class="kw-2">*mut </span>GtkInscription) -&gt; <span class="kw-2">*mut </span>pango::PangoAttrList;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_8&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_8&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_inscription_get_min_chars(self_: <span class="kw-2">*mut </span>GtkInscription) -&gt; c_uint;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_8&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_8&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_inscription_get_min_lines(self_: <span class="kw-2">*mut </span>GtkInscription) -&gt; c_uint;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_8&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_8&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_inscription_get_nat_chars(self_: <span class="kw-2">*mut </span>GtkInscription) -&gt; c_uint;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_8&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_8&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_inscription_get_nat_lines(self_: <span class="kw-2">*mut </span>GtkInscription) -&gt; c_uint;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_8&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_8&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_inscription_get_text(self_: <span class="kw-2">*mut </span>GtkInscription) -&gt; <span class="kw-2">*const </span>c_char;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_8&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_8&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_inscription_get_text_overflow(self_: <span class="kw-2">*mut </span>GtkInscription) -&gt; GtkInscriptionOverflow;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_8&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_8&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_inscription_get_wrap_mode(self_: <span class="kw-2">*mut </span>GtkInscription) -&gt; pango::PangoWrapMode;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_8&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_8&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_inscription_get_xalign(self_: <span class="kw-2">*mut </span>GtkInscription) -&gt; c_float;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_8&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_8&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_inscription_get_yalign(self_: <span class="kw-2">*mut </span>GtkInscription) -&gt; c_float;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_8&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_8&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_inscription_set_attributes(
         self_: <span class="kw-2">*mut </span>GtkInscription,
         attrs: <span class="kw-2">*mut </span>pango::PangoAttrList,
     );
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_8&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_8&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_inscription_set_markup(self_: <span class="kw-2">*mut </span>GtkInscription, markup: <span class="kw-2">*const </span>c_char);
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_8&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_8&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_inscription_set_min_chars(self_: <span class="kw-2">*mut </span>GtkInscription, min_chars: c_uint);
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_8&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_8&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_inscription_set_min_lines(self_: <span class="kw-2">*mut </span>GtkInscription, min_lines: c_uint);
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_8&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_8&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_inscription_set_nat_chars(self_: <span class="kw-2">*mut </span>GtkInscription, nat_chars: c_uint);
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_8&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_8&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_inscription_set_nat_lines(self_: <span class="kw-2">*mut </span>GtkInscription, nat_lines: c_uint);
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_8&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_8&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_inscription_set_text(self_: <span class="kw-2">*mut </span>GtkInscription, text: <span class="kw-2">*const </span>c_char);
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_8&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_8&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_inscription_set_text_overflow(
         self_: <span class="kw-2">*mut </span>GtkInscription,
         overflow: GtkInscriptionOverflow,
     );
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_8&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_8&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_inscription_set_wrap_mode(
         self_: <span class="kw-2">*mut </span>GtkInscription,
         wrap_mode: pango::PangoWrapMode,
     );
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_8&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_8&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_inscription_set_xalign(self_: <span class="kw-2">*mut </span>GtkInscription, xalign: c_float);
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_8&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_8&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_inscription_set_yalign(self_: <span class="kw-2">*mut </span>GtkInscription, yalign: c_float);
 
@@ -34617,7 +34671,7 @@
     <span class="kw">pub fn </span>gtk_label_get_max_width_chars(self_: <span class="kw-2">*mut </span>GtkLabel) -&gt; c_int;
     <span class="kw">pub fn </span>gtk_label_get_mnemonic_keyval(self_: <span class="kw-2">*mut </span>GtkLabel) -&gt; c_uint;
     <span class="kw">pub fn </span>gtk_label_get_mnemonic_widget(self_: <span class="kw-2">*mut </span>GtkLabel) -&gt; <span class="kw-2">*mut </span>GtkWidget;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_6&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_label_get_natural_wrap_mode(self_: <span class="kw-2">*mut </span>GtkLabel) -&gt; GtkNaturalWrapMode;
     <span class="kw">pub fn </span>gtk_label_get_selectable(self_: <span class="kw-2">*mut </span>GtkLabel) -&gt; gboolean;
@@ -34627,7 +34681,7 @@
         end: <span class="kw-2">*mut </span>c_int,
     ) -&gt; gboolean;
     <span class="kw">pub fn </span>gtk_label_get_single_line_mode(self_: <span class="kw-2">*mut </span>GtkLabel) -&gt; gboolean;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_8&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_8&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_label_get_tabs(self_: <span class="kw-2">*mut </span>GtkLabel) -&gt; <span class="kw-2">*mut </span>pango::PangoTabArray;
     <span class="kw">pub fn </span>gtk_label_get_text(self_: <span class="kw-2">*mut </span>GtkLabel) -&gt; <span class="kw-2">*const </span>c_char;
@@ -34649,12 +34703,12 @@
     <span class="kw">pub fn </span>gtk_label_set_markup_with_mnemonic(self_: <span class="kw-2">*mut </span>GtkLabel, str: <span class="kw-2">*const </span>c_char);
     <span class="kw">pub fn </span>gtk_label_set_max_width_chars(self_: <span class="kw-2">*mut </span>GtkLabel, n_chars: c_int);
     <span class="kw">pub fn </span>gtk_label_set_mnemonic_widget(self_: <span class="kw-2">*mut </span>GtkLabel, widget: <span class="kw-2">*mut </span>GtkWidget);
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_6&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_label_set_natural_wrap_mode(self_: <span class="kw-2">*mut </span>GtkLabel, wrap_mode: GtkNaturalWrapMode);
     <span class="kw">pub fn </span>gtk_label_set_selectable(self_: <span class="kw-2">*mut </span>GtkLabel, setting: gboolean);
     <span class="kw">pub fn </span>gtk_label_set_single_line_mode(self_: <span class="kw-2">*mut </span>GtkLabel, single_line_mode: gboolean);
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_8&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_8&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_label_set_tabs(self_: <span class="kw-2">*mut </span>GtkLabel, tabs: <span class="kw-2">*mut </span>pango::PangoTabArray);
     <span class="kw">pub fn </span>gtk_label_set_text(self_: <span class="kw-2">*mut </span>GtkLabel, str: <span class="kw-2">*const </span>c_char);
@@ -34789,7 +34843,7 @@
     <span class="kw">pub fn </span>gtk_list_box_invalidate_sort(box_: <span class="kw-2">*mut </span>GtkListBox);
     <span class="kw">pub fn </span>gtk_list_box_prepend(box_: <span class="kw-2">*mut </span>GtkListBox, child: <span class="kw-2">*mut </span>GtkWidget);
     <span class="kw">pub fn </span>gtk_list_box_remove(box_: <span class="kw-2">*mut </span>GtkListBox, child: <span class="kw-2">*mut </span>GtkWidget);
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_12&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_12&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_12&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_list_box_remove_all(box_: <span class="kw-2">*mut </span>GtkListBox);
     <span class="kw">pub fn </span>gtk_list_box_select_all(box_: <span class="kw-2">*mut </span>GtkListBox);
@@ -34848,7 +34902,7 @@
     </span><span class="kw">pub fn </span>gtk_list_item_get_type() -&gt; GType;
     <span class="kw">pub fn </span>gtk_list_item_get_activatable(self_: <span class="kw-2">*mut </span>GtkListItem) -&gt; gboolean;
     <span class="kw">pub fn </span>gtk_list_item_get_child(self_: <span class="kw-2">*mut </span>GtkListItem) -&gt; <span class="kw-2">*mut </span>GtkWidget;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_12&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_12&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_12&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_list_item_get_focusable(self_: <span class="kw-2">*mut </span>GtkListItem) -&gt; gboolean;
     <span class="kw">pub fn </span>gtk_list_item_get_item(self_: <span class="kw-2">*mut </span>GtkListItem) -&gt; <span class="kw-2">*mut </span>gobject::GObject;
@@ -34857,7 +34911,7 @@
     <span class="kw">pub fn </span>gtk_list_item_get_selected(self_: <span class="kw-2">*mut </span>GtkListItem) -&gt; gboolean;
     <span class="kw">pub fn </span>gtk_list_item_set_activatable(self_: <span class="kw-2">*mut </span>GtkListItem, activatable: gboolean);
     <span class="kw">pub fn </span>gtk_list_item_set_child(self_: <span class="kw-2">*mut </span>GtkListItem, child: <span class="kw-2">*mut </span>GtkWidget);
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_12&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_12&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_12&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_list_item_set_focusable(self_: <span class="kw-2">*mut </span>GtkListItem, focusable: gboolean);
     <span class="kw">pub fn </span>gtk_list_item_set_selectable(self_: <span class="kw-2">*mut </span>GtkListItem, selectable: gboolean);
@@ -34957,7 +35011,7 @@
     <span class="kw">pub fn </span>gtk_list_view_get_model(self_: <span class="kw-2">*mut </span>GtkListView) -&gt; <span class="kw-2">*mut </span>GtkSelectionModel;
     <span class="kw">pub fn </span>gtk_list_view_get_show_separators(self_: <span class="kw-2">*mut </span>GtkListView) -&gt; gboolean;
     <span class="kw">pub fn </span>gtk_list_view_get_single_click_activate(self_: <span class="kw-2">*mut </span>GtkListView) -&gt; gboolean;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_12&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_12&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_12&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_list_view_get_tab_behavior(self_: <span class="kw-2">*mut </span>GtkListView) -&gt; GtkListTabBehavior;
     <span class="kw">pub fn </span>gtk_list_view_set_enable_rubberband(
@@ -34971,7 +35025,7 @@
         self_: <span class="kw-2">*mut </span>GtkListView,
         single_click_activate: gboolean,
     );
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_12&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_12&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_12&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_list_view_set_tab_behavior(
         self_: <span class="kw-2">*mut </span>GtkListView,
@@ -35087,10 +35141,10 @@
     <span class="kw">pub fn </span>gtk_media_stream_set_muted(self_: <span class="kw-2">*mut </span>GtkMediaStream, muted: gboolean);
     <span class="kw">pub fn </span>gtk_media_stream_set_playing(self_: <span class="kw-2">*mut </span>GtkMediaStream, playing: gboolean);
     <span class="kw">pub fn </span>gtk_media_stream_set_volume(self_: <span class="kw-2">*mut </span>GtkMediaStream, volume: c_double);
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_4&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_4&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_4&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_media_stream_stream_ended(self_: <span class="kw-2">*mut </span>GtkMediaStream);
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_4&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_4&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_4&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_media_stream_stream_prepared(
         self_: <span class="kw-2">*mut </span>GtkMediaStream,
@@ -35099,7 +35153,7 @@
         seekable: gboolean,
         duration: i64,
     );
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_4&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_4&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_4&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_media_stream_stream_unprepared(self_: <span class="kw-2">*mut </span>GtkMediaStream);
     <span class="kw">pub fn </span>gtk_media_stream_unprepared(self_: <span class="kw-2">*mut </span>GtkMediaStream);
@@ -35111,13 +35165,13 @@
     //=========================================================================
     </span><span class="kw">pub fn </span>gtk_menu_button_get_type() -&gt; GType;
     <span class="kw">pub fn </span>gtk_menu_button_new() -&gt; <span class="kw-2">*mut </span>GtkWidget;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_menu_button_get_active(menu_button: <span class="kw-2">*mut </span>GtkMenuButton) -&gt; gboolean;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_4&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_4&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_4&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_menu_button_get_always_show_arrow(menu_button: <span class="kw-2">*mut </span>GtkMenuButton) -&gt; gboolean;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_6&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_menu_button_get_child(menu_button: <span class="kw-2">*mut </span>GtkMenuButton) -&gt; <span class="kw-2">*mut </span>GtkWidget;
     <span class="kw">pub fn </span>gtk_menu_button_get_direction(menu_button: <span class="kw-2">*mut </span>GtkMenuButton) -&gt; GtkArrowType;
@@ -35126,22 +35180,22 @@
     <span class="kw">pub fn </span>gtk_menu_button_get_label(menu_button: <span class="kw-2">*mut </span>GtkMenuButton) -&gt; <span class="kw-2">*const </span>c_char;
     <span class="kw">pub fn </span>gtk_menu_button_get_menu_model(menu_button: <span class="kw-2">*mut </span>GtkMenuButton) -&gt; <span class="kw-2">*mut </span>gio::GMenuModel;
     <span class="kw">pub fn </span>gtk_menu_button_get_popover(menu_button: <span class="kw-2">*mut </span>GtkMenuButton) -&gt; <span class="kw-2">*mut </span>GtkPopover;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_4&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_4&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_4&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_menu_button_get_primary(menu_button: <span class="kw-2">*mut </span>GtkMenuButton) -&gt; gboolean;
     <span class="kw">pub fn </span>gtk_menu_button_get_use_underline(menu_button: <span class="kw-2">*mut </span>GtkMenuButton) -&gt; gboolean;
     <span class="kw">pub fn </span>gtk_menu_button_popdown(menu_button: <span class="kw-2">*mut </span>GtkMenuButton);
     <span class="kw">pub fn </span>gtk_menu_button_popup(menu_button: <span class="kw-2">*mut </span>GtkMenuButton);
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_menu_button_set_active(menu_button: <span class="kw-2">*mut </span>GtkMenuButton, active: gboolean);
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_4&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_4&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_4&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_menu_button_set_always_show_arrow(
         menu_button: <span class="kw-2">*mut </span>GtkMenuButton,
         always_show_arrow: gboolean,
     );
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_6&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_menu_button_set_child(menu_button: <span class="kw-2">*mut </span>GtkMenuButton, child: <span class="kw-2">*mut </span>GtkWidget);
     <span class="kw">pub fn </span>gtk_menu_button_set_create_popup_func(
@@ -35159,7 +35213,7 @@
         menu_model: <span class="kw-2">*mut </span>gio::GMenuModel,
     );
     <span class="kw">pub fn </span>gtk_menu_button_set_popover(menu_button: <span class="kw-2">*mut </span>GtkMenuButton, popover: <span class="kw-2">*mut </span>GtkWidget);
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_4&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_4&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_4&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_menu_button_set_primary(menu_button: <span class="kw-2">*mut </span>GtkMenuButton, primary: gboolean);
     <span class="kw">pub fn </span>gtk_menu_button_set_use_underline(
@@ -35676,10 +35730,10 @@
     <span class="comment">//=========================================================================
     // GtkPasswordEntryBuffer
     //=========================================================================
-    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_4&quot;</span>, docsrs))]
+    </span><span class="attr">#[cfg(feature = <span class="string">&quot;v4_4&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_4&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_password_entry_buffer_get_type() -&gt; GType;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_4&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_4&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_4&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_password_entry_buffer_new() -&gt; <span class="kw-2">*mut </span>GtkEntryBuffer;
 
@@ -35695,7 +35749,7 @@
     <span class="kw">pub fn </span>gtk_picture_new_for_resource(resource_path: <span class="kw-2">*const </span>c_char) -&gt; <span class="kw-2">*mut </span>GtkWidget;
     <span class="kw">pub fn </span>gtk_picture_get_alternative_text(self_: <span class="kw-2">*mut </span>GtkPicture) -&gt; <span class="kw-2">*const </span>c_char;
     <span class="kw">pub fn </span>gtk_picture_get_can_shrink(self_: <span class="kw-2">*mut </span>GtkPicture) -&gt; gboolean;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_8&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_8&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_picture_get_content_fit(self_: <span class="kw-2">*mut </span>GtkPicture) -&gt; GtkContentFit;
     <span class="kw">pub fn </span>gtk_picture_get_file(self_: <span class="kw-2">*mut </span>GtkPicture) -&gt; <span class="kw-2">*mut </span>gio::GFile;
@@ -35706,7 +35760,7 @@
         alternative_text: <span class="kw-2">*const </span>c_char,
     );
     <span class="kw">pub fn </span>gtk_picture_set_can_shrink(self_: <span class="kw-2">*mut </span>GtkPicture, can_shrink: gboolean);
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_8&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_8&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_picture_set_content_fit(self_: <span class="kw-2">*mut </span>GtkPicture, content_fit: GtkContentFit);
     <span class="kw">pub fn </span>gtk_picture_set_file(self_: <span class="kw-2">*mut </span>GtkPicture, file: <span class="kw-2">*mut </span>gio::GFile);
@@ -36464,7 +36518,7 @@
         step: c_double,
         icons: <span class="kw-2">*mut *const </span>c_char,
     ) -&gt; <span class="kw-2">*mut </span>GtkWidget;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_scale_button_get_active(button: <span class="kw-2">*mut </span>GtkScaleButton) -&gt; gboolean;
     <span class="kw">pub fn </span>gtk_scale_button_get_adjustment(button: <span class="kw-2">*mut </span>GtkScaleButton) -&gt; <span class="kw-2">*mut </span>GtkAdjustment;
@@ -36622,20 +36676,20 @@
     </span><span class="kw">pub fn </span>gtk_search_entry_get_type() -&gt; GType;
     <span class="kw">pub fn </span>gtk_search_entry_new() -&gt; <span class="kw-2">*mut </span>GtkWidget;
     <span class="kw">pub fn </span>gtk_search_entry_get_key_capture_widget(entry: <span class="kw-2">*mut </span>GtkSearchEntry) -&gt; <span class="kw-2">*mut </span>GtkWidget;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_search_entry_get_placeholder_text(entry: <span class="kw-2">*mut </span>GtkSearchEntry) -&gt; <span class="kw-2">*const </span>c_char;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_8&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_8&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_search_entry_get_search_delay(entry: <span class="kw-2">*mut </span>GtkSearchEntry) -&gt; c_uint;
     <span class="kw">pub fn </span>gtk_search_entry_set_key_capture_widget(
         entry: <span class="kw-2">*mut </span>GtkSearchEntry,
         widget: <span class="kw-2">*mut </span>GtkWidget,
     );
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_search_entry_set_placeholder_text(entry: <span class="kw-2">*mut </span>GtkSearchEntry, text: <span class="kw-2">*const </span>c_char);
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_8&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_8&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_search_entry_set_search_delay(entry: <span class="kw-2">*mut </span>GtkSearchEntry, delay: c_uint);
 
@@ -36954,7 +37008,7 @@
         stops: <span class="kw-2">*const </span>gsk::GskColorStop,
         n_stops: size_t,
     );
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_snapshot_append_scaled_texture(
         snapshot: <span class="kw-2">*mut </span>GtkSnapshot,
@@ -36994,7 +37048,7 @@
         bounds: <span class="kw-2">*const </span>graphene::graphene_rect_t,
         take_args: <span class="kw-2">*mut </span>glib::GBytes,
     );
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_snapshot_push_mask(snapshot: <span class="kw-2">*mut </span>GtkSnapshot, mask_mode: gsk::GskMaskMode);
     <span class="kw">pub fn </span>gtk_snapshot_push_opacity(snapshot: <span class="kw-2">*mut </span>GtkSnapshot, opacity: c_double);
@@ -37345,12 +37399,12 @@
     //=========================================================================
     </span><span class="kw">pub fn </span>gtk_string_sorter_get_type() -&gt; GType;
     <span class="kw">pub fn </span>gtk_string_sorter_new(expression: <span class="kw-2">*mut </span>GtkExpression) -&gt; <span class="kw-2">*mut </span>GtkStringSorter;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_string_sorter_get_collation(self_: <span class="kw-2">*mut </span>GtkStringSorter) -&gt; GtkCollation;
     <span class="kw">pub fn </span>gtk_string_sorter_get_expression(self_: <span class="kw-2">*mut </span>GtkStringSorter) -&gt; <span class="kw-2">*mut </span>GtkExpression;
     <span class="kw">pub fn </span>gtk_string_sorter_get_ignore_case(self_: <span class="kw-2">*mut </span>GtkStringSorter) -&gt; gboolean;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_string_sorter_set_collation(self_: <span class="kw-2">*mut </span>GtkStringSorter, collation: GtkCollation);
     <span class="kw">pub fn </span>gtk_string_sorter_set_expression(
@@ -37428,7 +37482,7 @@
     </span><span class="kw">pub fn </span>gtk_text_get_type() -&gt; GType;
     <span class="kw">pub fn </span>gtk_text_new() -&gt; <span class="kw-2">*mut </span>GtkWidget;
     <span class="kw">pub fn </span>gtk_text_new_with_buffer(buffer: <span class="kw-2">*mut </span>GtkEntryBuffer) -&gt; <span class="kw-2">*mut </span>GtkWidget;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_4&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_4&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_4&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_text_compute_cursor_extents(
         self_: <span class="kw-2">*mut </span>GtkText,
@@ -37750,7 +37804,7 @@
     //=========================================================================
     </span><span class="kw">pub fn </span>gtk_text_child_anchor_get_type() -&gt; GType;
     <span class="kw">pub fn </span>gtk_text_child_anchor_new() -&gt; <span class="kw-2">*mut </span>GtkTextChildAnchor;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_6&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_text_child_anchor_new_with_replacement(
         character: <span class="kw-2">*const </span>c_char,
@@ -37892,7 +37946,7 @@
         y: <span class="kw-2">*mut </span>c_int,
         height: <span class="kw-2">*mut </span>c_int,
     );
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_4&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_4&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_4&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_text_view_get_ltr_context(text_view: <span class="kw-2">*mut </span>GtkTextView) -&gt; <span class="kw-2">*mut </span>pango::PangoContext;
     <span class="kw">pub fn </span>gtk_text_view_get_monospace(text_view: <span class="kw-2">*mut </span>GtkTextView) -&gt; gboolean;
@@ -37901,7 +37955,7 @@
     <span class="kw">pub fn </span>gtk_text_view_get_pixels_below_lines(text_view: <span class="kw-2">*mut </span>GtkTextView) -&gt; c_int;
     <span class="kw">pub fn </span>gtk_text_view_get_pixels_inside_wrap(text_view: <span class="kw-2">*mut </span>GtkTextView) -&gt; c_int;
     <span class="kw">pub fn </span>gtk_text_view_get_right_margin(text_view: <span class="kw-2">*mut </span>GtkTextView) -&gt; c_int;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_4&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_4&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_4&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_text_view_get_rtl_context(text_view: <span class="kw-2">*mut </span>GtkTextView) -&gt; <span class="kw-2">*mut </span>pango::PangoContext;
     <span class="kw">pub fn </span>gtk_text_view_get_tabs(text_view: <span class="kw-2">*mut </span>GtkTextView) -&gt; <span class="kw-2">*mut </span>pango::PangoTabArray;
@@ -38034,31 +38088,31 @@
     </span><span class="kw">pub fn </span>gtk_tree_expander_get_type() -&gt; GType;
     <span class="kw">pub fn </span>gtk_tree_expander_new() -&gt; <span class="kw-2">*mut </span>GtkWidget;
     <span class="kw">pub fn </span>gtk_tree_expander_get_child(self_: <span class="kw-2">*mut </span>GtkTreeExpander) -&gt; <span class="kw-2">*mut </span>GtkWidget;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_tree_expander_get_hide_expander(self_: <span class="kw-2">*mut </span>GtkTreeExpander) -&gt; gboolean;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_tree_expander_get_indent_for_depth(self_: <span class="kw-2">*mut </span>GtkTreeExpander) -&gt; gboolean;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_6&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_tree_expander_get_indent_for_icon(self_: <span class="kw-2">*mut </span>GtkTreeExpander) -&gt; gboolean;
     <span class="kw">pub fn </span>gtk_tree_expander_get_item(self_: <span class="kw-2">*mut </span>GtkTreeExpander) -&gt; <span class="kw-2">*mut </span>gobject::GObject;
     <span class="kw">pub fn </span>gtk_tree_expander_get_list_row(self_: <span class="kw-2">*mut </span>GtkTreeExpander) -&gt; <span class="kw-2">*mut </span>GtkTreeListRow;
     <span class="kw">pub fn </span>gtk_tree_expander_set_child(self_: <span class="kw-2">*mut </span>GtkTreeExpander, child: <span class="kw-2">*mut </span>GtkWidget);
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_tree_expander_set_hide_expander(
         self_: <span class="kw-2">*mut </span>GtkTreeExpander,
         hide_expander: gboolean,
     );
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_tree_expander_set_indent_for_depth(
         self_: <span class="kw-2">*mut </span>GtkTreeExpander,
         indent_for_depth: gboolean,
     );
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_6&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_tree_expander_set_indent_for_icon(
         self_: <span class="kw-2">*mut </span>GtkTreeExpander,
@@ -38830,16 +38884,16 @@
     <span class="comment">//=========================================================================
     // GtkUriLauncher
     //=========================================================================
-    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    </span><span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_uri_launcher_get_type() -&gt; GType;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_uri_launcher_new(uri: <span class="kw-2">*const </span>c_char) -&gt; <span class="kw-2">*mut </span>GtkUriLauncher;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_uri_launcher_get_uri(self_: <span class="kw-2">*mut </span>GtkUriLauncher) -&gt; <span class="kw-2">*const </span>c_char;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_uri_launcher_launch(
         self_: <span class="kw-2">*mut </span>GtkUriLauncher,
@@ -38848,14 +38902,14 @@
         callback: gio::GAsyncReadyCallback,
         user_data: gpointer,
     );
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_uri_launcher_launch_finish(
         self_: <span class="kw-2">*mut </span>GtkUriLauncher,
         result: <span class="kw-2">*mut </span>gio::GAsyncResult,
         error: <span class="kw-2">*mut *mut </span>glib::GError,
     ) -&gt; gboolean;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_uri_launcher_set_uri(self_: <span class="kw-2">*mut </span>GtkUriLauncher, uri: <span class="kw-2">*const </span>c_char);
 
@@ -38965,7 +39019,7 @@
         widget: <span class="kw-2">*mut </span>GtkWidget,
         text: <span class="kw-2">*const </span>c_char,
     ) -&gt; <span class="kw-2">*mut </span>pango::PangoLayout;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_8&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_8&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_widget_dispose_template(widget: <span class="kw-2">*mut </span>GtkWidget, widget_type: GType);
     <span class="kw">pub fn </span>gtk_drag_check_threshold(
@@ -38985,7 +39039,7 @@
     <span class="kw">pub fn </span>gtk_widget_get_can_target(widget: <span class="kw-2">*mut </span>GtkWidget) -&gt; gboolean;
     <span class="kw">pub fn </span>gtk_widget_get_child_visible(widget: <span class="kw-2">*mut </span>GtkWidget) -&gt; gboolean;
     <span class="kw">pub fn </span>gtk_widget_get_clipboard(widget: <span class="kw-2">*mut </span>GtkWidget) -&gt; <span class="kw-2">*mut </span>gdk::GdkClipboard;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_widget_get_color(widget: <span class="kw-2">*mut </span>GtkWidget, color: <span class="kw-2">*mut </span>gdk::GdkRGBA);
     <span class="kw">pub fn </span>gtk_widget_get_css_classes(widget: <span class="kw-2">*mut </span>GtkWidget) -&gt; <span class="kw-2">*mut *mut </span>c_char;
@@ -39229,7 +39283,7 @@
     <span class="kw">pub fn </span>gtk_window_get_focus(window: <span class="kw-2">*mut </span>GtkWindow) -&gt; <span class="kw-2">*mut </span>GtkWidget;
     <span class="kw">pub fn </span>gtk_window_get_focus_visible(window: <span class="kw-2">*mut </span>GtkWindow) -&gt; gboolean;
     <span class="kw">pub fn </span>gtk_window_get_group(window: <span class="kw-2">*mut </span>GtkWindow) -&gt; <span class="kw-2">*mut </span>GtkWindowGroup;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_2&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_2&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_2&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_window_get_handle_menubar_accel(window: <span class="kw-2">*mut </span>GtkWindow) -&gt; gboolean;
     <span class="kw">pub fn </span>gtk_window_get_hide_on_close(window: <span class="kw-2">*mut </span>GtkWindow) -&gt; gboolean;
@@ -39258,7 +39312,7 @@
     <span class="kw">pub fn </span>gtk_window_set_display(window: <span class="kw-2">*mut </span>GtkWindow, display: <span class="kw-2">*mut </span>gdk::GdkDisplay);
     <span class="kw">pub fn </span>gtk_window_set_focus(window: <span class="kw-2">*mut </span>GtkWindow, focus: <span class="kw-2">*mut </span>GtkWidget);
     <span class="kw">pub fn </span>gtk_window_set_focus_visible(window: <span class="kw-2">*mut </span>GtkWindow, setting: gboolean);
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_2&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_2&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_2&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_window_set_handle_menubar_accel(
         window: <span class="kw-2">*mut </span>GtkWindow,
@@ -39317,14 +39371,14 @@
     // GtkAccessible
     //=========================================================================
     </span><span class="kw">pub fn </span>gtk_accessible_get_type() -&gt; GType;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_accessible_get_accessible_parent(self_: <span class="kw-2">*mut </span>GtkAccessible) -&gt; <span class="kw-2">*mut </span>GtkAccessible;
     <span class="kw">pub fn </span>gtk_accessible_get_accessible_role(self_: <span class="kw-2">*mut </span>GtkAccessible) -&gt; GtkAccessibleRole;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_accessible_get_at_context(self_: <span class="kw-2">*mut </span>GtkAccessible) -&gt; <span class="kw-2">*mut </span>GtkATContext;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_accessible_get_bounds(
         self_: <span class="kw-2">*mut </span>GtkAccessible,
@@ -39333,17 +39387,17 @@
         width: <span class="kw-2">*mut </span>c_int,
         height: <span class="kw-2">*mut </span>c_int,
     ) -&gt; gboolean;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_accessible_get_first_accessible_child(
         self_: <span class="kw-2">*mut </span>GtkAccessible,
     ) -&gt; <span class="kw-2">*mut </span>GtkAccessible;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_accessible_get_next_accessible_sibling(
         self_: <span class="kw-2">*mut </span>GtkAccessible,
     ) -&gt; <span class="kw-2">*mut </span>GtkAccessible;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_accessible_get_platform_state(
         self_: <span class="kw-2">*mut </span>GtkAccessible,
@@ -39358,14 +39412,14 @@
         relation: GtkAccessibleRelation,
     );
     <span class="kw">pub fn </span>gtk_accessible_reset_state(self_: <span class="kw-2">*mut </span>GtkAccessible, state: GtkAccessibleState);
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_accessible_set_accessible_parent(
         self_: <span class="kw-2">*mut </span>GtkAccessible,
         parent: <span class="kw-2">*mut </span>GtkAccessible,
         next_sibling: <span class="kw-2">*mut </span>GtkAccessible,
     );
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_accessible_update_next_accessible_sibling(
         self_: <span class="kw-2">*mut </span>GtkAccessible,
@@ -39408,7 +39462,7 @@
     <span class="comment">//=========================================================================
     // GtkAccessibleRange
     //=========================================================================
-    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    </span><span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_accessible_range_get_type() -&gt; GType;
 
@@ -39554,7 +39608,7 @@
         object_class: <span class="kw-2">*mut </span>gobject::GObjectClass,
         first_prop: c_uint,
     ) -&gt; c_uint;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_10&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_editable_delegate_get_accessible_platform_state(
         editable: <span class="kw-2">*mut </span>GtkEditable,
@@ -39848,10 +39902,10 @@
     <span class="comment">//=========================================================================
     // GtkSymbolicPaintable
     //=========================================================================
-    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, docsrs))]
+    </span><span class="attr">#[cfg(feature = <span class="string">&quot;v4_6&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_symbolic_paintable_get_type() -&gt; GType;
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_6&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_symbolic_paintable_snapshot_symbolic(
         paintable: <span class="kw-2">*mut </span>GtkSymbolicPaintable,

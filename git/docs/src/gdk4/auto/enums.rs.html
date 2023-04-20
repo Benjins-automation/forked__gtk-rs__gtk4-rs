@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `gdk4/src/auto/enums.rs`."><title>enums.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Regular-46f98efaafac5295.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Bold-a2c9cd1067f8b328.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../../static.files/rustdoc-ba5701c5741a7b69.css" id="mainThemeStyle"><div id="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="gdk4" data-themes="" data-resource-suffix="" data-rustdoc-version="1.70.0-nightly (a41fc00ea 2023-04-13)" data-search-js="search-bc5a112813b5d712.js" data-settings-js="settings-298e1ea74db45b39.js" data-settings-css="settings-7bfb4c59cc6bc502.css" data-theme-light-css="light-0f8c037637f9eb3e.css" data-theme-dark-css="dark-1097f8e92a01e3cf.css" data-theme-ayu-css="ayu-614652228113ac93.css" ></div><script src="../../../static.files/storage-62ce34ea385b278a.js"></script><script defer src="../../../static.files/source-script-905937fbbdc8e9ea.js"></script><script defer src="../../../source-files.js"></script><script defer src="../../../static.files/main-f61008743c98d196.js"></script><noscript><link rel="stylesheet" media="(prefers-color-scheme:light)" href="../../../static.files/light-0f8c037637f9eb3e.css"><link rel="stylesheet" media="(prefers-color-scheme:dark)" href="../../../static.files/dark-1097f8e92a01e3cf.css"><link rel="stylesheet" href="../../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `gdk4/src/auto/enums.rs`."><title>enums.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Regular-46f98efaafac5295.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Bold-a2c9cd1067f8b328.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../../static.files/rustdoc-ba5701c5741a7b69.css" id="mainThemeStyle"><div id="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="gdk4" data-themes="" data-resource-suffix="" data-rustdoc-version="1.71.0-nightly (39c6804b9 2023-04-19)" data-search-js="search-e077946657036a58.js" data-settings-js="settings-298e1ea74db45b39.js" data-settings-css="settings-7bfb4c59cc6bc502.css" data-theme-light-css="light-0f8c037637f9eb3e.css" data-theme-dark-css="dark-1097f8e92a01e3cf.css" data-theme-ayu-css="ayu-614652228113ac93.css" ></div><script src="../../../static.files/storage-62ce34ea385b278a.js"></script><script defer src="../../../static.files/source-script-905937fbbdc8e9ea.js"></script><script defer src="../../../source-files.js"></script><script defer src="../../../static.files/main-1a524efa7bd4ab32.js"></script><noscript><link rel="stylesheet" media="(prefers-color-scheme:light)" href="../../../static.files/light-0f8c037637f9eb3e.css"><link rel="stylesheet" media="(prefers-color-scheme:dark)" href="../../../static.files/dark-1097f8e92a01e3cf.css"><link rel="stylesheet" href="../../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", checkDocsLatestStable);
 
@@ -4178,7 +4178,7 @@
     </span>PadGroupMode,
     <span class="doccomment">/// A touchpad hold gesture event, the current state
     ///   is determined by its phase field. Since: 4.6
-    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, docsrs))]
+    </span><span class="attr">#[cfg(feature = <span class="string">&quot;v4_8&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_8&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;GDK_TOUCHPAD_HOLD&quot;</span>)]
     </span>TouchpadHold,
@@ -4220,7 +4220,7 @@
                 <span class="self">Self</span>::PadRing =&gt; <span class="string">&quot;PadRing&quot;</span>,
                 <span class="self">Self</span>::PadStrip =&gt; <span class="string">&quot;PadStrip&quot;</span>,
                 <span class="self">Self</span>::PadGroupMode =&gt; <span class="string">&quot;PadGroupMode&quot;</span>,
-                <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, docsrs))]
+                <span class="attr">#[cfg(feature = <span class="string">&quot;v4_8&quot;</span>)]
                 </span><span class="self">Self</span>::TouchpadHold =&gt; <span class="string">&quot;TouchpadHold&quot;</span>,
                 <span class="kw">_ </span>=&gt; <span class="string">&quot;Unknown&quot;</span>,
             }
@@ -4262,7 +4262,7 @@
             <span class="self">Self</span>::PadRing =&gt; ffi::GDK_PAD_RING,
             <span class="self">Self</span>::PadStrip =&gt; ffi::GDK_PAD_STRIP,
             <span class="self">Self</span>::PadGroupMode =&gt; ffi::GDK_PAD_GROUP_MODE,
-            <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, docsrs))]
+            <span class="attr">#[cfg(feature = <span class="string">&quot;v4_8&quot;</span>)]
             </span><span class="self">Self</span>::TouchpadHold =&gt; ffi::GDK_TOUCHPAD_HOLD,
             <span class="self">Self</span>::__Unknown(value) =&gt; value,
         }
@@ -4303,7 +4303,7 @@
             ffi::GDK_PAD_RING =&gt; <span class="self">Self</span>::PadRing,
             ffi::GDK_PAD_STRIP =&gt; <span class="self">Self</span>::PadStrip,
             ffi::GDK_PAD_GROUP_MODE =&gt; <span class="self">Self</span>::PadGroupMode,
-            <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, docsrs))]
+            <span class="attr">#[cfg(feature = <span class="string">&quot;v4_8&quot;</span>)]
             </span>ffi::GDK_TOUCHPAD_HOLD =&gt; <span class="self">Self</span>::TouchpadHold,
             value =&gt; <span class="self">Self</span>::__Unknown(value),
         }
@@ -5104,56 +5104,56 @@
     </span><span class="attr">#[doc(alias = <span class="string">&quot;GDK_MEMORY_B8G8R8&quot;</span>)]
     </span>B8g8r8,
     <span class="doccomment">/// 3 guint16 values; for red, green, blue. Since: 4.6
-    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, docsrs))]
+    </span><span class="attr">#[cfg(feature = <span class="string">&quot;v4_6&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;GDK_MEMORY_R16G16B16&quot;</span>)]
     </span>R16g16b16,
     <span class="doccomment">/// 4 guint16 values; for red, green,
     ///   blue, alpha. The color values are premultiplied with the alpha value.
     ///  Since: 4.6
-    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, docsrs))]
+    </span><span class="attr">#[cfg(feature = <span class="string">&quot;v4_6&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;GDK_MEMORY_R16G16B16A16_PREMULTIPLIED&quot;</span>)]
     </span>R16g16b16a16Premultiplied,
     <span class="doccomment">/// 4 guint16 values; for red, green, blue, alpha.
     ///  Since: 4.6
-    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, docsrs))]
+    </span><span class="attr">#[cfg(feature = <span class="string">&quot;v4_6&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;GDK_MEMORY_R16G16B16A16&quot;</span>)]
     </span>R16g16b16a16,
     <span class="doccomment">/// 3 half-float values; for red, green, blue.
     ///   The data is opaque. Since: 4.6
-    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, docsrs))]
+    </span><span class="attr">#[cfg(feature = <span class="string">&quot;v4_6&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;GDK_MEMORY_R16G16B16_FLOAT&quot;</span>)]
     </span>R16g16b16Float,
     <span class="doccomment">/// 4 half-float values; for
     ///   red, green, blue and alpha. The color values are premultiplied with
     ///   the alpha value. Since: 4.6
-    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, docsrs))]
+    </span><span class="attr">#[cfg(feature = <span class="string">&quot;v4_6&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;GDK_MEMORY_R16G16B16A16_FLOAT_PREMULTIPLIED&quot;</span>)]
     </span>R16g16b16a16FloatPremultiplied,
     <span class="doccomment">/// 4 half-float values; for red, green,
     ///   blue and alpha. Since: 4.6
-    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, docsrs))]
+    </span><span class="attr">#[cfg(feature = <span class="string">&quot;v4_6&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;GDK_MEMORY_R16G16B16A16_FLOAT&quot;</span>)]
     </span>R16g16b16a16Float,
-    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, docsrs))]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_6&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;GDK_MEMORY_R32G32B32_FLOAT&quot;</span>)]
     </span>R32g32b32Float,
     <span class="doccomment">/// 4 float values; for
     ///   red, green, blue and alpha. The color values are premultiplied with
     ///   the alpha value. Since: 4.6
-    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, docsrs))]
+    </span><span class="attr">#[cfg(feature = <span class="string">&quot;v4_6&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;GDK_MEMORY_R32G32B32A32_FLOAT_PREMULTIPLIED&quot;</span>)]
     </span>R32g32b32a32FloatPremultiplied,
     <span class="doccomment">/// 4 float values; for red, green, blue and
     ///   alpha. Since: 4.6
-    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, docsrs))]
+    </span><span class="attr">#[cfg(feature = <span class="string">&quot;v4_6&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;GDK_MEMORY_R32G32B32A32_FLOAT&quot;</span>)]
     </span>R32g32b32a32Float,
@@ -5176,23 +5176,23 @@
                 <span class="self">Self</span>::A8b8g8r8 =&gt; <span class="string">&quot;A8b8g8r8&quot;</span>,
                 <span class="self">Self</span>::R8g8b8 =&gt; <span class="string">&quot;R8g8b8&quot;</span>,
                 <span class="self">Self</span>::B8g8r8 =&gt; <span class="string">&quot;B8g8r8&quot;</span>,
-                <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, docsrs))]
+                <span class="attr">#[cfg(feature = <span class="string">&quot;v4_6&quot;</span>)]
                 </span><span class="self">Self</span>::R16g16b16 =&gt; <span class="string">&quot;R16g16b16&quot;</span>,
-                <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, docsrs))]
+                <span class="attr">#[cfg(feature = <span class="string">&quot;v4_6&quot;</span>)]
                 </span><span class="self">Self</span>::R16g16b16a16Premultiplied =&gt; <span class="string">&quot;R16g16b16a16Premultiplied&quot;</span>,
-                <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, docsrs))]
+                <span class="attr">#[cfg(feature = <span class="string">&quot;v4_6&quot;</span>)]
                 </span><span class="self">Self</span>::R16g16b16a16 =&gt; <span class="string">&quot;R16g16b16a16&quot;</span>,
-                <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, docsrs))]
+                <span class="attr">#[cfg(feature = <span class="string">&quot;v4_6&quot;</span>)]
                 </span><span class="self">Self</span>::R16g16b16Float =&gt; <span class="string">&quot;R16g16b16Float&quot;</span>,
-                <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, docsrs))]
+                <span class="attr">#[cfg(feature = <span class="string">&quot;v4_6&quot;</span>)]
                 </span><span class="self">Self</span>::R16g16b16a16FloatPremultiplied =&gt; <span class="string">&quot;R16g16b16a16FloatPremultiplied&quot;</span>,
-                <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, docsrs))]
+                <span class="attr">#[cfg(feature = <span class="string">&quot;v4_6&quot;</span>)]
                 </span><span class="self">Self</span>::R16g16b16a16Float =&gt; <span class="string">&quot;R16g16b16a16Float&quot;</span>,
-                <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, docsrs))]
+                <span class="attr">#[cfg(feature = <span class="string">&quot;v4_6&quot;</span>)]
                 </span><span class="self">Self</span>::R32g32b32Float =&gt; <span class="string">&quot;R32g32b32Float&quot;</span>,
-                <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, docsrs))]
+                <span class="attr">#[cfg(feature = <span class="string">&quot;v4_6&quot;</span>)]
                 </span><span class="self">Self</span>::R32g32b32a32FloatPremultiplied =&gt; <span class="string">&quot;R32g32b32a32FloatPremultiplied&quot;</span>,
-                <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, docsrs))]
+                <span class="attr">#[cfg(feature = <span class="string">&quot;v4_6&quot;</span>)]
                 </span><span class="self">Self</span>::R32g32b32a32Float =&gt; <span class="string">&quot;R32g32b32a32Float&quot;</span>,
                 <span class="kw">_ </span>=&gt; <span class="string">&quot;Unknown&quot;</span>,
             }
@@ -5215,27 +5215,27 @@
             <span class="self">Self</span>::A8b8g8r8 =&gt; ffi::GDK_MEMORY_A8B8G8R8,
             <span class="self">Self</span>::R8g8b8 =&gt; ffi::GDK_MEMORY_R8G8B8,
             <span class="self">Self</span>::B8g8r8 =&gt; ffi::GDK_MEMORY_B8G8R8,
-            <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, docsrs))]
+            <span class="attr">#[cfg(feature = <span class="string">&quot;v4_6&quot;</span>)]
             </span><span class="self">Self</span>::R16g16b16 =&gt; ffi::GDK_MEMORY_R16G16B16,
-            <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, docsrs))]
+            <span class="attr">#[cfg(feature = <span class="string">&quot;v4_6&quot;</span>)]
             </span><span class="self">Self</span>::R16g16b16a16Premultiplied =&gt; ffi::GDK_MEMORY_R16G16B16A16_PREMULTIPLIED,
-            <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, docsrs))]
+            <span class="attr">#[cfg(feature = <span class="string">&quot;v4_6&quot;</span>)]
             </span><span class="self">Self</span>::R16g16b16a16 =&gt; ffi::GDK_MEMORY_R16G16B16A16,
-            <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, docsrs))]
+            <span class="attr">#[cfg(feature = <span class="string">&quot;v4_6&quot;</span>)]
             </span><span class="self">Self</span>::R16g16b16Float =&gt; ffi::GDK_MEMORY_R16G16B16_FLOAT,
-            <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, docsrs))]
+            <span class="attr">#[cfg(feature = <span class="string">&quot;v4_6&quot;</span>)]
             </span><span class="self">Self</span>::R16g16b16a16FloatPremultiplied =&gt; {
                 ffi::GDK_MEMORY_R16G16B16A16_FLOAT_PREMULTIPLIED
             }
-            <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, docsrs))]
+            <span class="attr">#[cfg(feature = <span class="string">&quot;v4_6&quot;</span>)]
             </span><span class="self">Self</span>::R16g16b16a16Float =&gt; ffi::GDK_MEMORY_R16G16B16A16_FLOAT,
-            <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, docsrs))]
+            <span class="attr">#[cfg(feature = <span class="string">&quot;v4_6&quot;</span>)]
             </span><span class="self">Self</span>::R32g32b32Float =&gt; ffi::GDK_MEMORY_R32G32B32_FLOAT,
-            <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, docsrs))]
+            <span class="attr">#[cfg(feature = <span class="string">&quot;v4_6&quot;</span>)]
             </span><span class="self">Self</span>::R32g32b32a32FloatPremultiplied =&gt; {
                 ffi::GDK_MEMORY_R32G32B32A32_FLOAT_PREMULTIPLIED
             }
-            <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, docsrs))]
+            <span class="attr">#[cfg(feature = <span class="string">&quot;v4_6&quot;</span>)]
             </span><span class="self">Self</span>::R32g32b32a32Float =&gt; ffi::GDK_MEMORY_R32G32B32A32_FLOAT,
             <span class="self">Self</span>::__Unknown(value) =&gt; value,
         }
@@ -5257,27 +5257,27 @@
             ffi::GDK_MEMORY_A8B8G8R8 =&gt; <span class="self">Self</span>::A8b8g8r8,
             ffi::GDK_MEMORY_R8G8B8 =&gt; <span class="self">Self</span>::R8g8b8,
             ffi::GDK_MEMORY_B8G8R8 =&gt; <span class="self">Self</span>::B8g8r8,
-            <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, docsrs))]
+            <span class="attr">#[cfg(feature = <span class="string">&quot;v4_6&quot;</span>)]
             </span>ffi::GDK_MEMORY_R16G16B16 =&gt; <span class="self">Self</span>::R16g16b16,
-            <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, docsrs))]
+            <span class="attr">#[cfg(feature = <span class="string">&quot;v4_6&quot;</span>)]
             </span>ffi::GDK_MEMORY_R16G16B16A16_PREMULTIPLIED =&gt; <span class="self">Self</span>::R16g16b16a16Premultiplied,
-            <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, docsrs))]
+            <span class="attr">#[cfg(feature = <span class="string">&quot;v4_6&quot;</span>)]
             </span>ffi::GDK_MEMORY_R16G16B16A16 =&gt; <span class="self">Self</span>::R16g16b16a16,
-            <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, docsrs))]
+            <span class="attr">#[cfg(feature = <span class="string">&quot;v4_6&quot;</span>)]
             </span>ffi::GDK_MEMORY_R16G16B16_FLOAT =&gt; <span class="self">Self</span>::R16g16b16Float,
-            <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, docsrs))]
+            <span class="attr">#[cfg(feature = <span class="string">&quot;v4_6&quot;</span>)]
             </span>ffi::GDK_MEMORY_R16G16B16A16_FLOAT_PREMULTIPLIED =&gt; {
                 <span class="self">Self</span>::R16g16b16a16FloatPremultiplied
             }
-            <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, docsrs))]
+            <span class="attr">#[cfg(feature = <span class="string">&quot;v4_6&quot;</span>)]
             </span>ffi::GDK_MEMORY_R16G16B16A16_FLOAT =&gt; <span class="self">Self</span>::R16g16b16a16Float,
-            <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, docsrs))]
+            <span class="attr">#[cfg(feature = <span class="string">&quot;v4_6&quot;</span>)]
             </span>ffi::GDK_MEMORY_R32G32B32_FLOAT =&gt; <span class="self">Self</span>::R32g32b32Float,
-            <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, docsrs))]
+            <span class="attr">#[cfg(feature = <span class="string">&quot;v4_6&quot;</span>)]
             </span>ffi::GDK_MEMORY_R32G32B32A32_FLOAT_PREMULTIPLIED =&gt; {
                 <span class="self">Self</span>::R32g32b32a32FloatPremultiplied
             }
-            <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, docsrs))]
+            <span class="attr">#[cfg(feature = <span class="string">&quot;v4_6&quot;</span>)]
             </span>ffi::GDK_MEMORY_R32G32B32A32_FLOAT =&gt; <span class="self">Self</span>::R32g32b32a32Float,
             value =&gt; <span class="self">Self</span>::__Unknown(value),
         }
@@ -5632,7 +5632,7 @@
 /// 1 surface logical pixel is equal to 1 real screen pixel multiplied by the
 /// final scale factor of your graphical interface (the product of the desktop
 /// scale factor and eventually a custom scale factor in your app).
-</span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, docsrs))]
+</span><span class="attr">#[cfg(feature = <span class="string">&quot;v4_8&quot;</span>)]
 #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_8&quot;</span>)))]
 #[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
@@ -5649,7 +5649,7 @@
     </span>__Unknown(i32),
 }
 
-<span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, docsrs))]
+<span class="attr">#[cfg(feature = <span class="string">&quot;v4_8&quot;</span>)]
 #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_8&quot;</span>)))]
 </span><span class="kw">impl </span>fmt::Display <span class="kw">for </span>ScrollUnit {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>fmt::Formatter) -&gt; fmt::Result {
@@ -5665,7 +5665,7 @@
     }
 }
 
-<span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, docsrs))]
+<span class="attr">#[cfg(feature = <span class="string">&quot;v4_8&quot;</span>)]
 #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_8&quot;</span>)))]
 #[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>ScrollUnit {
@@ -5681,7 +5681,7 @@
     }
 }
 
-<span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, docsrs))]
+<span class="attr">#[cfg(feature = <span class="string">&quot;v4_8&quot;</span>)]
 #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_8&quot;</span>)))]
 #[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GdkScrollUnit&gt; <span class="kw">for </span>ScrollUnit {
@@ -5697,7 +5697,7 @@
     }
 }
 
-<span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, docsrs))]
+<span class="attr">#[cfg(feature = <span class="string">&quot;v4_8&quot;</span>)]
 #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_8&quot;</span>)))]
 </span><span class="kw">impl </span>StaticType <span class="kw">for </span>ScrollUnit {
     <span class="attr">#[inline]
@@ -5706,7 +5706,7 @@
     }
 }
 
-<span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, docsrs))]
+<span class="attr">#[cfg(feature = <span class="string">&quot;v4_8&quot;</span>)]
 #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_8&quot;</span>)))]
 </span><span class="kw">impl </span>glib::HasParamSpec <span class="kw">for </span>ScrollUnit {
     <span class="kw">type </span>ParamSpec = glib::ParamSpecEnum;
@@ -5718,13 +5718,13 @@
     }
 }
 
-<span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, docsrs))]
+<span class="attr">#[cfg(feature = <span class="string">&quot;v4_8&quot;</span>)]
 #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_8&quot;</span>)))]
 </span><span class="kw">impl </span>glib::value::ValueType <span class="kw">for </span>ScrollUnit {
     <span class="kw">type </span>Type = <span class="self">Self</span>;
 }
 
-<span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, docsrs))]
+<span class="attr">#[cfg(feature = <span class="string">&quot;v4_8&quot;</span>)]
 #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_8&quot;</span>)))]
 </span><span class="kw">unsafe impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; FromValue&lt;<span class="lifetime">&#39;a</span>&gt; <span class="kw">for </span>ScrollUnit {
     <span class="kw">type </span>Checker = glib::value::GenericValueTypeChecker&lt;<span class="self">Self</span>&gt;;
@@ -5736,7 +5736,7 @@
     }
 }
 
-<span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, docsrs))]
+<span class="attr">#[cfg(feature = <span class="string">&quot;v4_8&quot;</span>)]
 #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_8&quot;</span>)))]
 </span><span class="kw">impl </span>ToValue <span class="kw">for </span>ScrollUnit {
     <span class="attr">#[inline]
@@ -5754,7 +5754,7 @@
     }
 }
 
-<span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, docsrs))]
+<span class="attr">#[cfg(feature = <span class="string">&quot;v4_8&quot;</span>)]
 #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_8&quot;</span>)))]
 </span><span class="kw">impl </span>From&lt;ScrollUnit&gt; <span class="kw">for </span>glib::Value {
     <span class="attr">#[inline]
@@ -6050,7 +6050,7 @@
 }
 
 <span class="doccomment">/// Possible errors that can be returned by [`Texture`][crate::Texture] constructors.
-</span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, docsrs))]
+</span><span class="attr">#[cfg(feature = <span class="string">&quot;v4_6&quot;</span>)]
 #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
 #[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
@@ -6073,7 +6073,7 @@
     </span>__Unknown(i32),
 }
 
-<span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, docsrs))]
+<span class="attr">#[cfg(feature = <span class="string">&quot;v4_6&quot;</span>)]
 #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
 </span><span class="kw">impl </span>fmt::Display <span class="kw">for </span>TextureError {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>fmt::Formatter) -&gt; fmt::Result {
@@ -6091,7 +6091,7 @@
     }
 }
 
-<span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, docsrs))]
+<span class="attr">#[cfg(feature = <span class="string">&quot;v4_6&quot;</span>)]
 #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
 #[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>TextureError {
@@ -6109,7 +6109,7 @@
     }
 }
 
-<span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, docsrs))]
+<span class="attr">#[cfg(feature = <span class="string">&quot;v4_6&quot;</span>)]
 #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
 #[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GdkTextureError&gt; <span class="kw">for </span>TextureError {
@@ -6127,7 +6127,7 @@
     }
 }
 
-<span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, docsrs))]
+<span class="attr">#[cfg(feature = <span class="string">&quot;v4_6&quot;</span>)]
 #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
 </span><span class="kw">impl </span>ErrorDomain <span class="kw">for </span>TextureError {
     <span class="attr">#[inline]
@@ -6152,7 +6152,7 @@
     }
 }
 
-<span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, docsrs))]
+<span class="attr">#[cfg(feature = <span class="string">&quot;v4_6&quot;</span>)]
 #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
 </span><span class="kw">impl </span>StaticType <span class="kw">for </span>TextureError {
     <span class="attr">#[inline]
@@ -6161,7 +6161,7 @@
     }
 }
 
-<span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, docsrs))]
+<span class="attr">#[cfg(feature = <span class="string">&quot;v4_6&quot;</span>)]
 #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
 </span><span class="kw">impl </span>glib::HasParamSpec <span class="kw">for </span>TextureError {
     <span class="kw">type </span>ParamSpec = glib::ParamSpecEnum;
@@ -6173,13 +6173,13 @@
     }
 }
 
-<span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, docsrs))]
+<span class="attr">#[cfg(feature = <span class="string">&quot;v4_6&quot;</span>)]
 #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
 </span><span class="kw">impl </span>glib::value::ValueType <span class="kw">for </span>TextureError {
     <span class="kw">type </span>Type = <span class="self">Self</span>;
 }
 
-<span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, docsrs))]
+<span class="attr">#[cfg(feature = <span class="string">&quot;v4_6&quot;</span>)]
 #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
 </span><span class="kw">unsafe impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; FromValue&lt;<span class="lifetime">&#39;a</span>&gt; <span class="kw">for </span>TextureError {
     <span class="kw">type </span>Checker = glib::value::GenericValueTypeChecker&lt;<span class="self">Self</span>&gt;;
@@ -6191,7 +6191,7 @@
     }
 }
 
-<span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, docsrs))]
+<span class="attr">#[cfg(feature = <span class="string">&quot;v4_6&quot;</span>)]
 #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
 </span><span class="kw">impl </span>ToValue <span class="kw">for </span>TextureError {
     <span class="attr">#[inline]
@@ -6209,7 +6209,7 @@
     }
 }
 
-<span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, docsrs))]
+<span class="attr">#[cfg(feature = <span class="string">&quot;v4_6&quot;</span>)]
 #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
 </span><span class="kw">impl </span>From&lt;TextureError&gt; <span class="kw">for </span>glib::Value {
     <span class="attr">#[inline]
@@ -6219,7 +6219,7 @@
     }
 }
 
-<span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_4&quot;</span>, docsrs))]
+<span class="attr">#[cfg(feature = <span class="string">&quot;v4_4&quot;</span>)]
 #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_4&quot;</span>)))]
 #[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
@@ -6235,7 +6235,7 @@
     </span>__Unknown(i32),
 }
 
-<span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_4&quot;</span>, docsrs))]
+<span class="attr">#[cfg(feature = <span class="string">&quot;v4_4&quot;</span>)]
 #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_4&quot;</span>)))]
 </span><span class="kw">impl </span>fmt::Display <span class="kw">for </span>TitlebarGesture {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>fmt::Formatter) -&gt; fmt::Result {
@@ -6252,7 +6252,7 @@
     }
 }
 
-<span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_4&quot;</span>, docsrs))]
+<span class="attr">#[cfg(feature = <span class="string">&quot;v4_4&quot;</span>)]
 #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_4&quot;</span>)))]
 #[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>TitlebarGesture {
@@ -6269,7 +6269,7 @@
     }
 }
 
-<span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_4&quot;</span>, docsrs))]
+<span class="attr">#[cfg(feature = <span class="string">&quot;v4_4&quot;</span>)]
 #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_4&quot;</span>)))]
 #[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GdkTitlebarGesture&gt; <span class="kw">for </span>TitlebarGesture {
@@ -6286,7 +6286,7 @@
     }
 }
 
-<span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_4&quot;</span>, docsrs))]
+<span class="attr">#[cfg(feature = <span class="string">&quot;v4_4&quot;</span>)]
 #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_4&quot;</span>)))]
 </span><span class="kw">impl </span>StaticType <span class="kw">for </span>TitlebarGesture {
     <span class="attr">#[inline]
@@ -6295,7 +6295,7 @@
     }
 }
 
-<span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_4&quot;</span>, docsrs))]
+<span class="attr">#[cfg(feature = <span class="string">&quot;v4_4&quot;</span>)]
 #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_4&quot;</span>)))]
 </span><span class="kw">impl </span>glib::HasParamSpec <span class="kw">for </span>TitlebarGesture {
     <span class="kw">type </span>ParamSpec = glib::ParamSpecEnum;
@@ -6307,13 +6307,13 @@
     }
 }
 
-<span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_4&quot;</span>, docsrs))]
+<span class="attr">#[cfg(feature = <span class="string">&quot;v4_4&quot;</span>)]
 #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_4&quot;</span>)))]
 </span><span class="kw">impl </span>glib::value::ValueType <span class="kw">for </span>TitlebarGesture {
     <span class="kw">type </span>Type = <span class="self">Self</span>;
 }
 
-<span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_4&quot;</span>, docsrs))]
+<span class="attr">#[cfg(feature = <span class="string">&quot;v4_4&quot;</span>)]
 #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_4&quot;</span>)))]
 </span><span class="kw">unsafe impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; FromValue&lt;<span class="lifetime">&#39;a</span>&gt; <span class="kw">for </span>TitlebarGesture {
     <span class="kw">type </span>Checker = glib::value::GenericValueTypeChecker&lt;<span class="self">Self</span>&gt;;
@@ -6325,7 +6325,7 @@
     }
 }
 
-<span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_4&quot;</span>, docsrs))]
+<span class="attr">#[cfg(feature = <span class="string">&quot;v4_4&quot;</span>)]
 #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_4&quot;</span>)))]
 </span><span class="kw">impl </span>ToValue <span class="kw">for </span>TitlebarGesture {
     <span class="attr">#[inline]
@@ -6343,7 +6343,7 @@
     }
 }
 
-<span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_4&quot;</span>, docsrs))]
+<span class="attr">#[cfg(feature = <span class="string">&quot;v4_4&quot;</span>)]
 #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_4&quot;</span>)))]
 </span><span class="kw">impl </span>From&lt;TitlebarGesture&gt; <span class="kw">for </span>glib::Value {
     <span class="attr">#[inline]

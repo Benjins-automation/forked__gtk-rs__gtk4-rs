@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `gtk4/src/auto/combo_box.rs`."><title>combo_box.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Regular-46f98efaafac5295.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Bold-a2c9cd1067f8b328.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../../static.files/rustdoc-ba5701c5741a7b69.css" id="mainThemeStyle"><div id="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="gtk4" data-themes="" data-resource-suffix="" data-rustdoc-version="1.71.0-nightly (7f94b314c 2023-04-23)" data-search-js="search-618e954b235f6acc.js" data-settings-js="settings-298e1ea74db45b39.js" data-settings-css="settings-7bfb4c59cc6bc502.css" data-theme-light-css="light-0f8c037637f9eb3e.css" data-theme-dark-css="dark-1097f8e92a01e3cf.css" data-theme-ayu-css="ayu-614652228113ac93.css" ></div><script src="../../../static.files/storage-62ce34ea385b278a.js"></script><script defer src="../../../static.files/source-script-11255107d0a65077.js"></script><script defer src="../../../source-files.js"></script><script defer src="../../../static.files/main-f0540c1d82cde29b.js"></script><noscript><link rel="stylesheet" media="(prefers-color-scheme:light)" href="../../../static.files/light-0f8c037637f9eb3e.css"><link rel="stylesheet" media="(prefers-color-scheme:dark)" href="../../../static.files/dark-1097f8e92a01e3cf.css"><link rel="stylesheet" href="../../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `gtk4/src/auto/combo_box.rs`."><title>combo_box.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Regular-46f98efaafac5295.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Bold-a2c9cd1067f8b328.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../../static.files/rustdoc-ba5701c5741a7b69.css" id="mainThemeStyle"><div id="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="gtk4" data-themes="" data-resource-suffix="" data-rustdoc-version="1.71.0-nightly (f49560538 2023-04-28)" data-search-js="search-618e954b235f6acc.js" data-settings-js="settings-de11bff964e9d4e5.js" data-settings-css="settings-6f6ffb5395b17c6e.css" data-theme-light-css="light-0f8c037637f9eb3e.css" data-theme-dark-css="dark-1097f8e92a01e3cf.css" data-theme-ayu-css="ayu-614652228113ac93.css" ></div><script src="../../../static.files/storage-62ce34ea385b278a.js"></script><script defer src="../../../static.files/source-script-11255107d0a65077.js"></script><script defer src="../../../source-files.js"></script><script defer src="../../../static.files/main-f0540c1d82cde29b.js"></script><noscript><link rel="stylesheet" media="(prefers-color-scheme:light)" href="../../../static.files/light-0f8c037637f9eb3e.css"><link rel="stylesheet" media="(prefers-color-scheme:dark)" href="../../../static.files/dark-1097f8e92a01e3cf.css"><link rel="stylesheet" href="../../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", checkDocsLatestStable);
 
@@ -2311,122 +2311,6 @@
 <a href="#2238" id="2238">2238</a>
 <a href="#2239" id="2239">2239</a>
 <a href="#2240" id="2240">2240</a>
-<a href="#2241" id="2241">2241</a>
-<a href="#2242" id="2242">2242</a>
-<a href="#2243" id="2243">2243</a>
-<a href="#2244" id="2244">2244</a>
-<a href="#2245" id="2245">2245</a>
-<a href="#2246" id="2246">2246</a>
-<a href="#2247" id="2247">2247</a>
-<a href="#2248" id="2248">2248</a>
-<a href="#2249" id="2249">2249</a>
-<a href="#2250" id="2250">2250</a>
-<a href="#2251" id="2251">2251</a>
-<a href="#2252" id="2252">2252</a>
-<a href="#2253" id="2253">2253</a>
-<a href="#2254" id="2254">2254</a>
-<a href="#2255" id="2255">2255</a>
-<a href="#2256" id="2256">2256</a>
-<a href="#2257" id="2257">2257</a>
-<a href="#2258" id="2258">2258</a>
-<a href="#2259" id="2259">2259</a>
-<a href="#2260" id="2260">2260</a>
-<a href="#2261" id="2261">2261</a>
-<a href="#2262" id="2262">2262</a>
-<a href="#2263" id="2263">2263</a>
-<a href="#2264" id="2264">2264</a>
-<a href="#2265" id="2265">2265</a>
-<a href="#2266" id="2266">2266</a>
-<a href="#2267" id="2267">2267</a>
-<a href="#2268" id="2268">2268</a>
-<a href="#2269" id="2269">2269</a>
-<a href="#2270" id="2270">2270</a>
-<a href="#2271" id="2271">2271</a>
-<a href="#2272" id="2272">2272</a>
-<a href="#2273" id="2273">2273</a>
-<a href="#2274" id="2274">2274</a>
-<a href="#2275" id="2275">2275</a>
-<a href="#2276" id="2276">2276</a>
-<a href="#2277" id="2277">2277</a>
-<a href="#2278" id="2278">2278</a>
-<a href="#2279" id="2279">2279</a>
-<a href="#2280" id="2280">2280</a>
-<a href="#2281" id="2281">2281</a>
-<a href="#2282" id="2282">2282</a>
-<a href="#2283" id="2283">2283</a>
-<a href="#2284" id="2284">2284</a>
-<a href="#2285" id="2285">2285</a>
-<a href="#2286" id="2286">2286</a>
-<a href="#2287" id="2287">2287</a>
-<a href="#2288" id="2288">2288</a>
-<a href="#2289" id="2289">2289</a>
-<a href="#2290" id="2290">2290</a>
-<a href="#2291" id="2291">2291</a>
-<a href="#2292" id="2292">2292</a>
-<a href="#2293" id="2293">2293</a>
-<a href="#2294" id="2294">2294</a>
-<a href="#2295" id="2295">2295</a>
-<a href="#2296" id="2296">2296</a>
-<a href="#2297" id="2297">2297</a>
-<a href="#2298" id="2298">2298</a>
-<a href="#2299" id="2299">2299</a>
-<a href="#2300" id="2300">2300</a>
-<a href="#2301" id="2301">2301</a>
-<a href="#2302" id="2302">2302</a>
-<a href="#2303" id="2303">2303</a>
-<a href="#2304" id="2304">2304</a>
-<a href="#2305" id="2305">2305</a>
-<a href="#2306" id="2306">2306</a>
-<a href="#2307" id="2307">2307</a>
-<a href="#2308" id="2308">2308</a>
-<a href="#2309" id="2309">2309</a>
-<a href="#2310" id="2310">2310</a>
-<a href="#2311" id="2311">2311</a>
-<a href="#2312" id="2312">2312</a>
-<a href="#2313" id="2313">2313</a>
-<a href="#2314" id="2314">2314</a>
-<a href="#2315" id="2315">2315</a>
-<a href="#2316" id="2316">2316</a>
-<a href="#2317" id="2317">2317</a>
-<a href="#2318" id="2318">2318</a>
-<a href="#2319" id="2319">2319</a>
-<a href="#2320" id="2320">2320</a>
-<a href="#2321" id="2321">2321</a>
-<a href="#2322" id="2322">2322</a>
-<a href="#2323" id="2323">2323</a>
-<a href="#2324" id="2324">2324</a>
-<a href="#2325" id="2325">2325</a>
-<a href="#2326" id="2326">2326</a>
-<a href="#2327" id="2327">2327</a>
-<a href="#2328" id="2328">2328</a>
-<a href="#2329" id="2329">2329</a>
-<a href="#2330" id="2330">2330</a>
-<a href="#2331" id="2331">2331</a>
-<a href="#2332" id="2332">2332</a>
-<a href="#2333" id="2333">2333</a>
-<a href="#2334" id="2334">2334</a>
-<a href="#2335" id="2335">2335</a>
-<a href="#2336" id="2336">2336</a>
-<a href="#2337" id="2337">2337</a>
-<a href="#2338" id="2338">2338</a>
-<a href="#2339" id="2339">2339</a>
-<a href="#2340" id="2340">2340</a>
-<a href="#2341" id="2341">2341</a>
-<a href="#2342" id="2342">2342</a>
-<a href="#2343" id="2343">2343</a>
-<a href="#2344" id="2344">2344</a>
-<a href="#2345" id="2345">2345</a>
-<a href="#2346" id="2346">2346</a>
-<a href="#2347" id="2347">2347</a>
-<a href="#2348" id="2348">2348</a>
-<a href="#2349" id="2349">2349</a>
-<a href="#2350" id="2350">2350</a>
-<a href="#2351" id="2351">2351</a>
-<a href="#2352" id="2352">2352</a>
-<a href="#2353" id="2353">2353</a>
-<a href="#2354" id="2354">2354</a>
-<a href="#2355" id="2355">2355</a>
-<a href="#2356" id="2356">2356</a>
 </pre></div><pre class="rust"><code><span class="comment">// This file was generated by gir (https://github.com/gtk-rs/gir)
 // from gir-files (https://github.com/gtk-rs/gir-files)
 // DO NOT EDIT
@@ -3663,7 +3547,7 @@
 /// # Implementors
 ///
 /// [`ComboBoxText`][struct@crate::ComboBoxText], [`ComboBox`][struct@crate::ComboBox]
-</span><span class="kw">pub trait </span>ComboBoxExt: <span class="lifetime">&#39;static </span>{
+</span><span class="kw">pub trait </span>ComboBoxExt: IsA&lt;ComboBox&gt; + <span class="lifetime">&#39;static </span>{
     <span class="doccomment">/// Returns the ID of the active row of @self.
     ///
     /// This value is taken from the active row and the column specified
@@ -3689,7 +3573,13 @@
     #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_combo_box_get_active_id&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_active_id&quot;</span>)]
-    </span><span class="kw">fn </span>active_id(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt;;
+    </span><span class="kw">fn </span>active_id(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt; {
+        <span class="kw">unsafe </span>{
+            from_glib_none(ffi::gtk_combo_box_get_active_id(
+                <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
+            ))
+        }
+    }
 
     <span class="doccomment">/// Sets @iter to point to the currently active item.
     ///
@@ -3709,7 +3599,20 @@
     #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_combo_box_get_active_iter&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_active_iter&quot;</span>)]
-    </span><span class="kw">fn </span>active_iter(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;TreeIter&gt;;
+    </span><span class="kw">fn </span>active_iter(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;TreeIter&gt; {
+        <span class="kw">unsafe </span>{
+            <span class="kw">let </span><span class="kw-2">mut </span>iter = TreeIter::uninitialized();
+            <span class="kw">let </span>ret = from_glib(ffi::gtk_combo_box_get_active_iter(
+                <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
+                iter.to_glib_none_mut().<span class="number">0</span>,
+            ));
+            <span class="kw">if </span>ret {
+                <span class="prelude-val">Some</span>(iter)
+            } <span class="kw">else </span>{
+                <span class="prelude-val">None
+            </span>}
+        }
+    }
 
     <span class="doccomment">/// Returns whether the combo box sets the dropdown button
     /// sensitive or not when there are no items in the model.
@@ -3729,7 +3632,13 @@
     #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_combo_box_get_button_sensitivity&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_button_sensitivity&quot;</span>)]
-    </span><span class="kw">fn </span>button_sensitivity(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; SensitivityType;
+    </span><span class="kw">fn </span>button_sensitivity(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; SensitivityType {
+        <span class="kw">unsafe </span>{
+            from_glib(ffi::gtk_combo_box_get_button_sensitivity(
+                <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
+            ))
+        }
+    }
 
     <span class="doccomment">/// Gets the child widget of @self.
     ///
@@ -3744,7 +3653,9 @@
     #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_combo_box_get_child&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_child&quot;</span>)]
-    </span><span class="kw">fn </span>child(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;Widget&gt;;
+    </span><span class="kw">fn </span>child(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;Widget&gt; {
+        <span class="kw">unsafe </span>{ from_glib_none(ffi::gtk_combo_box_get_child(<span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>)) }
+    }
 
     <span class="doccomment">/// Returns the column which @self is using to get the strings
     /// from to display in the internal entry.
@@ -3760,7 +3671,9 @@
     #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_combo_box_get_entry_text_column&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_entry_text_column&quot;</span>)]
-    </span><span class="kw">fn </span>entry_text_column(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32;
+    </span><span class="kw">fn </span>entry_text_column(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32 {
+        <span class="kw">unsafe </span>{ ffi::gtk_combo_box_get_entry_text_column(<span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>) }
+    }
 
     <span class="doccomment">/// Returns whether the combo box has an entry.
     ///
@@ -3775,7 +3688,13 @@
     #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_combo_box_get_has_entry&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_has_entry&quot;</span>)]
-    </span><span class="kw">fn </span>has_entry(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool;
+    </span><span class="kw">fn </span>has_entry(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
+        <span class="kw">unsafe </span>{
+            from_glib(ffi::gtk_combo_box_get_has_entry(
+                <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
+            ))
+        }
+    }
 
     <span class="doccomment">/// Returns the column which @self is using to get string IDs
     /// for values from.
@@ -3791,7 +3710,9 @@
     #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_combo_box_get_id_column&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_id_column&quot;</span>)]
-    </span><span class="kw">fn </span>id_column(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32;
+    </span><span class="kw">fn </span>id_column(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32 {
+        <span class="kw">unsafe </span>{ ffi::gtk_combo_box_get_id_column(<span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>) }
+    }
 
     <span class="doccomment">/// Returns the [`TreeModel`][crate::TreeModel] of @self.
     ///
@@ -3807,7 +3728,9 @@
     #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_combo_box_get_model&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_model&quot;</span>)]
-    </span><span class="kw">fn </span>model(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;TreeModel&gt;;
+    </span><span class="kw">fn </span>model(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;TreeModel&gt; {
+        <span class="kw">unsafe </span>{ from_glib_none(ffi::gtk_combo_box_get_model(<span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>)) }
+    }
 
     <span class="doccomment">/// Gets whether the popup uses a fixed width.
     ///
@@ -3822,7 +3745,13 @@
     #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_combo_box_get_popup_fixed_width&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_popup_fixed_width&quot;</span>)]
-    </span><span class="kw">fn </span>is_popup_fixed_width(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool;
+    </span><span class="kw">fn </span>is_popup_fixed_width(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
+        <span class="kw">unsafe </span>{
+            from_glib(ffi::gtk_combo_box_get_popup_fixed_width(
+                <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
+            ))
+        }
+    }
 
     <span class="doccomment">/// Hides the menu or dropdown list of @self.
     ///
@@ -3835,7 +3764,11 @@
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_combo_box_popdown&quot;</span>)]
-    </span><span class="kw">fn </span>popdown(<span class="kw-2">&amp;</span><span class="self">self</span>);
+    </span><span class="kw">fn </span>popdown(<span class="kw-2">&amp;</span><span class="self">self</span>) {
+        <span class="kw">unsafe </span>{
+            ffi::gtk_combo_box_popdown(<span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>);
+        }
+    }
 
     <span class="doccomment">/// Pops up the menu or dropdown list of @self.
     ///
@@ -3850,7 +3783,11 @@
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_combo_box_popup&quot;</span>)]
-    </span><span class="kw">fn </span>popup(<span class="kw-2">&amp;</span><span class="self">self</span>);
+    </span><span class="kw">fn </span>popup(<span class="kw-2">&amp;</span><span class="self">self</span>) {
+        <span class="kw">unsafe </span>{
+            ffi::gtk_combo_box_popup(<span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>);
+        }
+    }
 
     <span class="doccomment">/// Pops up the menu of @self.
     ///
@@ -3867,7 +3804,14 @@
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_combo_box_popup_for_device&quot;</span>)]
-    </span><span class="kw">fn </span>popup_for_device(<span class="kw-2">&amp;</span><span class="self">self</span>, device: <span class="kw-2">&amp;</span>gdk::Device);
+    </span><span class="kw">fn </span>popup_for_device(<span class="kw-2">&amp;</span><span class="self">self</span>, device: <span class="kw-2">&amp;</span>gdk::Device) {
+        <span class="kw">unsafe </span>{
+            ffi::gtk_combo_box_popup_for_device(
+                <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
+                device.to_glib_none().<span class="number">0</span>,
+            );
+        }
+    }
 
     <span class="doccomment">/// Changes the active row of @self to the one that has an ID equal to
     /// @active_id.
@@ -3893,7 +3837,14 @@
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_combo_box_set_active_id&quot;</span>)]
-    </span><span class="kw">fn </span>set_active_id(<span class="kw-2">&amp;</span><span class="self">self</span>, active_id: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;) -&gt; bool;
+    </span><span class="kw">fn </span>set_active_id(<span class="kw-2">&amp;</span><span class="self">self</span>, active_id: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;) -&gt; bool {
+        <span class="kw">unsafe </span>{
+            from_glib(ffi::gtk_combo_box_set_active_id(
+                <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
+                active_id.to_glib_none().<span class="number">0</span>,
+            ))
+        }
+    }
 
     <span class="doccomment">/// Sets the current active item to be the one referenced by @iter.
     ///
@@ -3907,7 +3858,14 @@
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_combo_box_set_active_iter&quot;</span>)]
-    </span><span class="kw">fn </span>set_active_iter(<span class="kw-2">&amp;</span><span class="self">self</span>, iter: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>TreeIter&gt;);
+    </span><span class="kw">fn </span>set_active_iter(<span class="kw-2">&amp;</span><span class="self">self</span>, iter: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>TreeIter&gt;) {
+        <span class="kw">unsafe </span>{
+            ffi::gtk_combo_box_set_active_iter(
+                <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
+                mut_override(iter.to_glib_none().<span class="number">0</span>),
+            );
+        }
+    }
 
     <span class="doccomment">/// Sets whether the dropdown button of the combo box should update
     /// its sensitivity depending on the model contents.
@@ -3920,7 +3878,14 @@
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_combo_box_set_button_sensitivity&quot;</span>)]
-    </span><span class="kw">fn </span>set_button_sensitivity(<span class="kw-2">&amp;</span><span class="self">self</span>, sensitivity: SensitivityType);
+    </span><span class="kw">fn </span>set_button_sensitivity(<span class="kw-2">&amp;</span><span class="self">self</span>, sensitivity: SensitivityType) {
+        <span class="kw">unsafe </span>{
+            ffi::gtk_combo_box_set_button_sensitivity(
+                <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
+                sensitivity.into_glib(),
+            );
+        }
+    }
 
     <span class="doccomment">/// Sets the child widget of @self.
     ///
@@ -3932,7 +3897,14 @@
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_combo_box_set_child&quot;</span>)]
-    </span><span class="kw">fn </span>set_child(<span class="kw-2">&amp;</span><span class="self">self</span>, child: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Widget&gt;&gt;);
+    </span><span class="kw">fn </span>set_child(<span class="kw-2">&amp;</span><span class="self">self</span>, child: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Widget&gt;&gt;) {
+        <span class="kw">unsafe </span>{
+            ffi::gtk_combo_box_set_child(
+                <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
+                child.map(|p| p.as_ref()).to_glib_none().<span class="number">0</span>,
+            );
+        }
+    }
 
     <span class="doccomment">/// Sets the model column which @self should use to get strings
     /// from to be @text_column.
@@ -3955,7 +3927,11 @@
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_combo_box_set_entry_text_column&quot;</span>)]
-    </span><span class="kw">fn </span>set_entry_text_column(<span class="kw-2">&amp;</span><span class="self">self</span>, text_column: i32);
+    </span><span class="kw">fn </span>set_entry_text_column(<span class="kw-2">&amp;</span><span class="self">self</span>, text_column: i32) {
+        <span class="kw">unsafe </span>{
+            ffi::gtk_combo_box_set_entry_text_column(<span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>, text_column);
+        }
+    }
 
     <span class="doccomment">/// Sets the model column which @self should use to get string IDs
     /// for values from.
@@ -3971,7 +3947,11 @@
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_combo_box_set_id_column&quot;</span>)]
-    </span><span class="kw">fn </span>set_id_column(<span class="kw-2">&amp;</span><span class="self">self</span>, id_column: i32);
+    </span><span class="kw">fn </span>set_id_column(<span class="kw-2">&amp;</span><span class="self">self</span>, id_column: i32) {
+        <span class="kw">unsafe </span>{
+            ffi::gtk_combo_box_set_id_column(<span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>, id_column);
+        }
+    }
 
     <span class="doccomment">/// Sets the model used by @self to be @model.
     ///
@@ -3990,7 +3970,14 @@
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_combo_box_set_model&quot;</span>)]
-    </span><span class="kw">fn </span>set_model(<span class="kw-2">&amp;</span><span class="self">self</span>, model: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;TreeModel&gt;&gt;);
+    </span><span class="kw">fn </span>set_model(<span class="kw-2">&amp;</span><span class="self">self</span>, model: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;TreeModel&gt;&gt;) {
+        <span class="kw">unsafe </span>{
+            ffi::gtk_combo_box_set_model(
+                <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
+                model.map(|p| p.as_ref()).to_glib_none().<span class="number">0</span>,
+            );
+        }
+    }
 
     <span class="doccomment">/// Specifies whether the popup’s width should be a fixed width.
     ///
@@ -4005,7 +3992,14 @@
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_combo_box_set_popup_fixed_width&quot;</span>)]
-    </span><span class="kw">fn </span>set_popup_fixed_width(<span class="kw-2">&amp;</span><span class="self">self</span>, fixed: bool);
+    </span><span class="kw">fn </span>set_popup_fixed_width(<span class="kw-2">&amp;</span><span class="self">self</span>, fixed: bool) {
+        <span class="kw">unsafe </span>{
+            ffi::gtk_combo_box_set_popup_fixed_width(
+                <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
+                fixed.into_glib(),
+            );
+        }
+    }
 
     <span class="doccomment">/// Sets the row separator function, which is used to determine
     /// whether a row should be drawn as a separator.
@@ -4021,22 +4015,56 @@
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_combo_box_set_row_separator_func&quot;</span>)]
-    </span><span class="kw">fn </span>set_row_separator_func&lt;P: Fn(<span class="kw-2">&amp;</span>TreeModel, <span class="kw-2">&amp;</span>TreeIter) -&gt; bool + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, func: P);
+    </span><span class="kw">fn </span>set_row_separator_func&lt;P: Fn(<span class="kw-2">&amp;</span>TreeModel, <span class="kw-2">&amp;</span>TreeIter) -&gt; bool + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, func: P) {
+        <span class="kw">let </span>func_data: Box_&lt;P&gt; = Box_::new(func);
+        <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>func_func&lt;P: Fn(<span class="kw-2">&amp;</span>TreeModel, <span class="kw-2">&amp;</span>TreeIter) -&gt; bool + <span class="lifetime">&#39;static</span>&gt;(
+            model: <span class="kw-2">*mut </span>ffi::GtkTreeModel,
+            iter: <span class="kw-2">*mut </span>ffi::GtkTreeIter,
+            data: glib::ffi::gpointer,
+        ) -&gt; glib::ffi::gboolean {
+            <span class="kw">let </span>model = from_glib_borrow(model);
+            <span class="kw">let </span>iter = from_glib_borrow(iter);
+            <span class="kw">let </span>callback: <span class="kw-2">&amp;</span>P = <span class="kw-2">&amp;*</span>(data <span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_</span>);
+            (<span class="kw-2">*</span>callback)(<span class="kw-2">&amp;</span>model, <span class="kw-2">&amp;</span>iter).into_glib()
+        }
+        <span class="kw">let </span>func = <span class="prelude-val">Some</span>(func_func::&lt;P&gt; <span class="kw">as _</span>);
+        <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>destroy_func&lt;P: Fn(<span class="kw-2">&amp;</span>TreeModel, <span class="kw-2">&amp;</span>TreeIter) -&gt; bool + <span class="lifetime">&#39;static</span>&gt;(
+            data: glib::ffi::gpointer,
+        ) {
+            <span class="kw">let </span>_callback: Box_&lt;P&gt; = Box_::from_raw(data <span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_</span>);
+        }
+        <span class="kw">let </span>destroy_call3 = <span class="prelude-val">Some</span>(destroy_func::&lt;P&gt; <span class="kw">as _</span>);
+        <span class="kw">let </span>super_callback0: Box_&lt;P&gt; = func_data;
+        <span class="kw">unsafe </span>{
+            ffi::gtk_combo_box_set_row_separator_func(
+                <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
+                func,
+                Box_::into_raw(super_callback0) <span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_</span>,
+                destroy_call3,
+            );
+        }
+    }
 
     <span class="doccomment">/// The `has-frame` property controls whether a frame is drawn around the entry.
     </span><span class="attr">#[doc(alias = <span class="string">&quot;has-frame&quot;</span>)]
-    </span><span class="kw">fn </span>has_frame(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool;
+    </span><span class="kw">fn </span>has_frame(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
+        glib::ObjectExt::property(<span class="self">self</span>.as_ref(), <span class="string">&quot;has-frame&quot;</span>)
+    }
 
     <span class="doccomment">/// The `has-frame` property controls whether a frame is drawn around the entry.
     </span><span class="attr">#[doc(alias = <span class="string">&quot;has-frame&quot;</span>)]
-    </span><span class="kw">fn </span>set_has_frame(<span class="kw-2">&amp;</span><span class="self">self</span>, has_frame: bool);
+    </span><span class="kw">fn </span>set_has_frame(<span class="kw-2">&amp;</span><span class="self">self</span>, has_frame: bool) {
+        glib::ObjectExt::set_property(<span class="self">self</span>.as_ref(), <span class="string">&quot;has-frame&quot;</span>, has_frame)
+    }
 
     <span class="doccomment">/// Whether the combo boxes dropdown is popped up.
     ///
     /// Note that this property is mainly useful, because
     /// it allows you to connect to notify::popup-shown.
     </span><span class="attr">#[doc(alias = <span class="string">&quot;popup-shown&quot;</span>)]
-    </span><span class="kw">fn </span>is_popup_shown(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool;
+    </span><span class="kw">fn </span>is_popup_shown(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
+        glib::ObjectExt::property(<span class="self">self</span>.as_ref(), <span class="string">&quot;popup-shown&quot;</span>)
+    }
 
     <span class="doccomment">/// Emitted to when the combo box is activated.
     ///
@@ -4045,11 +4073,32 @@
     </span><span class="attr">#[cfg(feature = <span class="string">&quot;v4_6&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;activate&quot;</span>)]
-    </span><span class="kw">fn </span>connect_activate&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
+    </span><span class="kw">fn </span>connect_activate&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
+        <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>activate_trampoline&lt;P: IsA&lt;ComboBox&gt;, F: Fn(<span class="kw-2">&amp;</span>P) + <span class="lifetime">&#39;static</span>&gt;(
+            this: <span class="kw-2">*mut </span>ffi::GtkComboBox,
+            f: glib::ffi::gpointer,
+        ) {
+            <span class="kw">let </span>f: <span class="kw-2">&amp;</span>F = <span class="kw-2">&amp;*</span>(f <span class="kw">as </span><span class="kw-2">*const </span>F);
+            f(ComboBox::from_glib_borrow(this).unsafe_cast_ref())
+        }
+        <span class="kw">unsafe </span>{
+            <span class="kw">let </span>f: Box_&lt;F&gt; = Box_::new(f);
+            connect_raw(
+                <span class="self">self</span>.as_ptr() <span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_</span>,
+                <span class="string">b&quot;activate\0&quot;</span>.as_ptr() <span class="kw">as </span><span class="kw-2">*const </span><span class="kw">_</span>,
+                <span class="prelude-val">Some</span>(transmute::&lt;<span class="kw">_</span>, <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn</span>()&gt;(
+                    activate_trampoline::&lt;<span class="self">Self</span>, F&gt; <span class="kw">as </span><span class="kw-2">*const </span>(),
+                )),
+                Box_::into_raw(f),
+            )
+        }
+    }
 
     <span class="attr">#[cfg(feature = <span class="string">&quot;v4_6&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
-    </span><span class="kw">fn </span>emit_activate(<span class="kw-2">&amp;</span><span class="self">self</span>);
+    </span><span class="kw">fn </span>emit_activate(<span class="kw-2">&amp;</span><span class="self">self</span>) {
+        <span class="self">self</span>.emit_by_name::&lt;()&gt;(<span class="string">&quot;activate&quot;</span>, <span class="kw-2">&amp;</span>[]);
+    }
 
     <span class="doccomment">/// Emitted when the active item is changed.
     ///
@@ -4057,7 +4106,26 @@
     /// or due to a call to [`set_active_iter()`][Self::set_active_iter()]. It will
     /// also be emitted while typing into the entry of a combo box with an entry.
     </span><span class="attr">#[doc(alias = <span class="string">&quot;changed&quot;</span>)]
-    </span><span class="kw">fn </span>connect_changed&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
+    </span><span class="kw">fn </span>connect_changed&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
+        <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>changed_trampoline&lt;P: IsA&lt;ComboBox&gt;, F: Fn(<span class="kw-2">&amp;</span>P) + <span class="lifetime">&#39;static</span>&gt;(
+            this: <span class="kw-2">*mut </span>ffi::GtkComboBox,
+            f: glib::ffi::gpointer,
+        ) {
+            <span class="kw">let </span>f: <span class="kw-2">&amp;</span>F = <span class="kw-2">&amp;*</span>(f <span class="kw">as </span><span class="kw-2">*const </span>F);
+            f(ComboBox::from_glib_borrow(this).unsafe_cast_ref())
+        }
+        <span class="kw">unsafe </span>{
+            <span class="kw">let </span>f: Box_&lt;F&gt; = Box_::new(f);
+            connect_raw(
+                <span class="self">self</span>.as_ptr() <span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_</span>,
+                <span class="string">b&quot;changed\0&quot;</span>.as_ptr() <span class="kw">as </span><span class="kw-2">*const </span><span class="kw">_</span>,
+                <span class="prelude-val">Some</span>(transmute::&lt;<span class="kw">_</span>, <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn</span>()&gt;(
+                    changed_trampoline::&lt;<span class="self">Self</span>, F&gt; <span class="kw">as </span><span class="kw-2">*const </span>(),
+                )),
+                Box_::into_raw(f),
+            )
+        }
+    }
 
     <span class="doccomment">/// Emitted to allow changing how the text in a combo box&#39;s entry is displayed.
     ///
@@ -4104,336 +4172,6 @@
     </span><span class="kw">fn </span>connect_format_entry_text&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, <span class="kw-2">&amp;</span>str) -&gt; String + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         f: F,
-    ) -&gt; SignalHandlerId;
-
-    <span class="doccomment">/// Emitted to move the active selection.
-    ///
-    /// This is an [keybinding signal](class.SignalAction.html).
-    /// ## `scroll_type`
-    /// a [`ScrollType`][crate::ScrollType]
-    </span><span class="attr">#[doc(alias = <span class="string">&quot;move-active&quot;</span>)]
-    </span><span class="kw">fn </span>connect_move_active&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, ScrollType) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
-
-    <span class="kw">fn </span>emit_move_active(<span class="kw-2">&amp;</span><span class="self">self</span>, scroll_type: ScrollType);
-
-    <span class="doccomment">/// Emitted to popdown the combo box list.
-    ///
-    /// This is an [keybinding signal](class.SignalAction.html).
-    ///
-    /// The default bindings for this signal are Alt+Up and Escape.
-    </span><span class="attr">#[doc(alias = <span class="string">&quot;popdown&quot;</span>)]
-    </span><span class="kw">fn </span>connect_popdown&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) -&gt; bool + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
-
-    <span class="kw">fn </span>emit_popdown(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool;
-
-    <span class="doccomment">/// Emitted to popup the combo box list.
-    ///
-    /// This is an [keybinding signal](class.SignalAction.html).
-    ///
-    /// The default binding for this signal is Alt+Down.
-    </span><span class="attr">#[doc(alias = <span class="string">&quot;popup&quot;</span>)]
-    </span><span class="kw">fn </span>connect_popup&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
-
-    <span class="kw">fn </span>emit_popup(<span class="kw-2">&amp;</span><span class="self">self</span>);
-
-    <span class="attr">#[doc(alias = <span class="string">&quot;active&quot;</span>)]
-    </span><span class="kw">fn </span>connect_active_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
-
-    <span class="attr">#[doc(alias = <span class="string">&quot;active-id&quot;</span>)]
-    </span><span class="kw">fn </span>connect_active_id_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
-
-    <span class="attr">#[doc(alias = <span class="string">&quot;button-sensitivity&quot;</span>)]
-    </span><span class="kw">fn </span>connect_button_sensitivity_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
-
-    <span class="attr">#[doc(alias = <span class="string">&quot;child&quot;</span>)]
-    </span><span class="kw">fn </span>connect_child_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
-
-    <span class="attr">#[doc(alias = <span class="string">&quot;entry-text-column&quot;</span>)]
-    </span><span class="kw">fn </span>connect_entry_text_column_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
-
-    <span class="attr">#[doc(alias = <span class="string">&quot;has-frame&quot;</span>)]
-    </span><span class="kw">fn </span>connect_has_frame_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
-
-    <span class="attr">#[doc(alias = <span class="string">&quot;id-column&quot;</span>)]
-    </span><span class="kw">fn </span>connect_id_column_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
-
-    <span class="attr">#[doc(alias = <span class="string">&quot;model&quot;</span>)]
-    </span><span class="kw">fn </span>connect_model_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
-
-    <span class="attr">#[doc(alias = <span class="string">&quot;popup-fixed-width&quot;</span>)]
-    </span><span class="kw">fn </span>connect_popup_fixed_width_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
-
-    <span class="attr">#[doc(alias = <span class="string">&quot;popup-shown&quot;</span>)]
-    </span><span class="kw">fn </span>connect_popup_shown_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
-}
-
-<span class="kw">impl</span>&lt;O: IsA&lt;ComboBox&gt;&gt; ComboBoxExt <span class="kw">for </span>O {
-    <span class="attr">#[allow(deprecated)]
-    </span><span class="kw">fn </span>active_id(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt; {
-        <span class="kw">unsafe </span>{
-            from_glib_none(ffi::gtk_combo_box_get_active_id(
-                <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
-            ))
-        }
-    }
-
-    <span class="attr">#[allow(deprecated)]
-    </span><span class="kw">fn </span>active_iter(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;TreeIter&gt; {
-        <span class="kw">unsafe </span>{
-            <span class="kw">let </span><span class="kw-2">mut </span>iter = TreeIter::uninitialized();
-            <span class="kw">let </span>ret = from_glib(ffi::gtk_combo_box_get_active_iter(
-                <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
-                iter.to_glib_none_mut().<span class="number">0</span>,
-            ));
-            <span class="kw">if </span>ret {
-                <span class="prelude-val">Some</span>(iter)
-            } <span class="kw">else </span>{
-                <span class="prelude-val">None
-            </span>}
-        }
-    }
-
-    <span class="attr">#[allow(deprecated)]
-    </span><span class="kw">fn </span>button_sensitivity(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; SensitivityType {
-        <span class="kw">unsafe </span>{
-            from_glib(ffi::gtk_combo_box_get_button_sensitivity(
-                <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
-            ))
-        }
-    }
-
-    <span class="attr">#[allow(deprecated)]
-    </span><span class="kw">fn </span>child(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;Widget&gt; {
-        <span class="kw">unsafe </span>{ from_glib_none(ffi::gtk_combo_box_get_child(<span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>)) }
-    }
-
-    <span class="attr">#[allow(deprecated)]
-    </span><span class="kw">fn </span>entry_text_column(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32 {
-        <span class="kw">unsafe </span>{ ffi::gtk_combo_box_get_entry_text_column(<span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>) }
-    }
-
-    <span class="attr">#[allow(deprecated)]
-    </span><span class="kw">fn </span>has_entry(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
-        <span class="kw">unsafe </span>{
-            from_glib(ffi::gtk_combo_box_get_has_entry(
-                <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
-            ))
-        }
-    }
-
-    <span class="attr">#[allow(deprecated)]
-    </span><span class="kw">fn </span>id_column(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32 {
-        <span class="kw">unsafe </span>{ ffi::gtk_combo_box_get_id_column(<span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>) }
-    }
-
-    <span class="attr">#[allow(deprecated)]
-    </span><span class="kw">fn </span>model(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;TreeModel&gt; {
-        <span class="kw">unsafe </span>{ from_glib_none(ffi::gtk_combo_box_get_model(<span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>)) }
-    }
-
-    <span class="attr">#[allow(deprecated)]
-    </span><span class="kw">fn </span>is_popup_fixed_width(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
-        <span class="kw">unsafe </span>{
-            from_glib(ffi::gtk_combo_box_get_popup_fixed_width(
-                <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
-            ))
-        }
-    }
-
-    <span class="attr">#[allow(deprecated)]
-    </span><span class="kw">fn </span>popdown(<span class="kw-2">&amp;</span><span class="self">self</span>) {
-        <span class="kw">unsafe </span>{
-            ffi::gtk_combo_box_popdown(<span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>);
-        }
-    }
-
-    <span class="attr">#[allow(deprecated)]
-    </span><span class="kw">fn </span>popup(<span class="kw-2">&amp;</span><span class="self">self</span>) {
-        <span class="kw">unsafe </span>{
-            ffi::gtk_combo_box_popup(<span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>);
-        }
-    }
-
-    <span class="attr">#[allow(deprecated)]
-    </span><span class="kw">fn </span>popup_for_device(<span class="kw-2">&amp;</span><span class="self">self</span>, device: <span class="kw-2">&amp;</span>gdk::Device) {
-        <span class="kw">unsafe </span>{
-            ffi::gtk_combo_box_popup_for_device(
-                <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
-                device.to_glib_none().<span class="number">0</span>,
-            );
-        }
-    }
-
-    <span class="attr">#[allow(deprecated)]
-    </span><span class="kw">fn </span>set_active_id(<span class="kw-2">&amp;</span><span class="self">self</span>, active_id: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;) -&gt; bool {
-        <span class="kw">unsafe </span>{
-            from_glib(ffi::gtk_combo_box_set_active_id(
-                <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
-                active_id.to_glib_none().<span class="number">0</span>,
-            ))
-        }
-    }
-
-    <span class="attr">#[allow(deprecated)]
-    </span><span class="kw">fn </span>set_active_iter(<span class="kw-2">&amp;</span><span class="self">self</span>, iter: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>TreeIter&gt;) {
-        <span class="kw">unsafe </span>{
-            ffi::gtk_combo_box_set_active_iter(
-                <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
-                mut_override(iter.to_glib_none().<span class="number">0</span>),
-            );
-        }
-    }
-
-    <span class="attr">#[allow(deprecated)]
-    </span><span class="kw">fn </span>set_button_sensitivity(<span class="kw-2">&amp;</span><span class="self">self</span>, sensitivity: SensitivityType) {
-        <span class="kw">unsafe </span>{
-            ffi::gtk_combo_box_set_button_sensitivity(
-                <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
-                sensitivity.into_glib(),
-            );
-        }
-    }
-
-    <span class="attr">#[allow(deprecated)]
-    </span><span class="kw">fn </span>set_child(<span class="kw-2">&amp;</span><span class="self">self</span>, child: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Widget&gt;&gt;) {
-        <span class="kw">unsafe </span>{
-            ffi::gtk_combo_box_set_child(
-                <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
-                child.map(|p| p.as_ref()).to_glib_none().<span class="number">0</span>,
-            );
-        }
-    }
-
-    <span class="attr">#[allow(deprecated)]
-    </span><span class="kw">fn </span>set_entry_text_column(<span class="kw-2">&amp;</span><span class="self">self</span>, text_column: i32) {
-        <span class="kw">unsafe </span>{
-            ffi::gtk_combo_box_set_entry_text_column(<span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>, text_column);
-        }
-    }
-
-    <span class="attr">#[allow(deprecated)]
-    </span><span class="kw">fn </span>set_id_column(<span class="kw-2">&amp;</span><span class="self">self</span>, id_column: i32) {
-        <span class="kw">unsafe </span>{
-            ffi::gtk_combo_box_set_id_column(<span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>, id_column);
-        }
-    }
-
-    <span class="attr">#[allow(deprecated)]
-    </span><span class="kw">fn </span>set_model(<span class="kw-2">&amp;</span><span class="self">self</span>, model: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;TreeModel&gt;&gt;) {
-        <span class="kw">unsafe </span>{
-            ffi::gtk_combo_box_set_model(
-                <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
-                model.map(|p| p.as_ref()).to_glib_none().<span class="number">0</span>,
-            );
-        }
-    }
-
-    <span class="attr">#[allow(deprecated)]
-    </span><span class="kw">fn </span>set_popup_fixed_width(<span class="kw-2">&amp;</span><span class="self">self</span>, fixed: bool) {
-        <span class="kw">unsafe </span>{
-            ffi::gtk_combo_box_set_popup_fixed_width(
-                <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
-                fixed.into_glib(),
-            );
-        }
-    }
-
-    <span class="attr">#[allow(deprecated)]
-    </span><span class="kw">fn </span>set_row_separator_func&lt;P: Fn(<span class="kw-2">&amp;</span>TreeModel, <span class="kw-2">&amp;</span>TreeIter) -&gt; bool + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, func: P) {
-        <span class="kw">let </span>func_data: Box_&lt;P&gt; = Box_::new(func);
-        <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>func_func&lt;P: Fn(<span class="kw-2">&amp;</span>TreeModel, <span class="kw-2">&amp;</span>TreeIter) -&gt; bool + <span class="lifetime">&#39;static</span>&gt;(
-            model: <span class="kw-2">*mut </span>ffi::GtkTreeModel,
-            iter: <span class="kw-2">*mut </span>ffi::GtkTreeIter,
-            data: glib::ffi::gpointer,
-        ) -&gt; glib::ffi::gboolean {
-            <span class="kw">let </span>model = from_glib_borrow(model);
-            <span class="kw">let </span>iter = from_glib_borrow(iter);
-            <span class="kw">let </span>callback: <span class="kw-2">&amp;</span>P = <span class="kw-2">&amp;*</span>(data <span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_</span>);
-            (<span class="kw-2">*</span>callback)(<span class="kw-2">&amp;</span>model, <span class="kw-2">&amp;</span>iter).into_glib()
-        }
-        <span class="kw">let </span>func = <span class="prelude-val">Some</span>(func_func::&lt;P&gt; <span class="kw">as _</span>);
-        <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>destroy_func&lt;P: Fn(<span class="kw-2">&amp;</span>TreeModel, <span class="kw-2">&amp;</span>TreeIter) -&gt; bool + <span class="lifetime">&#39;static</span>&gt;(
-            data: glib::ffi::gpointer,
-        ) {
-            <span class="kw">let </span>_callback: Box_&lt;P&gt; = Box_::from_raw(data <span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_</span>);
-        }
-        <span class="kw">let </span>destroy_call3 = <span class="prelude-val">Some</span>(destroy_func::&lt;P&gt; <span class="kw">as _</span>);
-        <span class="kw">let </span>super_callback0: Box_&lt;P&gt; = func_data;
-        <span class="kw">unsafe </span>{
-            ffi::gtk_combo_box_set_row_separator_func(
-                <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
-                func,
-                Box_::into_raw(super_callback0) <span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_</span>,
-                destroy_call3,
-            );
-        }
-    }
-
-    <span class="kw">fn </span>has_frame(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
-        glib::ObjectExt::property(<span class="self">self</span>.as_ref(), <span class="string">&quot;has-frame&quot;</span>)
-    }
-
-    <span class="kw">fn </span>set_has_frame(<span class="kw-2">&amp;</span><span class="self">self</span>, has_frame: bool) {
-        glib::ObjectExt::set_property(<span class="self">self</span>.as_ref(), <span class="string">&quot;has-frame&quot;</span>, has_frame)
-    }
-
-    <span class="kw">fn </span>is_popup_shown(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
-        glib::ObjectExt::property(<span class="self">self</span>.as_ref(), <span class="string">&quot;popup-shown&quot;</span>)
-    }
-
-    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_6&quot;</span>)]
-    #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
-    </span><span class="kw">fn </span>connect_activate&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
-        <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>activate_trampoline&lt;P: IsA&lt;ComboBox&gt;, F: Fn(<span class="kw-2">&amp;</span>P) + <span class="lifetime">&#39;static</span>&gt;(
-            this: <span class="kw-2">*mut </span>ffi::GtkComboBox,
-            f: glib::ffi::gpointer,
-        ) {
-            <span class="kw">let </span>f: <span class="kw-2">&amp;</span>F = <span class="kw-2">&amp;*</span>(f <span class="kw">as </span><span class="kw-2">*const </span>F);
-            f(ComboBox::from_glib_borrow(this).unsafe_cast_ref())
-        }
-        <span class="kw">unsafe </span>{
-            <span class="kw">let </span>f: Box_&lt;F&gt; = Box_::new(f);
-            connect_raw(
-                <span class="self">self</span>.as_ptr() <span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_</span>,
-                <span class="string">b&quot;activate\0&quot;</span>.as_ptr() <span class="kw">as </span><span class="kw-2">*const </span><span class="kw">_</span>,
-                <span class="prelude-val">Some</span>(transmute::&lt;<span class="kw">_</span>, <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn</span>()&gt;(
-                    activate_trampoline::&lt;<span class="self">Self</span>, F&gt; <span class="kw">as </span><span class="kw-2">*const </span>(),
-                )),
-                Box_::into_raw(f),
-            )
-        }
-    }
-
-    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_6&quot;</span>)]
-    #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
-    </span><span class="kw">fn </span>emit_activate(<span class="kw-2">&amp;</span><span class="self">self</span>) {
-        <span class="self">self</span>.emit_by_name::&lt;()&gt;(<span class="string">&quot;activate&quot;</span>, <span class="kw-2">&amp;</span>[]);
-    }
-
-    <span class="kw">fn </span>connect_changed&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
-        <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>changed_trampoline&lt;P: IsA&lt;ComboBox&gt;, F: Fn(<span class="kw-2">&amp;</span>P) + <span class="lifetime">&#39;static</span>&gt;(
-            this: <span class="kw-2">*mut </span>ffi::GtkComboBox,
-            f: glib::ffi::gpointer,
-        ) {
-            <span class="kw">let </span>f: <span class="kw-2">&amp;</span>F = <span class="kw-2">&amp;*</span>(f <span class="kw">as </span><span class="kw-2">*const </span>F);
-            f(ComboBox::from_glib_borrow(this).unsafe_cast_ref())
-        }
-        <span class="kw">unsafe </span>{
-            <span class="kw">let </span>f: Box_&lt;F&gt; = Box_::new(f);
-            connect_raw(
-                <span class="self">self</span>.as_ptr() <span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_</span>,
-                <span class="string">b&quot;changed\0&quot;</span>.as_ptr() <span class="kw">as </span><span class="kw-2">*const </span><span class="kw">_</span>,
-                <span class="prelude-val">Some</span>(transmute::&lt;<span class="kw">_</span>, <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn</span>()&gt;(
-                    changed_trampoline::&lt;<span class="self">Self</span>, F&gt; <span class="kw">as </span><span class="kw-2">*const </span>(),
-                )),
-                Box_::into_raw(f),
-            )
-        }
-    }
-
-    <span class="kw">fn </span>connect_format_entry_text&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, <span class="kw-2">&amp;</span>str) -&gt; String + <span class="lifetime">&#39;static</span>&gt;(
-        <span class="kw-2">&amp;</span><span class="self">self</span>,
-        f: F,
     ) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>format_entry_text_trampoline&lt;
             P: IsA&lt;ComboBox&gt;,
@@ -4463,7 +4201,13 @@
         }
     }
 
-    <span class="kw">fn </span>connect_move_active&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, ScrollType) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
+    <span class="doccomment">/// Emitted to move the active selection.
+    ///
+    /// This is an [keybinding signal](class.SignalAction.html).
+    /// ## `scroll_type`
+    /// a [`ScrollType`][crate::ScrollType]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;move-active&quot;</span>)]
+    </span><span class="kw">fn </span>connect_move_active&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, ScrollType) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>move_active_trampoline&lt;
             P: IsA&lt;ComboBox&gt;,
             F: Fn(<span class="kw-2">&amp;</span>P, ScrollType) + <span class="lifetime">&#39;static</span>,
@@ -4495,7 +4239,13 @@
         <span class="self">self</span>.emit_by_name::&lt;()&gt;(<span class="string">&quot;move-active&quot;</span>, <span class="kw-2">&amp;</span>[<span class="kw-2">&amp;</span>scroll_type]);
     }
 
-    <span class="kw">fn </span>connect_popdown&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) -&gt; bool + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
+    <span class="doccomment">/// Emitted to popdown the combo box list.
+    ///
+    /// This is an [keybinding signal](class.SignalAction.html).
+    ///
+    /// The default bindings for this signal are Alt+Up and Escape.
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;popdown&quot;</span>)]
+    </span><span class="kw">fn </span>connect_popdown&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) -&gt; bool + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>popdown_trampoline&lt;P: IsA&lt;ComboBox&gt;, F: Fn(<span class="kw-2">&amp;</span>P) -&gt; bool + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkComboBox,
             f: glib::ffi::gpointer,
@@ -4520,7 +4270,13 @@
         <span class="self">self</span>.emit_by_name(<span class="string">&quot;popdown&quot;</span>, <span class="kw-2">&amp;</span>[])
     }
 
-    <span class="kw">fn </span>connect_popup&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
+    <span class="doccomment">/// Emitted to popup the combo box list.
+    ///
+    /// This is an [keybinding signal](class.SignalAction.html).
+    ///
+    /// The default binding for this signal is Alt+Down.
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;popup&quot;</span>)]
+    </span><span class="kw">fn </span>connect_popup&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>popup_trampoline&lt;P: IsA&lt;ComboBox&gt;, F: Fn(<span class="kw-2">&amp;</span>P) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkComboBox,
             f: glib::ffi::gpointer,
@@ -4545,7 +4301,8 @@
         <span class="self">self</span>.emit_by_name::&lt;()&gt;(<span class="string">&quot;popup&quot;</span>, <span class="kw-2">&amp;</span>[]);
     }
 
-    <span class="kw">fn </span>connect_active_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
+    <span class="attr">#[doc(alias = <span class="string">&quot;active&quot;</span>)]
+    </span><span class="kw">fn </span>connect_active_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_active_trampoline&lt;P: IsA&lt;ComboBox&gt;, F: Fn(<span class="kw-2">&amp;</span>P) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkComboBox,
             _param_spec: glib::ffi::gpointer,
@@ -4567,7 +4324,8 @@
         }
     }
 
-    <span class="kw">fn </span>connect_active_id_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
+    <span class="attr">#[doc(alias = <span class="string">&quot;active-id&quot;</span>)]
+    </span><span class="kw">fn </span>connect_active_id_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_active_id_trampoline&lt;P: IsA&lt;ComboBox&gt;, F: Fn(<span class="kw-2">&amp;</span>P) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkComboBox,
             _param_spec: glib::ffi::gpointer,
@@ -4589,7 +4347,8 @@
         }
     }
 
-    <span class="kw">fn </span>connect_button_sensitivity_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
+    <span class="attr">#[doc(alias = <span class="string">&quot;button-sensitivity&quot;</span>)]
+    </span><span class="kw">fn </span>connect_button_sensitivity_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_button_sensitivity_trampoline&lt;
             P: IsA&lt;ComboBox&gt;,
             F: Fn(<span class="kw-2">&amp;</span>P) + <span class="lifetime">&#39;static</span>,
@@ -4614,7 +4373,8 @@
         }
     }
 
-    <span class="kw">fn </span>connect_child_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
+    <span class="attr">#[doc(alias = <span class="string">&quot;child&quot;</span>)]
+    </span><span class="kw">fn </span>connect_child_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_child_trampoline&lt;P: IsA&lt;ComboBox&gt;, F: Fn(<span class="kw-2">&amp;</span>P) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkComboBox,
             _param_spec: glib::ffi::gpointer,
@@ -4636,7 +4396,8 @@
         }
     }
 
-    <span class="kw">fn </span>connect_entry_text_column_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
+    <span class="attr">#[doc(alias = <span class="string">&quot;entry-text-column&quot;</span>)]
+    </span><span class="kw">fn </span>connect_entry_text_column_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_entry_text_column_trampoline&lt;
             P: IsA&lt;ComboBox&gt;,
             F: Fn(<span class="kw-2">&amp;</span>P) + <span class="lifetime">&#39;static</span>,
@@ -4661,7 +4422,8 @@
         }
     }
 
-    <span class="kw">fn </span>connect_has_frame_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
+    <span class="attr">#[doc(alias = <span class="string">&quot;has-frame&quot;</span>)]
+    </span><span class="kw">fn </span>connect_has_frame_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_has_frame_trampoline&lt;P: IsA&lt;ComboBox&gt;, F: Fn(<span class="kw-2">&amp;</span>P) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkComboBox,
             _param_spec: glib::ffi::gpointer,
@@ -4683,7 +4445,8 @@
         }
     }
 
-    <span class="kw">fn </span>connect_id_column_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
+    <span class="attr">#[doc(alias = <span class="string">&quot;id-column&quot;</span>)]
+    </span><span class="kw">fn </span>connect_id_column_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_id_column_trampoline&lt;P: IsA&lt;ComboBox&gt;, F: Fn(<span class="kw-2">&amp;</span>P) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkComboBox,
             _param_spec: glib::ffi::gpointer,
@@ -4705,7 +4468,8 @@
         }
     }
 
-    <span class="kw">fn </span>connect_model_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
+    <span class="attr">#[doc(alias = <span class="string">&quot;model&quot;</span>)]
+    </span><span class="kw">fn </span>connect_model_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_model_trampoline&lt;P: IsA&lt;ComboBox&gt;, F: Fn(<span class="kw-2">&amp;</span>P) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkComboBox,
             _param_spec: glib::ffi::gpointer,
@@ -4727,7 +4491,8 @@
         }
     }
 
-    <span class="kw">fn </span>connect_popup_fixed_width_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
+    <span class="attr">#[doc(alias = <span class="string">&quot;popup-fixed-width&quot;</span>)]
+    </span><span class="kw">fn </span>connect_popup_fixed_width_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_popup_fixed_width_trampoline&lt;
             P: IsA&lt;ComboBox&gt;,
             F: Fn(<span class="kw-2">&amp;</span>P) + <span class="lifetime">&#39;static</span>,
@@ -4752,7 +4517,8 @@
         }
     }
 
-    <span class="kw">fn </span>connect_popup_shown_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
+    <span class="attr">#[doc(alias = <span class="string">&quot;popup-shown&quot;</span>)]
+    </span><span class="kw">fn </span>connect_popup_shown_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_popup_shown_trampoline&lt;
             P: IsA&lt;ComboBox&gt;,
             F: Fn(<span class="kw-2">&amp;</span>P) + <span class="lifetime">&#39;static</span>,
@@ -4777,6 +4543,8 @@
         }
     }
 }
+
+<span class="kw">impl</span>&lt;O: IsA&lt;ComboBox&gt;&gt; ComboBoxExt <span class="kw">for </span>O {}
 
 <span class="kw">impl </span>fmt::Display <span class="kw">for </span>ComboBox {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>fmt::Formatter) -&gt; fmt::Result {

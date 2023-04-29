@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `gtk4/src/auto/check_button.rs`."><title>check_button.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Regular-46f98efaafac5295.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Bold-a2c9cd1067f8b328.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../../static.files/rustdoc-ba5701c5741a7b69.css" id="mainThemeStyle"><div id="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="gtk4" data-themes="" data-resource-suffix="" data-rustdoc-version="1.71.0-nightly (7f94b314c 2023-04-23)" data-search-js="search-618e954b235f6acc.js" data-settings-js="settings-298e1ea74db45b39.js" data-settings-css="settings-7bfb4c59cc6bc502.css" data-theme-light-css="light-0f8c037637f9eb3e.css" data-theme-dark-css="dark-1097f8e92a01e3cf.css" data-theme-ayu-css="ayu-614652228113ac93.css" ></div><script src="../../../static.files/storage-62ce34ea385b278a.js"></script><script defer src="../../../static.files/source-script-11255107d0a65077.js"></script><script defer src="../../../source-files.js"></script><script defer src="../../../static.files/main-f0540c1d82cde29b.js"></script><noscript><link rel="stylesheet" media="(prefers-color-scheme:light)" href="../../../static.files/light-0f8c037637f9eb3e.css"><link rel="stylesheet" media="(prefers-color-scheme:dark)" href="../../../static.files/dark-1097f8e92a01e3cf.css"><link rel="stylesheet" href="../../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `gtk4/src/auto/check_button.rs`."><title>check_button.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Regular-46f98efaafac5295.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Bold-a2c9cd1067f8b328.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../../static.files/rustdoc-ba5701c5741a7b69.css" id="mainThemeStyle"><div id="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="gtk4" data-themes="" data-resource-suffix="" data-rustdoc-version="1.71.0-nightly (f49560538 2023-04-28)" data-search-js="search-618e954b235f6acc.js" data-settings-js="settings-de11bff964e9d4e5.js" data-settings-css="settings-6f6ffb5395b17c6e.css" data-theme-light-css="light-0f8c037637f9eb3e.css" data-theme-dark-css="dark-1097f8e92a01e3cf.css" data-theme-ayu-css="ayu-614652228113ac93.css" ></div><script src="../../../static.files/storage-62ce34ea385b278a.js"></script><script defer src="../../../static.files/source-script-11255107d0a65077.js"></script><script defer src="../../../source-files.js"></script><script defer src="../../../static.files/main-f0540c1d82cde29b.js"></script><noscript><link rel="stylesheet" media="(prefers-color-scheme:light)" href="../../../static.files/light-0f8c037637f9eb3e.css"><link rel="stylesheet" media="(prefers-color-scheme:dark)" href="../../../static.files/dark-1097f8e92a01e3cf.css"><link rel="stylesheet" href="../../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", checkDocsLatestStable);
 
@@ -1503,56 +1503,6 @@
 <a href="#1430" id="1430">1430</a>
 <a href="#1431" id="1431">1431</a>
 <a href="#1432" id="1432">1432</a>
-<a href="#1433" id="1433">1433</a>
-<a href="#1434" id="1434">1434</a>
-<a href="#1435" id="1435">1435</a>
-<a href="#1436" id="1436">1436</a>
-<a href="#1437" id="1437">1437</a>
-<a href="#1438" id="1438">1438</a>
-<a href="#1439" id="1439">1439</a>
-<a href="#1440" id="1440">1440</a>
-<a href="#1441" id="1441">1441</a>
-<a href="#1442" id="1442">1442</a>
-<a href="#1443" id="1443">1443</a>
-<a href="#1444" id="1444">1444</a>
-<a href="#1445" id="1445">1445</a>
-<a href="#1446" id="1446">1446</a>
-<a href="#1447" id="1447">1447</a>
-<a href="#1448" id="1448">1448</a>
-<a href="#1449" id="1449">1449</a>
-<a href="#1450" id="1450">1450</a>
-<a href="#1451" id="1451">1451</a>
-<a href="#1452" id="1452">1452</a>
-<a href="#1453" id="1453">1453</a>
-<a href="#1454" id="1454">1454</a>
-<a href="#1455" id="1455">1455</a>
-<a href="#1456" id="1456">1456</a>
-<a href="#1457" id="1457">1457</a>
-<a href="#1458" id="1458">1458</a>
-<a href="#1459" id="1459">1459</a>
-<a href="#1460" id="1460">1460</a>
-<a href="#1461" id="1461">1461</a>
-<a href="#1462" id="1462">1462</a>
-<a href="#1463" id="1463">1463</a>
-<a href="#1464" id="1464">1464</a>
-<a href="#1465" id="1465">1465</a>
-<a href="#1466" id="1466">1466</a>
-<a href="#1467" id="1467">1467</a>
-<a href="#1468" id="1468">1468</a>
-<a href="#1469" id="1469">1469</a>
-<a href="#1470" id="1470">1470</a>
-<a href="#1471" id="1471">1471</a>
-<a href="#1472" id="1472">1472</a>
-<a href="#1473" id="1473">1473</a>
-<a href="#1474" id="1474">1474</a>
-<a href="#1475" id="1475">1475</a>
-<a href="#1476" id="1476">1476</a>
-<a href="#1477" id="1477">1477</a>
-<a href="#1478" id="1478">1478</a>
-<a href="#1479" id="1479">1479</a>
-<a href="#1480" id="1480">1480</a>
-<a href="#1481" id="1481">1481</a>
-<a href="#1482" id="1482">1482</a>
 </pre></div><pre class="rust"><code><span class="comment">// This file was generated by gir (https://github.com/gtk-rs/gir)
 // from gir-files (https://github.com/gtk-rs/gir-files)
 // DO NOT EDIT
@@ -2579,7 +2529,7 @@
 /// # Implementors
 ///
 /// [`CheckButton`][struct@crate::CheckButton]
-</span><span class="kw">pub trait </span>CheckButtonExt: <span class="lifetime">&#39;static </span>{
+</span><span class="kw">pub trait </span>CheckButtonExt: IsA&lt;CheckButton&gt; + <span class="lifetime">&#39;static </span>{
     <span class="doccomment">/// Returns whether the check button is active.
     ///
     /// # Returns
@@ -2587,7 +2537,13 @@
     /// whether the check button is active
     </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_check_button_get_active&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_active&quot;</span>)]
-    </span><span class="kw">fn </span>is_active(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool;
+    </span><span class="kw">fn </span>is_active(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
+        <span class="kw">unsafe </span>{
+            from_glib(ffi::gtk_check_button_get_active(
+                <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
+            ))
+        }
+    }
 
     <span class="doccomment">/// Gets the child widget of @self or `NULL` if [`label`][struct@crate::CheckButton#label] is set.
     ///
@@ -2598,7 +2554,13 @@
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_8&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;gtk_check_button_get_child&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_child&quot;</span>)]
-    </span><span class="kw">fn </span>child(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;Widget&gt;;
+    </span><span class="kw">fn </span>child(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;Widget&gt; {
+        <span class="kw">unsafe </span>{
+            from_glib_none(ffi::gtk_check_button_get_child(
+                <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
+            ))
+        }
+    }
 
     <span class="doccomment">/// Returns whether the check button is in an inconsistent state.
     ///
@@ -2607,7 +2569,13 @@
     /// [`true`] if @self is currently in an inconsistent state
     </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_check_button_get_inconsistent&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_inconsistent&quot;</span>)]
-    </span><span class="kw">fn </span>is_inconsistent(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool;
+    </span><span class="kw">fn </span>is_inconsistent(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
+        <span class="kw">unsafe </span>{
+            from_glib(ffi::gtk_check_button_get_inconsistent(
+                <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
+            ))
+        }
+    }
 
     <span class="doccomment">/// Returns the label of the check button or `NULL` if [`child`][struct@crate::CheckButton#child] is set.
     ///
@@ -2617,7 +2585,13 @@
     ///   to the indicator. If no label is shown, [`None`] will be returned.
     </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_check_button_get_label&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_label&quot;</span>)]
-    </span><span class="kw">fn </span>label(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt;;
+    </span><span class="kw">fn </span>label(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt; {
+        <span class="kw">unsafe </span>{
+            from_glib_none(ffi::gtk_check_button_get_label(
+                <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
+            ))
+        }
+    }
 
     <span class="doccomment">/// Returns whether underlines in the label indicate mnemonics.
     ///
@@ -2628,13 +2602,23 @@
     ///   a new value.
     </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_check_button_get_use_underline&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_use_underline&quot;</span>)]
-    </span><span class="kw">fn </span>uses_underline(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool;
+    </span><span class="kw">fn </span>uses_underline(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
+        <span class="kw">unsafe </span>{
+            from_glib(ffi::gtk_check_button_get_use_underline(
+                <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
+            ))
+        }
+    }
 
     <span class="doccomment">/// Changes the check buttons active state.
     /// ## `setting`
     /// the new value to set
     </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_check_button_set_active&quot;</span>)]
-    </span><span class="kw">fn </span>set_active(<span class="kw-2">&amp;</span><span class="self">self</span>, setting: bool);
+    </span><span class="kw">fn </span>set_active(<span class="kw-2">&amp;</span><span class="self">self</span>, setting: bool) {
+        <span class="kw">unsafe </span>{
+            ffi::gtk_check_button_set_active(<span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>, setting.into_glib());
+        }
+    }
 
     <span class="doccomment">/// Sets the child widget of @self.
     ///
@@ -2648,7 +2632,14 @@
     </span><span class="attr">#[cfg(feature = <span class="string">&quot;v4_8&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_8&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;gtk_check_button_set_child&quot;</span>)]
-    </span><span class="kw">fn </span>set_child(<span class="kw-2">&amp;</span><span class="self">self</span>, child: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Widget&gt;&gt;);
+    </span><span class="kw">fn </span>set_child(<span class="kw-2">&amp;</span><span class="self">self</span>, child: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Widget&gt;&gt;) {
+        <span class="kw">unsafe </span>{
+            ffi::gtk_check_button_set_child(
+                <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
+                child.map(|p| p.as_ref()).to_glib_none().<span class="number">0</span>,
+            );
+        }
+    }
 
     <span class="doccomment">/// Adds @self to the group of @group.
     ///
@@ -2669,7 +2660,14 @@
     /// another [`CheckButton`][crate::CheckButton] to
     ///   form a group with
     </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_check_button_set_group&quot;</span>)]
-    </span><span class="kw">fn </span>set_group(<span class="kw-2">&amp;</span><span class="self">self</span>, group: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;CheckButton&gt;&gt;);
+    </span><span class="kw">fn </span>set_group(<span class="kw-2">&amp;</span><span class="self">self</span>, group: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;CheckButton&gt;&gt;) {
+        <span class="kw">unsafe </span>{
+            ffi::gtk_check_button_set_group(
+                <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
+                group.map(|p| p.as_ref()).to_glib_none().<span class="number">0</span>,
+            );
+        }
+    }
 
     <span class="doccomment">/// Sets the [`CheckButton`][crate::CheckButton] to inconsistent state.
     ///
@@ -2678,7 +2676,14 @@
     /// ## `inconsistent`
     /// [`true`] if state is inconsistent
     </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_check_button_set_inconsistent&quot;</span>)]
-    </span><span class="kw">fn </span>set_inconsistent(<span class="kw-2">&amp;</span><span class="self">self</span>, inconsistent: bool);
+    </span><span class="kw">fn </span>set_inconsistent(<span class="kw-2">&amp;</span><span class="self">self</span>, inconsistent: bool) {
+        <span class="kw">unsafe </span>{
+            ffi::gtk_check_button_set_inconsistent(
+                <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
+                inconsistent.into_glib(),
+            );
+        }
+    }
 
     <span class="doccomment">/// Sets the text of @self.
     ///
@@ -2689,7 +2694,11 @@
     /// The text shown next to the indicator, or [`None`]
     ///   to show no text
     </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_check_button_set_label&quot;</span>)]
-    </span><span class="kw">fn </span>set_label(<span class="kw-2">&amp;</span><span class="self">self</span>, label: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;);
+    </span><span class="kw">fn </span>set_label(<span class="kw-2">&amp;</span><span class="self">self</span>, label: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;) {
+        <span class="kw">unsafe </span>{
+            ffi::gtk_check_button_set_label(<span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>, label.to_glib_none().<span class="number">0</span>);
+        }
+    }
 
     <span class="doccomment">/// Sets whether underlines in the label indicate mnemonics.
     ///
@@ -2699,7 +2708,14 @@
     /// ## `setting`
     /// the new value to set
     </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_check_button_set_use_underline&quot;</span>)]
-    </span><span class="kw">fn </span>set_use_underline(<span class="kw-2">&amp;</span><span class="self">self</span>, setting: bool);
+    </span><span class="kw">fn </span>set_use_underline(<span class="kw-2">&amp;</span><span class="self">self</span>, setting: bool) {
+        <span class="kw">unsafe </span>{
+            ffi::gtk_check_button_set_use_underline(
+                <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
+                setting.into_glib(),
+            );
+        }
+    }
 
     <span class="doccomment">/// Emitted to when the check button is activated.
     ///
@@ -2714,133 +2730,6 @@
     </span><span class="attr">#[cfg(feature = <span class="string">&quot;v4_2&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_2&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;activate&quot;</span>)]
-    </span><span class="kw">fn </span>connect_activate&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
-
-    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_2&quot;</span>)]
-    #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_2&quot;</span>)))]
-    </span><span class="kw">fn </span>emit_activate(<span class="kw-2">&amp;</span><span class="self">self</span>);
-
-    <span class="doccomment">/// Emitted when the buttons&#39;s [`active`][struct@crate::CheckButton#active]
-    /// property changes.
-    </span><span class="attr">#[doc(alias = <span class="string">&quot;toggled&quot;</span>)]
-    </span><span class="kw">fn </span>connect_toggled&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
-
-    <span class="attr">#[doc(alias = <span class="string">&quot;active&quot;</span>)]
-    </span><span class="kw">fn </span>connect_active_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
-
-    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_8&quot;</span>)]
-    #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_8&quot;</span>)))]
-    #[doc(alias = <span class="string">&quot;child&quot;</span>)]
-    </span><span class="kw">fn </span>connect_child_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
-
-    <span class="attr">#[doc(alias = <span class="string">&quot;group&quot;</span>)]
-    </span><span class="kw">fn </span>connect_group_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
-
-    <span class="attr">#[doc(alias = <span class="string">&quot;inconsistent&quot;</span>)]
-    </span><span class="kw">fn </span>connect_inconsistent_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
-
-    <span class="attr">#[doc(alias = <span class="string">&quot;label&quot;</span>)]
-    </span><span class="kw">fn </span>connect_label_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
-
-    <span class="attr">#[doc(alias = <span class="string">&quot;use-underline&quot;</span>)]
-    </span><span class="kw">fn </span>connect_use_underline_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
-}
-
-<span class="kw">impl</span>&lt;O: IsA&lt;CheckButton&gt;&gt; CheckButtonExt <span class="kw">for </span>O {
-    <span class="kw">fn </span>is_active(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
-        <span class="kw">unsafe </span>{
-            from_glib(ffi::gtk_check_button_get_active(
-                <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
-            ))
-        }
-    }
-
-    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_8&quot;</span>)]
-    #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_8&quot;</span>)))]
-    </span><span class="kw">fn </span>child(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;Widget&gt; {
-        <span class="kw">unsafe </span>{
-            from_glib_none(ffi::gtk_check_button_get_child(
-                <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
-            ))
-        }
-    }
-
-    <span class="kw">fn </span>is_inconsistent(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
-        <span class="kw">unsafe </span>{
-            from_glib(ffi::gtk_check_button_get_inconsistent(
-                <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
-            ))
-        }
-    }
-
-    <span class="kw">fn </span>label(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt; {
-        <span class="kw">unsafe </span>{
-            from_glib_none(ffi::gtk_check_button_get_label(
-                <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
-            ))
-        }
-    }
-
-    <span class="kw">fn </span>uses_underline(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
-        <span class="kw">unsafe </span>{
-            from_glib(ffi::gtk_check_button_get_use_underline(
-                <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
-            ))
-        }
-    }
-
-    <span class="kw">fn </span>set_active(<span class="kw-2">&amp;</span><span class="self">self</span>, setting: bool) {
-        <span class="kw">unsafe </span>{
-            ffi::gtk_check_button_set_active(<span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>, setting.into_glib());
-        }
-    }
-
-    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_8&quot;</span>)]
-    #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_8&quot;</span>)))]
-    </span><span class="kw">fn </span>set_child(<span class="kw-2">&amp;</span><span class="self">self</span>, child: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Widget&gt;&gt;) {
-        <span class="kw">unsafe </span>{
-            ffi::gtk_check_button_set_child(
-                <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
-                child.map(|p| p.as_ref()).to_glib_none().<span class="number">0</span>,
-            );
-        }
-    }
-
-    <span class="kw">fn </span>set_group(<span class="kw-2">&amp;</span><span class="self">self</span>, group: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;CheckButton&gt;&gt;) {
-        <span class="kw">unsafe </span>{
-            ffi::gtk_check_button_set_group(
-                <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
-                group.map(|p| p.as_ref()).to_glib_none().<span class="number">0</span>,
-            );
-        }
-    }
-
-    <span class="kw">fn </span>set_inconsistent(<span class="kw-2">&amp;</span><span class="self">self</span>, inconsistent: bool) {
-        <span class="kw">unsafe </span>{
-            ffi::gtk_check_button_set_inconsistent(
-                <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
-                inconsistent.into_glib(),
-            );
-        }
-    }
-
-    <span class="kw">fn </span>set_label(<span class="kw-2">&amp;</span><span class="self">self</span>, label: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;) {
-        <span class="kw">unsafe </span>{
-            ffi::gtk_check_button_set_label(<span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>, label.to_glib_none().<span class="number">0</span>);
-        }
-    }
-
-    <span class="kw">fn </span>set_use_underline(<span class="kw-2">&amp;</span><span class="self">self</span>, setting: bool) {
-        <span class="kw">unsafe </span>{
-            ffi::gtk_check_button_set_use_underline(
-                <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
-                setting.into_glib(),
-            );
-        }
-    }
-
-    <span class="attr">#[cfg(feature = <span class="string">&quot;v4_2&quot;</span>)]
-    #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_2&quot;</span>)))]
     </span><span class="kw">fn </span>connect_activate&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>activate_trampoline&lt;P: IsA&lt;CheckButton&gt;, F: Fn(<span class="kw-2">&amp;</span>P) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkCheckButton,
@@ -2868,7 +2757,10 @@
         <span class="self">self</span>.emit_by_name::&lt;()&gt;(<span class="string">&quot;activate&quot;</span>, <span class="kw-2">&amp;</span>[]);
     }
 
-    <span class="kw">fn </span>connect_toggled&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
+    <span class="doccomment">/// Emitted when the buttons&#39;s [`active`][struct@crate::CheckButton#active]
+    /// property changes.
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;toggled&quot;</span>)]
+    </span><span class="kw">fn </span>connect_toggled&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>toggled_trampoline&lt;P: IsA&lt;CheckButton&gt;, F: Fn(<span class="kw-2">&amp;</span>P) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkCheckButton,
             f: glib::ffi::gpointer,
@@ -2889,7 +2781,8 @@
         }
     }
 
-    <span class="kw">fn </span>connect_active_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
+    <span class="attr">#[doc(alias = <span class="string">&quot;active&quot;</span>)]
+    </span><span class="kw">fn </span>connect_active_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_active_trampoline&lt;P: IsA&lt;CheckButton&gt;, F: Fn(<span class="kw-2">&amp;</span>P) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkCheckButton,
             _param_spec: glib::ffi::gpointer,
@@ -2913,6 +2806,7 @@
 
     <span class="attr">#[cfg(feature = <span class="string">&quot;v4_8&quot;</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">&quot;v4_8&quot;</span>)))]
+    #[doc(alias = <span class="string">&quot;child&quot;</span>)]
     </span><span class="kw">fn </span>connect_child_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_child_trampoline&lt;P: IsA&lt;CheckButton&gt;, F: Fn(<span class="kw-2">&amp;</span>P) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkCheckButton,
@@ -2935,7 +2829,8 @@
         }
     }
 
-    <span class="kw">fn </span>connect_group_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
+    <span class="attr">#[doc(alias = <span class="string">&quot;group&quot;</span>)]
+    </span><span class="kw">fn </span>connect_group_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_group_trampoline&lt;P: IsA&lt;CheckButton&gt;, F: Fn(<span class="kw-2">&amp;</span>P) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkCheckButton,
             _param_spec: glib::ffi::gpointer,
@@ -2957,7 +2852,8 @@
         }
     }
 
-    <span class="kw">fn </span>connect_inconsistent_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
+    <span class="attr">#[doc(alias = <span class="string">&quot;inconsistent&quot;</span>)]
+    </span><span class="kw">fn </span>connect_inconsistent_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_inconsistent_trampoline&lt;
             P: IsA&lt;CheckButton&gt;,
             F: Fn(<span class="kw-2">&amp;</span>P) + <span class="lifetime">&#39;static</span>,
@@ -2982,7 +2878,8 @@
         }
     }
 
-    <span class="kw">fn </span>connect_label_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
+    <span class="attr">#[doc(alias = <span class="string">&quot;label&quot;</span>)]
+    </span><span class="kw">fn </span>connect_label_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_label_trampoline&lt;P: IsA&lt;CheckButton&gt;, F: Fn(<span class="kw-2">&amp;</span>P) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkCheckButton,
             _param_spec: glib::ffi::gpointer,
@@ -3004,7 +2901,8 @@
         }
     }
 
-    <span class="kw">fn </span>connect_use_underline_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
+    <span class="attr">#[doc(alias = <span class="string">&quot;use-underline&quot;</span>)]
+    </span><span class="kw">fn </span>connect_use_underline_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_use_underline_trampoline&lt;
             P: IsA&lt;CheckButton&gt;,
             F: Fn(<span class="kw-2">&amp;</span>P) + <span class="lifetime">&#39;static</span>,
@@ -3029,6 +2927,8 @@
         }
     }
 }
+
+<span class="kw">impl</span>&lt;O: IsA&lt;CheckButton&gt;&gt; CheckButtonExt <span class="kw">for </span>O {}
 
 <span class="kw">impl </span>fmt::Display <span class="kw">for </span>CheckButton {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>fmt::Formatter) -&gt; fmt::Result {

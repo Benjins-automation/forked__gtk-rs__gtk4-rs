@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `gtk4/src/auto/dialog.rs`."><title>dialog.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Regular-46f98efaafac5295.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Bold-a2c9cd1067f8b328.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../../static.files/rustdoc-ba5701c5741a7b69.css" id="mainThemeStyle"><div id="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="gtk4" data-themes="" data-resource-suffix="" data-rustdoc-version="1.71.0-nightly (7f94b314c 2023-04-23)" data-search-js="search-618e954b235f6acc.js" data-settings-js="settings-298e1ea74db45b39.js" data-settings-css="settings-7bfb4c59cc6bc502.css" data-theme-light-css="light-0f8c037637f9eb3e.css" data-theme-dark-css="dark-1097f8e92a01e3cf.css" data-theme-ayu-css="ayu-614652228113ac93.css" ></div><script src="../../../static.files/storage-62ce34ea385b278a.js"></script><script defer src="../../../static.files/source-script-11255107d0a65077.js"></script><script defer src="../../../source-files.js"></script><script defer src="../../../static.files/main-f0540c1d82cde29b.js"></script><noscript><link rel="stylesheet" media="(prefers-color-scheme:light)" href="../../../static.files/light-0f8c037637f9eb3e.css"><link rel="stylesheet" media="(prefers-color-scheme:dark)" href="../../../static.files/dark-1097f8e92a01e3cf.css"><link rel="stylesheet" href="../../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `gtk4/src/auto/dialog.rs`."><title>dialog.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Regular-46f98efaafac5295.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Bold-a2c9cd1067f8b328.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../../static.files/rustdoc-ba5701c5741a7b69.css" id="mainThemeStyle"><div id="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="gtk4" data-themes="" data-resource-suffix="" data-rustdoc-version="1.71.0-nightly (f49560538 2023-04-28)" data-search-js="search-618e954b235f6acc.js" data-settings-js="settings-de11bff964e9d4e5.js" data-settings-css="settings-6f6ffb5395b17c6e.css" data-theme-light-css="light-0f8c037637f9eb3e.css" data-theme-dark-css="dark-1097f8e92a01e3cf.css" data-theme-ayu-css="ayu-614652228113ac93.css" ></div><script src="../../../static.files/storage-62ce34ea385b278a.js"></script><script defer src="../../../static.files/source-script-11255107d0a65077.js"></script><script defer src="../../../source-files.js"></script><script defer src="../../../static.files/main-f0540c1d82cde29b.js"></script><noscript><link rel="stylesheet" media="(prefers-color-scheme:light)" href="../../../static.files/light-0f8c037637f9eb3e.css"><link rel="stylesheet" media="(prefers-color-scheme:dark)" href="../../../static.files/dark-1097f8e92a01e3cf.css"><link rel="stylesheet" href="../../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", checkDocsLatestStable);
 
@@ -1816,39 +1816,6 @@
 <a href="#1743" id="1743">1743</a>
 <a href="#1744" id="1744">1744</a>
 <a href="#1745" id="1745">1745</a>
-<a href="#1746" id="1746">1746</a>
-<a href="#1747" id="1747">1747</a>
-<a href="#1748" id="1748">1748</a>
-<a href="#1749" id="1749">1749</a>
-<a href="#1750" id="1750">1750</a>
-<a href="#1751" id="1751">1751</a>
-<a href="#1752" id="1752">1752</a>
-<a href="#1753" id="1753">1753</a>
-<a href="#1754" id="1754">1754</a>
-<a href="#1755" id="1755">1755</a>
-<a href="#1756" id="1756">1756</a>
-<a href="#1757" id="1757">1757</a>
-<a href="#1758" id="1758">1758</a>
-<a href="#1759" id="1759">1759</a>
-<a href="#1760" id="1760">1760</a>
-<a href="#1761" id="1761">1761</a>
-<a href="#1762" id="1762">1762</a>
-<a href="#1763" id="1763">1763</a>
-<a href="#1764" id="1764">1764</a>
-<a href="#1765" id="1765">1765</a>
-<a href="#1766" id="1766">1766</a>
-<a href="#1767" id="1767">1767</a>
-<a href="#1768" id="1768">1768</a>
-<a href="#1769" id="1769">1769</a>
-<a href="#1770" id="1770">1770</a>
-<a href="#1771" id="1771">1771</a>
-<a href="#1772" id="1772">1772</a>
-<a href="#1773" id="1773">1773</a>
-<a href="#1774" id="1774">1774</a>
-<a href="#1775" id="1775">1775</a>
-<a href="#1776" id="1776">1776</a>
-<a href="#1777" id="1777">1777</a>
-<a href="#1778" id="1778">1778</a>
 </pre></div><pre class="rust"><code><span class="comment">// This file was generated by gir (https://github.com/gtk-rs/gir)
 // from gir-files (https://github.com/gtk-rs/gir-files)
 // DO NOT EDIT
@@ -3281,7 +3248,7 @@
 /// # Implementors
 ///
 /// [`AppChooserDialog`][struct@crate::AppChooserDialog], [`ColorChooserDialog`][struct@crate::ColorChooserDialog], [`Dialog`][struct@crate::Dialog], [`FileChooserDialog`][struct@crate::FileChooserDialog], [`FontChooserDialog`][struct@crate::FontChooserDialog], [`MessageDialog`][struct@crate::MessageDialog], [`PageSetupUnixDialog`][struct@crate::PageSetupUnixDialog], [`PrintUnixDialog`][struct@crate::PrintUnixDialog]
-</span><span class="kw">pub trait </span>DialogExt: <span class="lifetime">&#39;static </span>{
+</span><span class="kw">pub trait </span>DialogExt: IsA&lt;Dialog&gt; + <span class="lifetime">&#39;static </span>{
     <span class="doccomment">/// Adds an activatable widget to the action area of a [`Dialog`][crate::Dialog].
     ///
     /// GTK connects a signal handler that will emit the
@@ -3302,7 +3269,15 @@
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_dialog_add_action_widget&quot;</span>)]
-    </span><span class="kw">fn </span>add_action_widget(<span class="kw-2">&amp;</span><span class="self">self</span>, child: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Widget&gt;, response_id: ResponseType);
+    </span><span class="kw">fn </span>add_action_widget(<span class="kw-2">&amp;</span><span class="self">self</span>, child: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Widget&gt;, response_id: ResponseType) {
+        <span class="kw">unsafe </span>{
+            ffi::gtk_dialog_add_action_widget(
+                <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
+                child.as_ref().to_glib_none().<span class="number">0</span>,
+                response_id.into_glib(),
+            );
+        }
+    }
 
     <span class="doccomment">/// Adds a button with the given text.
     ///
@@ -3325,7 +3300,15 @@
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_dialog_add_button&quot;</span>)]
-    </span><span class="kw">fn </span>add_button(<span class="kw-2">&amp;</span><span class="self">self</span>, button_text: <span class="kw-2">&amp;</span>str, response_id: ResponseType) -&gt; Widget;
+    </span><span class="kw">fn </span>add_button(<span class="kw-2">&amp;</span><span class="self">self</span>, button_text: <span class="kw-2">&amp;</span>str, response_id: ResponseType) -&gt; Widget {
+        <span class="kw">unsafe </span>{
+            from_glib_none(ffi::gtk_dialog_add_button(
+                <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
+                button_text.to_glib_none().<span class="number">0</span>,
+                response_id.into_glib(),
+            ))
+        }
+    }
 
     <span class="doccomment">/// Returns the content area of @self.
     ///
@@ -3340,7 +3323,13 @@
     #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_dialog_get_content_area&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_content_area&quot;</span>)]
-    </span><span class="kw">fn </span>content_area(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Box;
+    </span><span class="kw">fn </span>content_area(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Box {
+        <span class="kw">unsafe </span>{
+            from_glib_none(ffi::gtk_dialog_get_content_area(
+                <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
+            ))
+        }
+    }
 
     <span class="doccomment">/// Returns the header bar of @self.
     ///
@@ -3358,7 +3347,13 @@
     #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_dialog_get_header_bar&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_header_bar&quot;</span>)]
-    </span><span class="kw">fn </span>header_bar(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; HeaderBar;
+    </span><span class="kw">fn </span>header_bar(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; HeaderBar {
+        <span class="kw">unsafe </span>{
+            from_glib_none(ffi::gtk_dialog_get_header_bar(
+                <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
+            ))
+        }
+    }
 
     <span class="doccomment">/// Gets the widget button that uses the given response ID in the action area
     /// of a dialog.
@@ -3377,7 +3372,14 @@
     #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_dialog_get_widget_for_response&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_widget_for_response&quot;</span>)]
-    </span><span class="kw">fn </span>widget_for_response(<span class="kw-2">&amp;</span><span class="self">self</span>, response_id: ResponseType) -&gt; <span class="prelude-ty">Option</span>&lt;Widget&gt;;
+    </span><span class="kw">fn </span>widget_for_response(<span class="kw-2">&amp;</span><span class="self">self</span>, response_id: ResponseType) -&gt; <span class="prelude-ty">Option</span>&lt;Widget&gt; {
+        <span class="kw">unsafe </span>{
+            from_glib_none(ffi::gtk_dialog_get_widget_for_response(
+                <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
+                response_id.into_glib(),
+            ))
+        }
+    }
 
     <span class="doccomment">/// Emits the ::response signal with the given response ID.
     ///
@@ -3391,7 +3393,11 @@
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_dialog_response&quot;</span>)]
-    </span><span class="kw">fn </span>response(<span class="kw-2">&amp;</span><span class="self">self</span>, response_id: ResponseType);
+    </span><span class="kw">fn </span>response(<span class="kw-2">&amp;</span><span class="self">self</span>, response_id: ResponseType) {
+        <span class="kw">unsafe </span>{
+            ffi::gtk_dialog_response(<span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>, response_id.into_glib());
+        }
+    }
 
     <span class="doccomment">/// Sets the default widget for the dialog based on the response ID.
     ///
@@ -3405,7 +3411,14 @@
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_dialog_set_default_response&quot;</span>)]
-    </span><span class="kw">fn </span>set_default_response(<span class="kw-2">&amp;</span><span class="self">self</span>, response_id: ResponseType);
+    </span><span class="kw">fn </span>set_default_response(<span class="kw-2">&amp;</span><span class="self">self</span>, response_id: ResponseType) {
+        <span class="kw">unsafe </span>{
+            ffi::gtk_dialog_set_default_response(
+                <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
+                response_id.into_glib(),
+            );
+        }
+    }
 
     <span class="doccomment">/// A convenient way to sensitize/desensitize dialog buttons.
     ///
@@ -3422,7 +3435,15 @@
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_dialog_set_response_sensitive&quot;</span>)]
-    </span><span class="kw">fn </span>set_response_sensitive(<span class="kw-2">&amp;</span><span class="self">self</span>, response_id: ResponseType, setting: bool);
+    </span><span class="kw">fn </span>set_response_sensitive(<span class="kw-2">&amp;</span><span class="self">self</span>, response_id: ResponseType, setting: bool) {
+        <span class="kw">unsafe </span>{
+            ffi::gtk_dialog_set_response_sensitive(
+                <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
+                response_id.into_glib(),
+                setting.into_glib(),
+            );
+        }
+    }
 
     <span class="doccomment">/// [`true`] if the dialog uses a headerbar for action buttons
     /// instead of the action-area.
@@ -3450,7 +3471,9 @@
     /// Use [`Window`][crate::Window] instead
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;use-header-bar&quot;</span>)]
-    </span><span class="kw">fn </span>use_header_bar(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32;
+    </span><span class="kw">fn </span>use_header_bar(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32 {
+        glib::ObjectExt::property(<span class="self">self</span>.as_ref(), <span class="string">&quot;use-header-bar&quot;</span>)
+    }
 
     <span class="doccomment">/// Emitted when the user uses a keybinding to close the dialog.
     ///
@@ -3463,112 +3486,7 @@
     /// Use [`Window`][crate::Window] instead
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;close&quot;</span>)]
-    </span><span class="kw">fn </span>connect_close&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
-
-    <span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
-    </span><span class="kw">fn </span>emit_close(<span class="kw-2">&amp;</span><span class="self">self</span>);
-
-    <span class="doccomment">/// Emitted when an action widget is clicked.
-    ///
-    /// The signal is also emitted when the dialog receives a
-    /// delete event, and when [`response()`][Self::response()] is called.
-    /// On a delete event, the response ID is [`ResponseType::DeleteEvent`][crate::ResponseType::DeleteEvent].
-    /// Otherwise, it depends on which action widget was clicked.
-    ///
-    /// # Deprecated since 4.10
-    ///
-    /// Use [`Window`][crate::Window] instead
-    /// ## `response_id`
-    /// the response ID
-    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
-    #[doc(alias = <span class="string">&quot;response&quot;</span>)]
-    </span><span class="kw">fn </span>connect_response&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, ResponseType) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
-}
-
-<span class="kw">impl</span>&lt;O: IsA&lt;Dialog&gt;&gt; DialogExt <span class="kw">for </span>O {
-    <span class="attr">#[allow(deprecated)]
-    </span><span class="kw">fn </span>add_action_widget(<span class="kw-2">&amp;</span><span class="self">self</span>, child: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Widget&gt;, response_id: ResponseType) {
-        <span class="kw">unsafe </span>{
-            ffi::gtk_dialog_add_action_widget(
-                <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
-                child.as_ref().to_glib_none().<span class="number">0</span>,
-                response_id.into_glib(),
-            );
-        }
-    }
-
-    <span class="attr">#[allow(deprecated)]
-    </span><span class="kw">fn </span>add_button(<span class="kw-2">&amp;</span><span class="self">self</span>, button_text: <span class="kw-2">&amp;</span>str, response_id: ResponseType) -&gt; Widget {
-        <span class="kw">unsafe </span>{
-            from_glib_none(ffi::gtk_dialog_add_button(
-                <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
-                button_text.to_glib_none().<span class="number">0</span>,
-                response_id.into_glib(),
-            ))
-        }
-    }
-
-    <span class="attr">#[allow(deprecated)]
-    </span><span class="kw">fn </span>content_area(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Box {
-        <span class="kw">unsafe </span>{
-            from_glib_none(ffi::gtk_dialog_get_content_area(
-                <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
-            ))
-        }
-    }
-
-    <span class="attr">#[allow(deprecated)]
-    </span><span class="kw">fn </span>header_bar(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; HeaderBar {
-        <span class="kw">unsafe </span>{
-            from_glib_none(ffi::gtk_dialog_get_header_bar(
-                <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
-            ))
-        }
-    }
-
-    <span class="attr">#[allow(deprecated)]
-    </span><span class="kw">fn </span>widget_for_response(<span class="kw-2">&amp;</span><span class="self">self</span>, response_id: ResponseType) -&gt; <span class="prelude-ty">Option</span>&lt;Widget&gt; {
-        <span class="kw">unsafe </span>{
-            from_glib_none(ffi::gtk_dialog_get_widget_for_response(
-                <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
-                response_id.into_glib(),
-            ))
-        }
-    }
-
-    <span class="attr">#[allow(deprecated)]
-    </span><span class="kw">fn </span>response(<span class="kw-2">&amp;</span><span class="self">self</span>, response_id: ResponseType) {
-        <span class="kw">unsafe </span>{
-            ffi::gtk_dialog_response(<span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>, response_id.into_glib());
-        }
-    }
-
-    <span class="attr">#[allow(deprecated)]
-    </span><span class="kw">fn </span>set_default_response(<span class="kw-2">&amp;</span><span class="self">self</span>, response_id: ResponseType) {
-        <span class="kw">unsafe </span>{
-            ffi::gtk_dialog_set_default_response(
-                <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
-                response_id.into_glib(),
-            );
-        }
-    }
-
-    <span class="attr">#[allow(deprecated)]
-    </span><span class="kw">fn </span>set_response_sensitive(<span class="kw-2">&amp;</span><span class="self">self</span>, response_id: ResponseType, setting: bool) {
-        <span class="kw">unsafe </span>{
-            ffi::gtk_dialog_set_response_sensitive(
-                <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
-                response_id.into_glib(),
-                setting.into_glib(),
-            );
-        }
-    }
-
-    <span class="kw">fn </span>use_header_bar(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32 {
-        glib::ObjectExt::property(<span class="self">self</span>.as_ref(), <span class="string">&quot;use-header-bar&quot;</span>)
-    }
-
-    <span class="kw">fn </span>connect_close&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
+    </span><span class="kw">fn </span>connect_close&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>close_trampoline&lt;P: IsA&lt;Dialog&gt;, F: Fn(<span class="kw-2">&amp;</span>P) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkDialog,
             f: glib::ffi::gpointer,
@@ -3593,7 +3511,21 @@
         <span class="self">self</span>.emit_by_name::&lt;()&gt;(<span class="string">&quot;close&quot;</span>, <span class="kw-2">&amp;</span>[]);
     }
 
-    <span class="kw">fn </span>connect_response&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, ResponseType) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
+    <span class="doccomment">/// Emitted when an action widget is clicked.
+    ///
+    /// The signal is also emitted when the dialog receives a
+    /// delete event, and when [`response()`][Self::response()] is called.
+    /// On a delete event, the response ID is [`ResponseType::DeleteEvent`][crate::ResponseType::DeleteEvent].
+    /// Otherwise, it depends on which action widget was clicked.
+    ///
+    /// # Deprecated since 4.10
+    ///
+    /// Use [`Window`][crate::Window] instead
+    /// ## `response_id`
+    /// the response ID
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[doc(alias = <span class="string">&quot;response&quot;</span>)]
+    </span><span class="kw">fn </span>connect_response&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, ResponseType) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>response_trampoline&lt;
             P: IsA&lt;Dialog&gt;,
             F: Fn(<span class="kw-2">&amp;</span>P, ResponseType) + <span class="lifetime">&#39;static</span>,
@@ -3621,6 +3553,8 @@
         }
     }
 }
+
+<span class="kw">impl</span>&lt;O: IsA&lt;Dialog&gt;&gt; DialogExt <span class="kw">for </span>O {}
 
 <span class="kw">impl </span>fmt::Display <span class="kw">for </span>Dialog {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>fmt::Formatter) -&gt; fmt::Result {

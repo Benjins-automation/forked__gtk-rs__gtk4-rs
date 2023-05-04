@@ -323,7 +323,7 @@ will still work but it will not have an immediate audible effect.
 When the stream is unmuted, the new volume setting will take effect.</p>
 <h6 id="volume"><a href="#volume"><code>volume</code></a></h6>
 <p>New volume of the stream from 0.0 to 1.0</p>
-</div></details><details class="toggle method-toggle" open><summary><section id="method.stream_ended" class="method"><a class="srclink rightside" href="../../src/gtk4/auto/media_stream.rs.html#563-567">source</a><h4 class="code-header">fn <a href="#method.stream_ended" class="fn">stream_ended</a>(&amp;self)</h4></section></summary><div class="docblock"><p>Pauses the media stream and marks it as ended.</p>
+</div></details><details class="toggle method-toggle" open><summary><section id="method.stream_ended" class="method"><a class="srclink rightside" href="../../src/gtk4/auto/media_stream.rs.html#563-567">source</a><h4 class="code-header">fn <a href="#method.stream_ended" class="fn">stream_ended</a>(&amp;self)</h4></section></summary><span class="item-info"><div class="stab portability">Available on <strong>crate feature <code>v4_4</code></strong> only.</div></span><div class="docblock"><p>Pauses the media stream and marks it as ended.</p>
 <p>This is a hint only, calls to <a href="trait.MediaStreamExt.html#method.play"><code>play()</code></a>
 may still happen.</p>
 <p>The media stream must be prepared when this function is called.</p>
@@ -333,7 +333,7 @@ may still happen.</p>
     has_video: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
     seekable: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
     duration: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i64.html">i64</a>
-)</h4></section></summary><div class="docblock"><p>Called by <a href="../struct.MediaStream.html" title="struct gtk4::MediaStream"><code>MediaStream</code></a> implementations to advertise the stream
+)</h4></section></summary><span class="item-info"><div class="stab portability">Available on <strong>crate feature <code>v4_4</code></strong> only.</div></span><div class="docblock"><p>Called by <a href="../struct.MediaStream.html" title="struct gtk4::MediaStream"><code>MediaStream</code></a> implementations to advertise the stream
 being ready to play and providing details about the stream.</p>
 <p>Note that the arguments are hints. If the stream implementation
 cannot determine the correct values, it is better to err on the
@@ -349,7 +349,7 @@ reset via <a href="trait.MediaStreamExt.html#method.stream_unprepared"><code>str
 <p><a href="https://doc.rust-lang.org/nightly/std/primitive.bool.html" title="primitive bool"><code>true</code></a> if the stream should advertise seekability</p>
 <h6 id="duration-1"><a href="#duration-1"><code>duration</code></a></h6>
 <p>The duration of the stream or 0 if unknown</p>
-</div></details><details class="toggle method-toggle" open><summary><section id="method.stream_unprepared" class="method"><a class="srclink rightside" href="../../src/gtk4/auto/media_stream.rs.html#610-614">source</a><h4 class="code-header">fn <a href="#method.stream_unprepared" class="fn">stream_unprepared</a>(&amp;self)</h4></section></summary><div class="docblock"><p>Resets a given media stream implementation.</p>
+</div></details><details class="toggle method-toggle" open><summary><section id="method.stream_unprepared" class="method"><a class="srclink rightside" href="../../src/gtk4/auto/media_stream.rs.html#610-614">source</a><h4 class="code-header">fn <a href="#method.stream_unprepared" class="fn">stream_unprepared</a>(&amp;self)</h4></section></summary><span class="item-info"><div class="stab portability">Available on <strong>crate feature <code>v4_4</code></strong> only.</div></span><div class="docblock"><p>Resets a given media stream implementation.</p>
 <p><a href="trait.MediaStreamExt.html#method.stream_prepared"><code>stream_prepared()</code></a> can then be called again.</p>
 <p>This function will also reset any error state the stream was in.</p>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.unprepared" class="method"><a class="srclink rightside" href="../../src/gtk4/auto/media_stream.rs.html#624-628">source</a><h4 class="code-header">fn <a href="#method.unprepared" class="fn">unprepared</a>(&amp;self)</h4></section></summary><span class="item-info"><div class="stab deprecated"><span class="emoji">👎</span><span>Deprecated: Since 4.4</span></div></span><div class="docblock"><p>Same as gtk_media_stream_stream_unprepared().</p>

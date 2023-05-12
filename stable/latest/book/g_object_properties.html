@@ -151,9 +151,9 @@
                         <h1 id="properties"><a class="header" href="#properties">Properties</a></h1>
 <p>Properties provide a public API for accessing state of GObjects.</p>
 <p>Let's see how this is done by experimenting with the <a href="https://gtk-rs.org/gtk4-rs/stable/latest/docs/gtk4/struct.Switch.html"><code>Switch</code></a> widget.
-One of its properties is the <a href="https://docs.gtk.org/gtk4/property.Switch.state.html">state</a>.
+One of its properties is called <a href="../docs/gtk4/struct.Switch.html#active">active</a>.
 According to the GTK docs, it can be read and be written to.
-That is why <code>gtk-rs</code> provides corresponding <a href="../docs/gtk4/struct.Switch.html#method.state"><code>state</code></a> and <a href="../docs/gtk4/struct.Switch.html#method.set_state"><code>set_state</code></a> methods.</p>
+That is why <code>gtk-rs</code> provides corresponding <a href="../docs/gtk4/struct.Switch.html#method.is_active"><code>is_active</code></a> and <a href="../docs/gtk4/struct.Switch.html#method.set_active"><code>set_active</code></a> methods.</p>
 <p>Filename: <a class=file-link href="https://github.com/gtk-rs/gtk4-rs/blob/master/book/listings/g_object_properties/1/main.rs">listings/g_object_properties/1/main.rs</a></p>
 <pre><code class="language-rust  no_run noplayground"><span class="boring">use gtk::prelude::*;
 </span><span class="boring">use gtk::{glib, Align, Application, ApplicationWindow, Box, Orientation, Switch};
@@ -175,12 +175,12 @@ That is why <code>gtk-rs</code> provides corresponding <a href="../docs/gtk4/str
 </span>    // Create the switch
     let switch = Switch::new();
 
-    // Set and then immediately obtain state
-    switch.set_state(true);
-    let current_state = switch.state();
+    // Set and then immediately obtain active property
+    switch.set_active(true);
+    let switch_active = switch.is_active();
 
-    // This prints: &quot;The current state is true&quot;
-    println!(&quot;The current state is {}&quot;, current_state);
+    // This prints: &quot;The active property of switch is true&quot;
+    println!(&quot;The active property of switch is {}&quot;, switch_active);
 <span class="boring">
 </span><span class="boring">    // Set up box
 </span><span class="boring">    let gtk_box = Box::builder()
@@ -231,7 +231,7 @@ Let's see how that would look like for two <code>Switch</code> instances.</p>
     let switch_2 = Switch::new();
 <span class="boring">
 </span><span class="boring">    switch_1
-</span><span class="boring">        .bind_property(&quot;state&quot;, &amp;switch_2, &quot;state&quot;)
+</span><span class="boring">        .bind_property(&quot;active&quot;, &amp;switch_2, &quot;active&quot;)
 </span><span class="boring">        .flags(BindingFlags::BIDIRECTIONAL)
 </span><span class="boring">        .build();
 </span><span class="boring">
@@ -259,7 +259,7 @@ Let's see how that would look like for two <code>Switch</code> instances.</p>
 </span><span class="boring">    // Present the window
 </span><span class="boring">    window.present();
 </span><span class="boring">}</span></code></pre>
-<p>In our case, we want to bind the &quot;state&quot; property of <code>switch_1</code> to the &quot;state&quot; property of <code>switch_2</code>.
+<p>In our case, we want to bind the &quot;active&quot; property of <code>switch_1</code> to the &quot;active&quot; property of <code>switch_2</code>.
 We also want the binding to be bidirectional, so we specify this with the <a href="https://gtk-rs.org/gtk-rs-core/stable/latest/docs/glib/struct.BindingFlags.html"><code>BindingFlags</code></a>.</p>
 <p>Filename: <a class=file-link href="https://github.com/gtk-rs/gtk4-rs/blob/master/book/listings/g_object_properties/2/main.rs">listings/g_object_properties/2/main.rs</a></p>
 <pre><code class="language-rust  no_run noplayground"><span class="boring">use glib::BindingFlags;
@@ -285,7 +285,7 @@ We also want the binding to be bidirectional, so we specify this with the <a hre
 </span><span class="boring">    let switch_2 = Switch::new();
 </span><span class="boring">
 </span>    switch_1
-        .bind_property(&quot;state&quot;, &amp;switch_2, &quot;state&quot;)
+        .bind_property(&quot;active&quot;, &amp;switch_2, &quot;active&quot;)
         .flags(BindingFlags::BIDIRECTIONAL)
         .build();
 <span class="boring">

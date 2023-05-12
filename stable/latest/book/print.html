@@ -1543,9 +1543,9 @@ More examples can be found in the <a href="https://gtk-rs.org/gtk-rs-core/stable
 <div style="break-before: page; page-break-before: always;"></div><h1 id="properties"><a class="header" href="#properties">Properties</a></h1>
 <p>Properties provide a public API for accessing state of GObjects.</p>
 <p>Let's see how this is done by experimenting with the <a href="https://gtk-rs.org/gtk4-rs/stable/latest/docs/gtk4/struct.Switch.html"><code>Switch</code></a> widget.
-One of its properties is the <a href="https://docs.gtk.org/gtk4/property.Switch.state.html">state</a>.
+One of its properties is called <a href="../docs/gtk4/struct.Switch.html#active">active</a>.
 According to the GTK docs, it can be read and be written to.
-That is why <code>gtk-rs</code> provides corresponding <a href="../docs/gtk4/struct.Switch.html#method.state"><code>state</code></a> and <a href="../docs/gtk4/struct.Switch.html#method.set_state"><code>set_state</code></a> methods.</p>
+That is why <code>gtk-rs</code> provides corresponding <a href="../docs/gtk4/struct.Switch.html#method.is_active"><code>is_active</code></a> and <a href="../docs/gtk4/struct.Switch.html#method.set_active"><code>set_active</code></a> methods.</p>
 <p>Filename: <a class=file-link href="https://github.com/gtk-rs/gtk4-rs/blob/master/book/listings/g_object_properties/1/main.rs">listings/g_object_properties/1/main.rs</a></p>
 <pre><code class="language-rust  no_run noplayground"><span class="boring">use gtk::prelude::*;
 </span><span class="boring">use gtk::{glib, Align, Application, ApplicationWindow, Box, Orientation, Switch};
@@ -1567,12 +1567,12 @@ That is why <code>gtk-rs</code> provides corresponding <a href="../docs/gtk4/str
 </span>    // Create the switch
     let switch = Switch::new();
 
-    // Set and then immediately obtain state
-    switch.set_state(true);
-    let current_state = switch.state();
+    // Set and then immediately obtain active property
+    switch.set_active(true);
+    let switch_active = switch.is_active();
 
-    // This prints: &quot;The current state is true&quot;
-    println!(&quot;The current state is {}&quot;, current_state);
+    // This prints: &quot;The active property of switch is true&quot;
+    println!(&quot;The active property of switch is {}&quot;, switch_active);
 <span class="boring">
 </span><span class="boring">    // Set up box
 </span><span class="boring">    let gtk_box = Box::builder()
@@ -1623,7 +1623,7 @@ Let's see how that would look like for two <code>Switch</code> instances.</p>
     let switch_2 = Switch::new();
 <span class="boring">
 </span><span class="boring">    switch_1
-</span><span class="boring">        .bind_property(&quot;state&quot;, &amp;switch_2, &quot;state&quot;)
+</span><span class="boring">        .bind_property(&quot;active&quot;, &amp;switch_2, &quot;active&quot;)
 </span><span class="boring">        .flags(BindingFlags::BIDIRECTIONAL)
 </span><span class="boring">        .build();
 </span><span class="boring">
@@ -1651,7 +1651,7 @@ Let's see how that would look like for two <code>Switch</code> instances.</p>
 </span><span class="boring">    // Present the window
 </span><span class="boring">    window.present();
 </span><span class="boring">}</span></code></pre>
-<p>In our case, we want to bind the &quot;state&quot; property of <code>switch_1</code> to the &quot;state&quot; property of <code>switch_2</code>.
+<p>In our case, we want to bind the &quot;active&quot; property of <code>switch_1</code> to the &quot;active&quot; property of <code>switch_2</code>.
 We also want the binding to be bidirectional, so we specify this with the <a href="https://gtk-rs.org/gtk-rs-core/stable/latest/docs/glib/struct.BindingFlags.html"><code>BindingFlags</code></a>.</p>
 <p>Filename: <a class=file-link href="https://github.com/gtk-rs/gtk4-rs/blob/master/book/listings/g_object_properties/2/main.rs">listings/g_object_properties/2/main.rs</a></p>
 <pre><code class="language-rust  no_run noplayground"><span class="boring">use glib::BindingFlags;
@@ -1677,7 +1677,7 @@ We also want the binding to be bidirectional, so we specify this with the <a hre
 </span><span class="boring">    let switch_2 = Switch::new();
 </span><span class="boring">
 </span>    switch_1
-        .bind_property(&quot;state&quot;, &amp;switch_2, &quot;state&quot;)
+        .bind_property(&quot;active&quot;, &amp;switch_2, &quot;active&quot;)
         .flags(BindingFlags::BIDIRECTIONAL)
         .build();
 <span class="boring">
@@ -4711,7 +4711,7 @@ This is why we will skip this topic here.</p>
 <p>Note that we can create a <code>StringList</code> directly from an iterator over strings.
 This means we don't have to create a custom GObject for our model anymore.</p>
 <p>As usual, we connect the label to the list item via an expression.
-Here we can use <a href="../docs/gtk4/struct.StringObject.html"><code>StringObject</code></a>, which exposes its content via the <a href="https://docs.gtk.org/gtk4/property.StringObject.string.html">property &quot;string&quot;</a>.</p>
+Here we can use <a href="../docs/gtk4/struct.StringObject.html"><code>StringObject</code></a>, which exposes its content via the <a href="../docs/gtk4/struct.StringObject.html#string">property &quot;string&quot;</a>.</p>
 <p>Filename: <a class=file-link href="https://github.com/gtk-rs/gtk4-rs/blob/master/book/listings/list_widgets/6/main.rs">listings/list_widgets/6/main.rs</a></p>
 <pre><code class="language-rust  no_run noplayground"><span class="boring">use gtk::{glib, prelude::*, ListItem};
 </span><span class="boring">use gtk::{
@@ -4859,7 +4859,7 @@ Then you start listing the elements you want to describe.
 In order to define a composite template, we specify the name <code>MyGtkAppWindow</code> of the custom widget we want to create and the parent <a href="../docs/gtk4/struct.ApplicationWindow.html"><code>gtk::ApplicationWindow</code></a> it derives of.
 These <code>xml</code> files are independent of the programming language, which is why the classes have the original names.
 Luckily, they all convert like this: <code>gtk::ApplicationWindow</code> → <code>GtkApplicationWindow</code>.
-Then we can specify properties which are listed <a href="https://docs.gtk.org/gtk4/class.ApplicationWindow.html">here</a> for <code>ApplicationWindow</code>.
+Then we can specify properties which are listed <a href="../docs/gtk4/struct.ApplicationWindow.html#properties">here</a> for <code>ApplicationWindow</code>.
 Since <code>ApplicationWindow</code> can contain other widgets we use the <code>&lt;child&gt;</code> tag to add a <code>gtk::Button</code>.
 We want to be able to refer to the button later on so we also set its <code>id</code>.</p>
 <h2 id="resources"><a class="header" href="#resources">Resources</a></h2>
@@ -7147,10 +7147,10 @@ With <a href="../docs/gtk4/builders/struct.ButtonBuilder.html"><code>ButtonBuild
 </span><span class="boring">    action_count.connect_activate(clone!(@weak label =&gt; move |action, parameter| {
 </span><span class="boring">        // Get state
 </span><span class="boring">        let mut state = action
-</span><span class="boring">        .state()
-</span><span class="boring">        .expect(&quot;Could not get state.&quot;)
-</span><span class="boring">        .get::&lt;i32&gt;()
-</span><span class="boring">        .expect(&quot;The value needs to be of type `i32`.&quot;);
+</span><span class="boring">            .state()
+</span><span class="boring">            .expect(&quot;Could not get state.&quot;)
+</span><span class="boring">            .get::&lt;i32&gt;()
+</span><span class="boring">            .expect(&quot;The value needs to be of type `i32`.&quot;);
 </span><span class="boring">
 </span><span class="boring">        // Get parameter
 </span><span class="boring">        let parameter = parameter
@@ -7571,7 +7571,7 @@ We do that by adding the menu in front of the template.</p>
        &lt;object class=&quot;GtkBox&quot; id=&quot;gtk_box&quot;&gt;
          &lt;property name=&quot;orientation&quot;&gt;vertical&lt;/property&gt;
 </code></pre>
-<p>Since we connect the menu to the <a href="../docs/gtk4/struct.MenuButton.html"><code>gtk::MenuButton</code></a> via the <a href="https://docs.gtk.org/gtk4/property.MenuButton.menu-model.html">menu-model</a> property, the <code>Menu</code> is expected to be a <a href="../docs/gtk4/struct.PopoverMenu.html"><code>gtk::PopoverMenu</code></a>.
+<p>Since we connect the menu to the <a href="../docs/gtk4/struct.MenuButton.html"><code>gtk::MenuButton</code></a> via the <a href="../docs/gtk4/struct.MenuButton.html#menu-model">menu-model</a> property, the <code>Menu</code> is expected to be a <a href="../docs/gtk4/struct.PopoverMenu.html"><code>gtk::PopoverMenu</code></a>.
 The <a href="../docs/gtk4/struct.PopoverMenu.html">documentation</a> for <code>PopoverMenu</code> also explains its <code>xml</code> syntax for the interface builder.</p>
 <p>Also note how we specified the target:</p>
 <pre><code class="language-xml">&lt;attribute name=&quot;target&quot;&gt;Horizontal&lt;/attribute&gt;
@@ -7733,10 +7733,10 @@ pub struct Window {
 </span><span class="boring">        action_count.connect_activate(clone!(@weak label =&gt; move |action, parameter| {
 </span><span class="boring">            // Get state
 </span><span class="boring">            let mut state = action
-</span><span class="boring">            .state()
-</span><span class="boring">            .expect(&quot;Could not get state.&quot;)
-</span><span class="boring">            .get::&lt;i32&gt;()
-</span><span class="boring">            .expect(&quot;The variant needs to be of type `i32`.&quot;);
+</span><span class="boring">                .state()
+</span><span class="boring">                .expect(&quot;Could not get state.&quot;)
+</span><span class="boring">                .get::&lt;i32&gt;()
+</span><span class="boring">                .expect(&quot;The variant needs to be of type `i32`.&quot;);
 </span><span class="boring">
 </span><span class="boring">            // Get parameter
 </span><span class="boring">            let parameter = parameter
@@ -7855,10 +7855,10 @@ We create actions with the<a href="https://gtk-rs.org/gtk-rs-core/stable/latest/
 </span><span class="boring">        action_count.connect_activate(clone!(@weak label =&gt; move |action, parameter| {
 </span><span class="boring">            // Get state
 </span><span class="boring">            let mut state = action
-</span><span class="boring">            .state()
-</span><span class="boring">            .expect(&quot;Could not get state.&quot;)
-</span><span class="boring">            .get::&lt;i32&gt;()
-</span><span class="boring">            .expect(&quot;The variant needs to be of type `i32`.&quot;);
+</span><span class="boring">                .state()
+</span><span class="boring">                .expect(&quot;Could not get state.&quot;)
+</span><span class="boring">                .get::&lt;i32&gt;()
+</span><span class="boring">                .expect(&quot;The variant needs to be of type `i32`.&quot;);
 </span><span class="boring">
 </span><span class="boring">            // Get parameter
 </span><span class="boring">            let parameter = parameter
@@ -7979,10 +7979,10 @@ For the stateful actions, instead of adding callbacks to their &quot;activate&qu
 </span><span class="boring">        action_count.connect_activate(clone!(@weak label =&gt; move |action, parameter| {
 </span><span class="boring">            // Get state
 </span><span class="boring">            let mut state = action
-</span><span class="boring">            .state()
-</span><span class="boring">            .expect(&quot;Could not get state.&quot;)
-</span><span class="boring">            .get::&lt;i32&gt;()
-</span><span class="boring">            .expect(&quot;The variant needs to be of type `i32`.&quot;);
+</span><span class="boring">                .state()
+</span><span class="boring">                .expect(&quot;Could not get state.&quot;)
+</span><span class="boring">                .get::&lt;i32&gt;()
+</span><span class="boring">                .expect(&quot;The variant needs to be of type `i32`.&quot;);
 </span><span class="boring">
 </span><span class="boring">            // Get parameter
 </span><span class="boring">            let parameter = parameter

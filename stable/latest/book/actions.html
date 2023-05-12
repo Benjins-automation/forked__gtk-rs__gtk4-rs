@@ -476,10 +476,10 @@ With <a href="../docs/gtk4/builders/struct.ButtonBuilder.html"><code>ButtonBuild
 </span><span class="boring">    action_count.connect_activate(clone!(@weak label =&gt; move |action, parameter| {
 </span><span class="boring">        // Get state
 </span><span class="boring">        let mut state = action
-</span><span class="boring">        .state()
-</span><span class="boring">        .expect(&quot;Could not get state.&quot;)
-</span><span class="boring">        .get::&lt;i32&gt;()
-</span><span class="boring">        .expect(&quot;The value needs to be of type `i32`.&quot;);
+</span><span class="boring">            .state()
+</span><span class="boring">            .expect(&quot;Could not get state.&quot;)
+</span><span class="boring">            .get::&lt;i32&gt;()
+</span><span class="boring">            .expect(&quot;The value needs to be of type `i32`.&quot;);
 </span><span class="boring">
 </span><span class="boring">        // Get parameter
 </span><span class="boring">        let parameter = parameter
@@ -900,7 +900,7 @@ We do that by adding the menu in front of the template.</p>
        &lt;object class=&quot;GtkBox&quot; id=&quot;gtk_box&quot;&gt;
          &lt;property name=&quot;orientation&quot;&gt;vertical&lt;/property&gt;
 </code></pre>
-<p>Since we connect the menu to the <a href="../docs/gtk4/struct.MenuButton.html"><code>gtk::MenuButton</code></a> via the <a href="https://docs.gtk.org/gtk4/property.MenuButton.menu-model.html">menu-model</a> property, the <code>Menu</code> is expected to be a <a href="../docs/gtk4/struct.PopoverMenu.html"><code>gtk::PopoverMenu</code></a>.
+<p>Since we connect the menu to the <a href="../docs/gtk4/struct.MenuButton.html"><code>gtk::MenuButton</code></a> via the <a href="../docs/gtk4/struct.MenuButton.html#menu-model">menu-model</a> property, the <code>Menu</code> is expected to be a <a href="../docs/gtk4/struct.PopoverMenu.html"><code>gtk::PopoverMenu</code></a>.
 The <a href="../docs/gtk4/struct.PopoverMenu.html">documentation</a> for <code>PopoverMenu</code> also explains its <code>xml</code> syntax for the interface builder.</p>
 <p>Also note how we specified the target:</p>
 <pre><code class="language-xml">&lt;attribute name=&quot;target&quot;&gt;Horizontal&lt;/attribute&gt;
@@ -1062,10 +1062,10 @@ pub struct Window {
 </span><span class="boring">        action_count.connect_activate(clone!(@weak label =&gt; move |action, parameter| {
 </span><span class="boring">            // Get state
 </span><span class="boring">            let mut state = action
-</span><span class="boring">            .state()
-</span><span class="boring">            .expect(&quot;Could not get state.&quot;)
-</span><span class="boring">            .get::&lt;i32&gt;()
-</span><span class="boring">            .expect(&quot;The variant needs to be of type `i32`.&quot;);
+</span><span class="boring">                .state()
+</span><span class="boring">                .expect(&quot;Could not get state.&quot;)
+</span><span class="boring">                .get::&lt;i32&gt;()
+</span><span class="boring">                .expect(&quot;The variant needs to be of type `i32`.&quot;);
 </span><span class="boring">
 </span><span class="boring">            // Get parameter
 </span><span class="boring">            let parameter = parameter
@@ -1184,10 +1184,10 @@ We create actions with the<a href="https://gtk-rs.org/gtk-rs-core/stable/latest/
 </span><span class="boring">        action_count.connect_activate(clone!(@weak label =&gt; move |action, parameter| {
 </span><span class="boring">            // Get state
 </span><span class="boring">            let mut state = action
-</span><span class="boring">            .state()
-</span><span class="boring">            .expect(&quot;Could not get state.&quot;)
-</span><span class="boring">            .get::&lt;i32&gt;()
-</span><span class="boring">            .expect(&quot;The variant needs to be of type `i32`.&quot;);
+</span><span class="boring">                .state()
+</span><span class="boring">                .expect(&quot;Could not get state.&quot;)
+</span><span class="boring">                .get::&lt;i32&gt;()
+</span><span class="boring">                .expect(&quot;The variant needs to be of type `i32`.&quot;);
 </span><span class="boring">
 </span><span class="boring">            // Get parameter
 </span><span class="boring">            let parameter = parameter
@@ -1308,10 +1308,10 @@ For the stateful actions, instead of adding callbacks to their &quot;activate&qu
 </span><span class="boring">        action_count.connect_activate(clone!(@weak label =&gt; move |action, parameter| {
 </span><span class="boring">            // Get state
 </span><span class="boring">            let mut state = action
-</span><span class="boring">            .state()
-</span><span class="boring">            .expect(&quot;Could not get state.&quot;)
-</span><span class="boring">            .get::&lt;i32&gt;()
-</span><span class="boring">            .expect(&quot;The variant needs to be of type `i32`.&quot;);
+</span><span class="boring">                .state()
+</span><span class="boring">                .expect(&quot;Could not get state.&quot;)
+</span><span class="boring">                .get::&lt;i32&gt;()
+</span><span class="boring">                .expect(&quot;The variant needs to be of type `i32`.&quot;);
 </span><span class="boring">
 </span><span class="boring">            // Get parameter
 </span><span class="boring">            let parameter = parameter
